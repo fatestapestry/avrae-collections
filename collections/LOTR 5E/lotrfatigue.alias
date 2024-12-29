@@ -1,0 +1,111 @@
+<drac2>
+
+BASE_DC = 10
+SAVING_THROW_ABILITY = "constitution"
+MULTIPLE_ROLES_PENALTY = -5
+
+# Load data
+journey_data = load_json(get_gvar("a6e3208c-b3c8-408b-b310-43e3daab5332"))
+using(
+    common_utils="0c6d5bca-a15d-4e45-a08d-48cf51411088",
+    lotr_utils="bf283fd7-585d-4530-b0e2-9e03eb643a96"
+)
+footer = lotr_utils.FOOTER_FATIGUE
+
+# Set up variables
+ch = character()
+args = argparse(&ARGS&)
+dc = BASE_DC
+bonuses = []
+events = []
+adv = args.adv()
+
+if args.get('dc'):
+    try:
+        dc = int(args.last('dc'))
+    except:
+        title = "Error"
+        desc = f"Invalid DC value: {args.last('dc')}"
+        return common_utils.embed_msg(title=title, desc=desc, footer=footer)
+
+# Check for multiple roles penalty
+if 'multipleroles' in args:
+    bonuses.append(f"{MULTIPLE_ROLES_PENALTY}[Multiple Roles]")
+
+# Check for blessing die
+if 'blessingdie' in args:
+    blessing_die = lotr_utils.get_blessing_die(ch)
+    if blessing_die:
+        bonuses.append(f"{blessing_die}[Blessing Die]")
+
+# Check for mount bonus
+if args.get('mount'):
+    try:
+        mount_bonus = int(args.last('mount'))
+        if mount_bonus > 0:
+            bonuses.append(f"{mount_bonus}[Mount]")
+    except:
+        title = "Error"
+        desc = f"Invalid mount bonus: {args.last('mount')}"
+        return common_utils.embed_msg(title=title, desc=desc, footer=footer)
+
+# Process additional bonuses
+if args.get('b'):
+    bonuses.extend(args.get('b'))
+
+# Check for autumn/winter override
+if 'autumn' in args or 'winter' in args:
+    adv = -1
+
+# Process events
+final_dc = dc
+
+# Check for both -e and -event arguments
+event_args = args.get('e', []) + args.get('event', [])
+for arg in event_args:
+    # Check for full name
+    if arg in journey_data['events']:
+        events.append(journey_data['events'][arg])
+        final_dc += journey_data['events'][arg]['dc_mod']
+        continue
+
+    # Check for abbreviation
+    found = False
+    for event_name, event_data in journey_data['events'].items():
+        if arg == event_data['abbr']:
+            events.append(event_data)
+            final_dc += event_data['dc_mod']
+            found = True
+            break
+
+    if not found:
+        title = "Error"
+        supported_event_str = [f"{e}|{v['abbr']}" for e,v in journey_data['events'].items()]
+        desc = (f"Invalid event: `{arg}`\n"
+                f"Supported events:\n"
+                f"`{supported_event_str}`")
+        return common_utils.embed_msg(title=title, desc=desc, footer=footer)
+
+# Stub for exhaustion handling
+if 'exhaustion' in args:
+    pass  # Future implementation
+
+# Make the save
+result, nat_roll = common_utils.make_save_roll(ch, SAVING_THROW_ABILITY, adv, bonuses)
+success = result.total >= final_dc
+
+# Build output
+dc_parts = [str(dc)] + [f"{e['dc_mod']}" for e in events]
+desc_lines = [
+    f"DC: {' + '.join(dc_parts)} = **{final_dc}**",
+    str(result),
+    "**Success!**" if success else "**Failure!**"
+]
+
+title = f"{ch.name} makes a Fatigue ({SAVING_THROW_ABILITY.title()}) saving throw!"
+desc = '\n'.join(desc_lines)
+fields = [f"{e['field_title']}|{e['field_text']}" for e in events] if events else None
+
+return common_utils.embed_msg(title=title, desc=desc, footer=footer, fields=fields)
+
+</drac2>

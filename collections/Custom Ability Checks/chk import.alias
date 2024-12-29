@@ -1,0 +1,42 @@
+<drac2>
+args, out = &ARGS&, get_gvar("82433f32-d46d-4e22-9673-0cb9befc555e")
+if not args:
+  return out + '-f "*You must specify what checks to import.*"'
+
+a, new = args[0].title(), {}
+if 'Redsky' in a:
+  clist = ["Eldertech","Materials","Politics","Medicine"]
+  new.update({''.join(x.lower().split()):{"name":x,"base":"Intelligence","prof":"0","args":"","source":"Imported: Redsky"} for x in clist})
+if 'Musical' in a or 'Tools' in a:
+  clist = ["Bagpipes", "Drum", "Dulcimer", "Flute", "Lute", "Lyre", "Horn", "Pan Flute", "Shawm", "Viol"]
+  new.update({''.join(x.lower().split()):{"name":x,"base":"Charisma","prof":"0","args":"","source":"Imported: Musical Instruments"} for x in clist})
+if 'Gaming' in a or 'Tools' in a:
+  clist = ["Dice Set", "Playing Card Set"]
+  new.update({''.join(x.lower().split()):{"name":x,"base":"Charisma","prof":"0","args":"","source":"Imported: Gaming Sets"} for x in clist})
+if 'Artisan' in a or 'Tools' in a:
+  clist = {"Alchemist’s Supplies":"Intelligence", "Brewer’s Supplies":"Wisdom", "Calligrapher’s Supplies":"Dexterity", "Carpenter’s Tools":"Dexterity", "Cartographer’s Tools":"Intelligence", "Cobbler’s Tools":"Dexterity", "Cook’s Utensils":"Wisdom", "Glassblower’s Tools":"Constitution", "Jeweler’s Tools":"Dexterity", "Leatherworker’s Tools":"Strength", "Mason’s Tools":"Strength", "Painter’s Supplies":"Dexterity", "Potter’s Tools":"Dexterity", "Smith’s Tools":"Strength", "Tinker’s Tools":"Intelligence", "Weaver’s Tools":"Dexterity", "Woodcarver’s Tools":"Strength"}
+  new.update({''.join(x.lower().split()):{"name":x,"base":y,"prof":"0","args":"","source":"Imported: Artisan’s Tools"} for x, y in clist.items()})
+if 'Tools' in a:
+  clist = {"Disguise Kit":"Dexterity","Forgery Kit":"Dexterity","Herbalism Kit":"Wisdom","Navigator’s Tools":"Wisdom","Thieves’ Tools":"Dexterity","Vehicles (land)":"Wisdom","Vehicles (water)":"Wisdom"}
+  new.update({''.join(x.lower().split()):{"name":x,"base":y,"prof":"0","args":"","source":"Imported: All Tools"} for x, y in clist.items()})
+
+
+if not new:
+  return out + '-f "*Could not find importable list of checks named* ***' + args[0] + '***."'
+
+ch, chks = character(), get('checks','{}')
+chks = load_json(chks.replace("'",'"') if "'" in chks else chks) if chks else ""
+if not chks:
+  ch.set_cvar("checks", dump_json(new))
+  return out + '-f "*Imported first custom check(s) from* ***' + a + '*** *list*."'
+
+if typeof(chks) in 'SafeList':
+  chks = {''.join(x.name.lower().split()):x for x in chks}
+  character().set_cvar('checks', dump_json(chks))
+elif typeof(chks) not in 'SafeDict':
+  err('Your `checks` character variable (cvar) is not formatted correctly. Use `!cvar checks` to look at it or `!cvar delete checks` to start fresh.')
+
+chks.update(new)
+ch.set_cvar("checks", dump_json(chks))
+return out + '-f "*Imported custom check(s) from* ***' + a + '*** *list*."'
+</drac2>

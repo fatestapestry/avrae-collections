@@ -1,0 +1,3 @@
+The aliases in this collection make it easier for you to use Avrae to make ability checks for things that aren't built in by default.
+
+You can use these aliases to change the names of existing skills to suit other settings, add additional skills with associated proficiencies, add tool proficiencies and roll tool checks, or add in anything else you might want to include in your games based on an ability check.

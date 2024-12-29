@@ -1,0 +1,1 @@
+The weapon is strong and heavy, inflicting more harm on its targets. You gain a +1 bonus to damage rolls with this weapon.

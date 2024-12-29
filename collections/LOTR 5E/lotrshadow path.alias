@@ -1,0 +1,63 @@
+<drac2>
+# !lotrshadow path <value|none>
+# Load shadow data
+shadow_data = load_json(get_gvar("4160bb62-8791-4239-941c-b7805e5351b6"))
+using(
+   lotr_utils="bf283fd7-585d-4530-b0e2-9e03eb643a96",
+   common_utils="0c6d5bca-a15d-4e45-a08d-48cf51411088"
+)
+footer = lotr_utils.FOOTER_SHADOW
+
+ch = character()
+args = &ARGS&
+
+# Validate shadow path exists
+valid, error = lotr_utils.validate_shadow_path(ch)
+if not valid:
+    title = "Error: Cannot Manage Shadow Path"
+    desc = error
+    return common_utils.embed_msg(title=title, desc=desc, footer=footer)
+
+# Load shadow data and current path
+shadow_data = load_json(get_gvar(lotr_utils.METADATA_SHADOW))
+shadow_path = load_json(ch.get_cvar(lotr_utils.SHADOW_PATH))
+path_flaws = shadow_data["paths"][shadow_path["calling"]]["flaws"]
+
+# Require value argument
+if len(args) < 1:
+    title = "Error: Invalid Arguments"
+    desc = "Usage: `!lotrshadow path <value|none>`"
+    return common_utils.embed_msg(title=title, desc=desc, footer=footer)
+
+target_flaw = ' '.join(args).lower()
+display_value = None
+
+# Handle reset case
+if target_flaw == 'none':
+    shadow_path["currentFlaws"] = []
+    display_value = "None"
+else:
+    # Find matching flaw
+    matching_flaw = None
+    for flaw in path_flaws:
+        if flaw.lower() == target_flaw:
+            matching_flaw = flaw
+            break
+
+    if not matching_flaw:
+        title = "Error: Invalid Flaw"
+        desc = (f"`{target_flaw}` is not a valid flaw for your shadow path.\n"
+                f"Valid flaws for {shadow_path['path']}:\n"
+                f"`{[f.lower() for f in path_flaws]}`")
+        return common_utils.embed_msg(title=title, desc=desc, footer=footer)
+
+    shadow_path["currentFlaws"] = lotr_utils.get_flaws_until(path_flaws, matching_flaw)
+    display_value = matching_flaw
+
+# Save updated path
+ch.set_cvar(lotr_utils.SHADOW_PATH, dump_json(shadow_path))
+prefix = f"Shadow Path flaws updated to: {display_value}"
+
+title = f"{ch.name}\'s Flaws updated!"
+return lotr_utils.create_full_shadow_display(ch, title, prefix)
+</drac2>

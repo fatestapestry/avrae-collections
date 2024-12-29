@@ -1,0 +1,113 @@
+[
+  {
+    "name": "barding",
+    "cvars": {
+      "race": "Barding",
+      "speed": "30 ft.",
+      "languages": "Westron, Dalish",
+      "size": "Medium"
+    }
+  },
+  {
+    "name": "dwarf blue mountains",
+    "cvars": {
+      "race": "Dwarf of the Blue Mountains",
+      "speed": "25 ft.",
+      "languages": "Westron, Khuzdul",
+      "size": "Medium"
+    }
+  },
+  {
+    "name": "dwarf erebor",
+    "cvars": {
+      "race": "Dwarf of Erebor",
+      "speed": "25 ft.",
+      "languages": "Westron, Khuzdul, Dalish",
+      "size": "Medium"
+    }
+  },
+  {
+    "name": "dwarf iron hills",
+    "cvars": {
+      "race": "Dwarf of the Iron Hills",
+      "speed": "25 ft.",
+      "languages": "Westron, Khuzdul",
+      "size": "Medium"
+    }
+  },
+  {
+    "name": "dwarf wandering",
+    "cvars": {
+      "race": "Wandering Dwarf",
+      "speed": "25 ft.",
+      "languages": "Westron, Khuzdul",
+      "size": "Medium"
+    }
+  },
+  {
+    "name": "elf lindon",
+    "featureResources": "239b3730-e51f-4bc2-9dae-26c67b99663c",
+    "counters": [
+      {
+        "name": "Elven-Skill",
+        "reset": "long",
+        "level": 1,
+        "value": "proficiencyBonus",
+        "display": "bubble",
+        "use": "use elvenskill",
+        "desc": "By virtue of their birthright, Elves are capable of reaching levels of finesse unattainable by mortals. If you are not miserable and make an ability check that lets you add your proficiency bonus, you can obtain a magical success. You can do so a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
+      }
+    ],
+    "cvars": {
+      "race": "Elf of Lindon",
+      "speed": "30 ft.",
+      "languages": "Westron, Sindarin",
+      "size": "Medium"
+    }
+  },
+  {
+    "name": "hobbit fallohide",
+    "cvars": {
+      "race": "Fallohide Hobbit",
+      "speed": "25 ft.",
+      "languages": "Westron",
+      "size": "Small"
+    }
+  },
+  {
+    "name": "hobbit harfoot",
+    "cvars": {
+      "race": "Harfoot Hobbit",
+      "speed": "25 ft.",
+      "languages": "Westron",
+      "size": "Small"
+    }
+  },
+  {
+    "name": "hobbit stoor",
+    "cvars": {
+      "race": "Stoor Hobbit",
+      "speed": "25 ft.",
+      "languages": "Westron",
+      "size": "Small"
+    }
+  },
+  {
+    "name": "man bree",
+    "cvars": {
+      "race": "Man of Bree",
+      "speed": "30 ft.",
+      "languages": "Westron",
+      "size": "Medium"
+    }
+  },
+  {
+    "name": "ranger north",
+    "cvars": {
+      "race": "Ranger of the North",
+      "speed": "35 ft.",
+      "languages": "Westron, Sindarin",
+      "size": "Medium"
+    }
+  }
+]

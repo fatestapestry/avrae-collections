@@ -1,0 +1,59 @@
+<drac2>
+# Get context and load configuration
+check_data = load_yaml(get_gvar("856f9b7a-c299-4052-9e7f-5fcba2f919be"))
+using(
+    common_utils="0c6d5bca-a15d-4e45-a08d-48cf51411088",
+    lotr_utils="bf283fd7-585d-4530-b0e2-9e03eb643a96"
+)
+skills = check_data['skills']
+proficiencies = common_utils.PROFICIENCY_LEVELS
+skills_cvar = lotr_utils.LOTR_SKILLS
+footer = lotr_utils.FOOTER_CHECK
+
+# Get character
+ch = character()
+
+# Parse arguments
+args = &ARGS&
+if not args:
+    title = "No LOTR skill provided."
+    desc = f"**Usage**: `!lotrcheck <skill> [args]`\n\n"\
+           f"**Available Commands:**\n"\
+           f"• `!lotrcheck <skill> [args]` - Make a skill check\n"\
+           f"• `!lotrcheck list` - View all skills and their status\n"\
+           f"• `!lotrcheck setup <skill> [none|half|pro|exp]` - Configure a skill\n"\
+           f"• `!lotrcheck remove <skill>` - Remove a skill setup\n\n"
+    return common_utils.embed_msg(title=title, desc=desc, footer=footer)
+
+# Validate skill
+skill = args[0].lower()
+if skill not in skills:
+    title = "Unknown LOTR Skill"
+    desc = f"Invalid skill `{skill}`.\nValid Skills: `{[s for s in skills.keys()]}`"
+    return common_utils.embed_msg(title=title, desc=desc, footer=footer)
+
+# Check skill setup
+char_skills = load_yaml(ch.get_cvar(skills_cvar, '{}'))
+if skill not in char_skills:
+    title = "Skill Not Set Up"
+    desc = f"Skill `{skill}` not set up.\nUse `!lotrcheck setup {skill} [none|half|pro|exp]` to set up."
+    return common_utils.embed_msg(title=title, desc=desc, footer=footer)
+
+# Get the base ability and proficiency level
+skill_data = skills[skill]
+ability = skill_data['ability']
+prof_type = char_skills[skill]
+
+# Calculate proficiency bonus
+prof_multiplier = proficiencies[prof_type][0]
+if prof_multiplier > 0:
+    bonus = floor(ch.stats.prof_bonus * prof_multiplier) if prof_multiplier == 0.5 else ch.stats.prof_bonus * prof_multiplier
+    args.append(f'-b {bonus}["{proficiencies[prof_type][1]}"]')
+
+# Add title override to show our custom skill name
+args.append(f'-title "{name} makes a {skill_data["name"]} check!"')
+
+# Pass through to Avrae's check system with our custom title
+return f'check {ability} {" ".join(args[1:])}'
+
+</drac2>

@@ -1,0 +1,9 @@
+{
+  "elvenskill": {
+    "fail": "True",
+    "cc": "Elven-Skill",
+    "title": "[name] uses their Elven-Skill feature!",
+    "desc": "By virtue of their birthright, Elves are capable of reaching levels of finesse unattainable by mortals. If you are not miserable and make an ability check that lets you add your proficiency bonus, you can obtain a magical success. You can do so a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.",
+    "effect": "Magical Success||1"
+  }
+}

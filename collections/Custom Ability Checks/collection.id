@@ -1,0 +1,12 @@
+{
+  "aliases": {
+    "chk list": "6127eb0f807f1f1578ee9c3c", 
+    "chk add": "6127f4fc807f1f1578ee9c44", 
+    "chk": "6127dc67807f1f1578ee9c37", 
+    "chk remove": "6127f576807f1f1578ee9c45", 
+    "chk import": "612958db4025af98353b2272"
+  }, 
+  "collection": "6127dbf9807f1f1578ee9c35", 
+  "name": "Custom Ability Checks", 
+  "snippets": {}
+}

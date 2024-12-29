@@ -1,0 +1,1 @@
+If a Player-hero is making an ability check that can plausibly be affected by a flaw, the check has disadvantage.

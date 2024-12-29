@@ -1,0 +1,1 @@
+**Open—DC 15.** This is the default attitude for an audience, representing a general inclination to listen to what the Company has to say.

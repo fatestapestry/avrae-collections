@@ -1,0 +1,56 @@
+{
+  "paths": {
+    "Captain": {
+      "name": "Lure of Power",
+      "flaws": ["Resentful", "Arrogant", "Overconfident", "Tyrannical"],
+      "description": "Power is the quintessential temptation, and provides the Shadow with an easy way to win the hearts of those who desire it."
+    },
+    "Champion": {
+      "name": "Curse of Vengeance",
+      "flaws": ["Spiteful", "Brutal", "Cruel", "Murderous"],
+      "description": "Individuals who live by the sword are ever tempted to draw it when their will is thwarted or when they deem their honour to have been impugned by an insult."
+    },
+    "Messenger": {
+      "name": "Wandering-Madness",
+      "flaws": ["Idle", "Forgetful", "Uncaring", "Cowardly"],
+      "description": "Travelling afar might be the duty chosen by a Messenger, but it carries the risk of never finding a place to fight for."
+    },
+    "Scholar": {
+      "name": "Lure of Secrets",
+      "flaws": ["Haughty", "Scornful", "Scheming", "Traitorous"],
+      "description": "Inquisitiveness and curiosity are desirable virtues in an individual, but knowledge can be put to malicious use, and learned individuals can look down on others as ignorant fools."
+    },
+    "Treasure Hunter": {
+      "name": "Dragon-Sickness",
+      "flaws": ["Grasping", "Mistrustful", "Deceitful", "Thieving"],
+      "description": "Adventurers who find themselves on the Road to seek lost riches run the risk of catching the age-old disease capable of turning a pile of enchanted gold into bitter ashes."
+    },
+    "Warden": {
+      "name": "Path of Despair",
+      "flaws": ["Troubled", "Wavering", "Guilt-ridden", "Fearful"],
+      "description": "Self-doubt is often the way that the Shadow chooses to reach the heart of those who oppose it."
+    }
+  },
+  "shadowSources": {
+    "dread": {
+      "save": "charisma",
+      "dc": 15,
+      "description": "Terror is a spear in the hand of the Enemy."
+    },
+    "greed": {
+      "save": "wisdom",
+      "dc": 15,
+      "description": "Heroes risk being corrupted by their own desire whenever they put their hands on gold and precious objects that were tainted by laying in the dark for a long time."
+    },
+    "misdeed": {
+      "save": "wisdom",
+      "dc": 15,
+      "description": "A special instance of Shadow gain that cannot be reduced or cancelled by a saving throw of any kind."
+    },
+    "sorcery": {
+      "save": "intelligence",
+      "dc": 15,
+      "description": "Adventurers gain Shadow when they fall victim to the dreadful spells of the Enemy and his minions."
+    }
+  }
+}

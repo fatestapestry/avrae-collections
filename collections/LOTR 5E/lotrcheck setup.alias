@@ -1,0 +1,49 @@
+<drac2>
+# Get context and load configuration
+check_data = load_yaml(get_gvar("856f9b7a-c299-4052-9e7f-5fcba2f919be"))
+using(
+    common_utils="0c6d5bca-a15d-4e45-a08d-48cf51411088",
+    lotr_utils="bf283fd7-585d-4530-b0e2-9e03eb643a96"
+)
+skills = check_data['skills']
+proficiencies = common_utils.PROFICIENCY_LEVELS
+skills_cvar = lotr_utils.LOTR_SKILLS
+footer = lotr_utils.FOOTER_CHECK
+
+# Get character context
+ch = character()
+
+# Input validation
+args = &ARGS&
+if len(args) < 2:
+    title = "Invalid Arguments"
+    desc = "Usage: `!lotrcheck setup <skill> [none|half|pro|exp]`"
+    return common_utils.embed_msg(title=title, desc=desc, footer=footer)
+
+# Validate the skill name
+skill = args[0].lower()
+if skill not in skills:
+    title = "Invalid LOTR Skill"
+    desc = f"Unknown skill: `{skill}`\nValid Skills: `{[s for s in skills.keys()]}`"
+    return common_utils.embed_msg(title=title, desc=desc, footer=footer)
+
+# Determine proficiency level (default to 'none' if not specified)
+prof_type = args[1].lower()
+if prof_type not in proficiencies:
+    title = "Invalid Proficiency"
+    desc = f"Valid Proficiencies: `{[p for p in proficiencies.keys()]}`"
+    return common_utils.embed_msg(title=title, desc=desc, footer=footer)
+
+# Load existing skills and update
+char_skills = load_yaml(ch.get_cvar(skills_cvar, '{}'))
+char_skills[skill] = prof_type
+ch.set_cvar(skills_cvar, dump_json(char_skills))
+
+# Create response message
+skill_data = skills[skill]
+title = f"{name}'s LOTR skill {skill_data['name']}  set up"
+desc = f"{skill_data['name']}, {proficiencies[prof_type][1]}\n\n"
+field = f"{skill_data['name']} ({skill_data['ability'].title()})|*{skill_data['description']}*"
+return common_utils.embed_msg(title=title, desc=desc, field=field, footer=footer)
+
+</drac2>

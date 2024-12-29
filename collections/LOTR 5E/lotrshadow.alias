@@ -1,0 +1,75 @@
+<drac2>
+using(
+    common_utils="0c6d5bca-a15d-4e45-a08d-48cf51411088",
+    lotr_utils="bf283fd7-585d-4530-b0e2-9e03eb643a96"
+)
+footer = lotr_utils.FOOTER_SHADOW
+
+# Parse args
+args = &ARGS&
+if not args:
+    title = "Validation Error"
+    desc = "Missing amount. Usage: `!lotrshadow <amt> [args]`"
+    return common_utils.embed_msg(title=title, desc=desc, footer=footer)
+
+# Parse amount, accepting +/- prefix
+amt_str = args[0]
+try:
+    is_increment = amt_str.startswith(('+', '-'))
+    amt = int(amt_str)
+except:
+    title = "Validation Error"
+    desc = f"Invalid amount: `{amt_str}`. Must be an integer or increment (e.g., 1, +1, -1)"
+    return common_utils.embed_msg(title=title, desc=desc, footer=footer)
+
+# Check scar flag
+is_scar = 'scar' in args[1:] if len(args) > 1 else False
+
+# Get character and validate shadow path
+ch = character()
+valid, error = lotr_utils.validate_shadow_path(ch)
+if not valid:
+    title = "Validation Error"
+    desc = error
+    return common_utils.embed_msg(title=title, desc=desc, footer=footer)
+
+# Get appropriate counter
+counter = lotr_utils.CC_SHADOW_SCARS if is_scar else lotr_utils.CC_SHADOW_POINTS
+counter_obj = ch.cc(counter)
+current = counter_obj.value
+
+# Calculate new value
+new_value = current + amt if is_increment else amt
+
+# Validate we won't go below minimum
+if new_value < counter_obj.min:
+    title = "Error"
+    desc = f"Cannot reduce {counter} below minimum value of {counter_obj.min}"
+    return common_utils.embed_msg(title=title, desc=desc, footer=footer)
+
+# Apply the change (will automatically clip to max)
+ch.set_cc(counter, new_value)
+actual_new = ch.get_cc(counter)  # Get the actual value after potential clipping
+
+# If modifying scars, update Shadow Points minimum value
+if is_scar:
+    delta = actual_new - current  # Calculate actual change after any clipping
+    shadow_points = ch.cc(lotr_utils.CC_SHADOW_POINTS)
+    new_min = max(0, shadow_points.min + delta)
+
+    # Update Shadow Points minimum value
+    ch.edit_cc(lotr_utils.CC_SHADOW_POINTS, minVal=str(new_min))
+
+    # If current Shadow Points are below new minimum, increase them
+    if shadow_points.value < new_min:
+        ch.set_cc(lotr_utils.CC_SHADOW_POINTS, new_min)
+
+# Build appropriate title based on action
+title = f'"{ch.name}\'s '
+title += lotr_utils.CC_SHADOW_SCARS if is_scar else lotr_utils.CC_SHADOW_POINTS
+title += ' Increased"' if actual_new > current else ' Reduced"'
+
+# Display updated status
+return lotr_utils.create_full_shadow_display(ch, title)
+
+</drac2>

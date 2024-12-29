@@ -1,0 +1,28 @@
+<drac2>
+args, ch, out = &ARGS&, character(), get_gvar("82433f32-d46d-4e22-9673-0cb9befc555e") + ' -f "*'
+if not args:
+  return out + 'To add a new check, you must specify the name of the new check and either its base stat or the standard 5E check to be replaced.*"'
+if len(args) < 2:
+  return out + 'To add a new check, you must specify the base stat of the new check.\nYou may also specify a standard 5E check to be replaced by the new check instead of a base stat.*"'
+if len(args) > 2 and not args[2] in "0.512":
+  return out + 'The proficiency multiplier you entered is not valid:* ***' + args[2] + '***. *\nYou must specify the proficiency multiplier as 0, 0.5, 1, or 2 (defaults to 0).\nThese correspond to having no proficiency (0), half-proficiency (0.5), proficiency (1), or expertise (2).*"'
+
+ckey, cname = ''.join(args[0].lower().split()), args[0].title()
+new = {ckey: {"name": cname, "base": args[1].title(), "prof": (args[2] if len(args) > 2 else "0"), "args": (" ".join(args[3:]) if len(args) > 3 else "", "source": "User")}}
+end = ' custom check:* ***' + cname + '***."'
+
+checks = ch.cvars['checks'] if "checks" in ch.cvars else ""
+checks = load_json(checks.replace("'",'"') if "'" in checks else checks) if checks else ""
+if not checks:
+  ch.set_cvar("checks", dump_json(new))
+  return out + 'Added first' + end
+
+if typeof(checks) in 'SafeList':
+  checks = {x.name.lower():x for x in checks}
+elif typeof(checks) not in 'SafeDict':
+  err('Your `checks` character variable (cvar) is not formatted correctly. Use `!cvar checks` to look at it or `!cvar delete checks` to start fresh.')
+
+checks.update(new)
+ch.set_cvar("checks", dump_json(checks))
+return out + ('Updated' if [x for x in checks if x in ckey] else 'Added') + end
+</drac2>

@@ -1,0 +1,35 @@
+<drac2>
+# Get context and load configuration
+check_data = load_yaml(get_gvar("856f9b7a-c299-4052-9e7f-5fcba2f919be"))
+using(
+    common_utils="0c6d5bca-a15d-4e45-a08d-48cf51411088",
+    lotr_utils="bf283fd7-585d-4530-b0e2-9e03eb643a96"
+)
+skills = check_data['skills']
+proficiencies = common_utils.PROFICIENCY_LEVELS
+skills_cvar = lotr_utils.LOTR_SKILLS
+footer = lotr_utils.FOOTER_CHECK
+# Get character
+ch = character()
+
+# Load character's configured skills
+char_skills = load_yaml(ch.get_cvar(skills_cvar, '{}'))
+
+# Create the skill listing with formatting
+skill_fields = []
+for skill_key, skill_data in skills.items():
+    # Determine current proficiency status
+    status = "Not Set Up"
+    if skill_key in char_skills:
+        prof_type = char_skills[skill_key]
+        status = proficiencies[prof_type][1]  # Get the display name for this proficiency level
+
+    # Create the field text with proper formatting
+    field_text = f"Status: {status}"
+    skill_fields.append(f'{skill_data["name"]} ({skill_data["ability"].title()})|{field_text}')
+
+# Build and return the embed
+title = f"{name}'s LOTR Skills"
+return common_utils.embed_msg(title, fields=skill_fields, footer=footer)
+
+</drac2>

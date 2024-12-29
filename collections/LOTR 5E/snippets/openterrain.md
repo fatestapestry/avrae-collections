@@ -1,0 +1,1 @@
+**Open Terrain - DC 15.** The events takes place in a hex suggesting neither hard terrain nor roads.

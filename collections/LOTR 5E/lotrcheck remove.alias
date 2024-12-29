@@ -1,0 +1,49 @@
+<drac2>
+# Get context and load configuration
+check_data = load_yaml(get_gvar("856f9b7a-c299-4052-9e7f-5fcba2f919be"))
+using(
+    common_utils="0c6d5bca-a15d-4e45-a08d-48cf51411088",
+    lotr_utils="bf283fd7-585d-4530-b0e2-9e03eb643a96"
+)
+skills = check_data['skills']
+proficiencies = common_utils.PROFICIENCY_LEVELS
+skills_cvar = lotr_utils.LOTR_SKILLS
+footer = lotr_utils.FOOTER_CHECK
+
+# Get character
+ch = character()
+
+# Parse arguments
+args = &ARGS&
+if len(args) < 1:
+    title = "LOTR Skill Remove"
+    desc = "**Usage**: `!lotrcheck remove <skill>`"
+    return common_utils.embed_msg(title=title, desc=desc, footer=footer)
+
+# Validate the skill name
+skill = args[0].lower()
+if skill not in skills:
+    title = "Unknown LOTR Skill"
+    desc = f"`{skill}` is not recognized.\nValid Skills: `{[s for s in skills.keys()]}`"
+    return common_utils.embed_msg(title=title, desc=desc, footer=footer)
+
+# Load existing skills
+char_skills = load_yaml(ch.get_cvar(skills_cvar, '{}'))
+
+# Check if skill is set up
+if skill not in char_skills:
+    title = "Skill Not Found"
+    desc = f"`{skills[skill]['name']}` is not currently set up."
+    return common_utils.embed_msg(title=title, desc=desc, footer=footer)
+
+# Remove the skill
+char_skills.pop(skill)
+ch.set_cvar(skills_cvar, dump_json(char_skills))
+
+# Create response message
+skill_data = skills[skill]
+title = "LOTR Skill Removed"
+desc = f"Removed setup for `{skill_data['name']} ({skill_data['ability'].title()})`."
+return common_utils.embed_msg(title=title, desc=desc, footer=footer)
+
+</drac2>

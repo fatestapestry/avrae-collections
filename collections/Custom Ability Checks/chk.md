@@ -1,0 +1,1 @@
+This command replaces the existing "check" command, and accepts all the same arguments. However, in addition to making checks with the default list of skills and abilities it will also make any custom checks you've defined using "chk add" and those you've added using "chk import".

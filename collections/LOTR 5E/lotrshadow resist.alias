@@ -1,0 +1,99 @@
+<drac2>
+shadow_data = load_json(get_gvar("4160bb62-8791-4239-941c-b7805e5351b6"))
+using(
+   lotr_utils="bf283fd7-585d-4530-b0e2-9e03eb643a96",
+   common_utils="0c6d5bca-a15d-4e45-a08d-48cf51411088"
+)
+footer = lotr_utils.FOOTER_SHADOW
+
+# Parse basic args
+args = &ARGS&
+if len(args) < 2:
+    title = "Validation Error"
+    desc = f"Missing arguments.\nUsage: `!lotrshadow resist <source> <amt> [args]`"
+    return common_utils.embed_msg(title=title, desc=desc, footer=footer)
+
+# Validate source and amount
+source = args[0].lower()
+
+
+if source not in shadow_data["shadowSources"]:
+    title = "Validation Error"
+    desc = f"Invalid source `{source}`.\nMust be one of: `{[s for s in shadow_data['shadowSources'].keys()]}`"
+    return common_utils.embed_msg(title=title, desc=desc, footer=footer)
+
+source_data = shadow_data["shadowSources"][source]
+
+try:
+    amt = int(args[1])
+    if amt <= 0:
+        title = "Validation Error"
+        desc = f"Invalid amt `{amt}`. Amount must be a positive integer"
+        return common_utils.embed_msg(title=title, desc=desc, footer=footer)
+except:
+    title = "Validation Error"
+    desc = f"Invalid amt `{args[1]}`. Amount must be a positive integer"
+    return common_utils.embed_msg(title=title, desc=desc, footer=footer)
+
+# Get character and validate shadow path
+ch = character()
+valid, path_error = lotr_utils.validate_shadow_path(ch)
+if not valid:
+    title = "Validation Error"
+    return common_utils.embed_msg(title=title, desc=desc, footer=footer)
+
+# Parse remaining args
+args = argparse(args[2:])
+
+# Get ability
+ability_arg = args.last('ability', default=source_data['save']).lower()
+ability = common_utils.ABILITY_NAMES.get(ability_arg)
+if not ability:
+    title = "Validation Error"
+    desc = f"Invalid ability: {ability}."
+    return common_utils.embed_msg(title=title, desc=desc, footer=footer)
+
+# Get DC
+dc = int(args.last('dc', default=source_data['dc']))
+
+# Check if character is miserable
+shadow_pts, status = lotr_utils.get_shadow_status(ch)
+is_miserable = status == lotr_utils.STATUS_MISERABLE or "miserable" in args
+
+# Make save roll
+result, nat_roll = common_utils.make_save_roll(ch, ability, args.adv(), args.get('b'))
+auto_fail = is_miserable and nat_roll <= 2
+
+# Calculate success and shadow reduction
+success = result.total >= dc and not auto_fail
+reduction = 2 if result.total >= (dc + 5) else 1 if success else 0
+final_shadow = max(0, amt - reduction)
+
+# Apply shadow points
+ch.set_cc(lotr_utils.CC_SHADOW_POINTS, ch.get_cc(lotr_utils.CC_SHADOW_POINTS) + final_shadow)
+
+desc_parts = [
+    f"{ch.name} makes a {ability} Save!",
+    f"**DC {dc}**",
+    str(result)
+]
+
+if auto_fail:
+    desc_parts.append("**Critical Failure!** (Miserable)")
+elif success:
+    desc_parts.append("**Success!**")
+    if reduction > 0:
+        desc_parts.append(f"*(Shadow gain reduced by {reduction})*")
+else:
+    desc_parts.append("**Failure!**")
+
+desc_parts.append("")  # Add blank line for spacing
+desc_parts.append(f"{final_shadow} Shadow points gained")
+desc_parts.append(f"**Shadow Points:** {ch.get_cc(lotr_utils.CC_SHADOW_POINTS)}/{ch.stats.wisdom}")
+
+desc = "\n".join(desc_parts)
+title = f"{ch.name} attempts to resist the Shadow ({source.title()})!"
+
+return common_utils.embed_msg(title=title, desc=desc, footer=footer)
+
+</drac2>

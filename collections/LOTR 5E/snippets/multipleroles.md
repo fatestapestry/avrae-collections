@@ -1,0 +1,1 @@
+**Multiple Roles (-5).** Player-heroes who take on multiple roles take a -5 penalty to this check.

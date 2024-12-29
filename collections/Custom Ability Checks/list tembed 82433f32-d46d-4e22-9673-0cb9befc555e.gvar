@@ -1,0 +1,17 @@
+tembed -title "<name>'s custom ability checks:" -desc "<drac2>
+ch = character()
+chks = ch.cvars['checks']if "checks" in ch.cvars else ""
+chks = load_json(chks.replace("'",'"') if "'" in chks else chks) if chks else ""
+if not chks:
+  return f'{name} has no custom ability checks.'
+
+if typeof(chks) in 'SafeList':
+  chks = {x.name.lower():x for x in chks}
+  ch.set_cvar('checks', dump_json(chks))
+elif typeof(chks) not in 'SafeDict':
+  err('Your `checks` character variable (cvar) is not formatted correctly. Use `!cvar checks` to look at it or `!cvar delete checks` to start fresh.')
+
+clist = [(f'{x.name} ({x.base})' + (f': Profiency: {x.prof}x' if float(x.prof) > 0 else "") + (f', Args: {x.args}' if x.args else "")) for y, x in chks.items() if 'minprof' not in y]
+clist.sort()
+return "\n".join(clist)
+</drac2>" -footer "!chk was created by @brandonjdehart#2020" -thumb <image> -color <color> 

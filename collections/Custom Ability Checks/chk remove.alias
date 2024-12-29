@@ -1,0 +1,25 @@
+<drac2>
+ch, out, chks = character(), get_gvar("82433f32-d46d-4e22-9673-0cb9befc555e"), get('checks','{}')
+chks = load_json(chks.replace("'",'"') if "'" in chks else chks) if chks else ""
+if not chks:
+  return out
+
+if typeof(chks) in 'SafeList':
+  chks = {''.join(x.name.lower().split()):x for x in chks}
+  ch.set_cvar('checks',dump_json(chks))
+elif typeof(chks) not in 'SafeDict':
+  err('Your `checks` character variable (cvar) is not formatted correctly. Use `!cvar checks` to look at it or `!cvar delete checks` to start fresh.')
+
+args = &ARGS&
+if not args:
+  return out + '-f "*You have not specified which check to remove.\nChoose one of the checks above to remove it.*"'
+
+a = ''.join(args[0].lower().split())
+if a not in chks:
+  return out + '-f "*Could not find custom check named* ***' + args[0] + '***.\n*Remember: the names must be identical.*"'
+
+removed = chks.pop(a)
+ch.set_cvar("checks", dump_json(chks))
+return out + '-f "*Removed check:* ***' + removed.name + '***."'
+
+</drac2>

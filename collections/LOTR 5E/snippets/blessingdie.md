@@ -1,0 +1,1 @@
+**Blessing Die.** The bearer of a Marvellous Artefact or Wondrous Item can roll a Blessing die and add the number rolled to the ability checks affected by the blessings. The Blessing die is determined by the bearer’s proficiency bonus, as shown in the table below. A character can roll only one Blessing die on each check.

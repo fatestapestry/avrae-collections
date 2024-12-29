@@ -1,0 +1,1 @@
+**Reluctant—DC 20.** The encountered group has reasons to be unwilling to help the Company, possibly due to a level of prejudice or other source of concern.

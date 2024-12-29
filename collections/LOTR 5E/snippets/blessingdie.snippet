@@ -1,0 +1,5 @@
+-b <drac2>
+blessing_die = "1d8" if int(get("proficiencyBonus"))==4 else ("1d6" if int(get("proficiencyBonus"))==3 else "1d4")
+return f'{blessing_die}["Blessing Die"]'
+</drac2>
+-f "Blessing Die|The bearer of a Marvellous Artefact or Wondrous Item can roll a Blessing die and add the number rolled to the ability checks affected by the blessings. The Blessing die is determined by the bearer’s proficiency bonus. A character can roll only one Blessing die on each check."

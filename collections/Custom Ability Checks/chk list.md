@@ -1,0 +1,1 @@
+Lists the active character's available checks.

@@ -1,0 +1,107 @@
+{
+  "events": {
+    "terriblemisfortune": {
+      "dc_mod": 3,
+      "abbr": "tm",
+      "field_title": "Terrible Misfortune (1-2)",
+      "field_text": "The fatigue saving throw DC increases by +3. In addition, if the check fails, the target must make a Dexterity saving throw*. On a failed save, the target is reduced to 0 hit points. On a successful save, the target loses half of their maximum hit points (rounded down)."
+    },
+    "despair": {
+      "dc_mod": 2,
+      "abbr": "dp",
+      "field_title": "Despair (3-4)",
+      "field_text": "The fatigue saving throw DC increases by +2. In addition, if the check fails, everyone in the Company gains 2 (1d3) Shadow points (Charisma saving throw* to resist, see Chapter 8)."
+    },
+    "illchoices": {
+      "dc_mod": 2,
+      "abbr": "ic",
+      "field_title": "Ill Choices (5-6)",
+      "field_text": "The fatigue saving throw DC increases by +2. In addition, if the check fails, the target gains 1 Shadow point (Wisdom saving throw* to resist, see Chapter 8)."
+    },
+    "mishap": {
+      "dc_mod": 1,
+      "abbr": "mp",
+      "field_title": "Mishap (7-14)",
+      "field_text": "The fatigue saving throw DC increases by +1. If the check fails, the DC increases by +2 instead, and the length of the journey increases by 1 day."
+    },
+    "shortcut": {
+      "dc_mod": 1,
+      "abbr": "sc",
+      "field_title": "Short Cut (15-17)",
+      "field_text": "The fatigue saving throw DC increases by +1. If the check succeeds, reduce the length of the journey by 1 day, to a minimum of 1 day."
+    },
+    "chancemeeting": {
+      "dc_mod": 1,
+      "abbr": "cm",
+      "field_title": "Chance-meeting (18-19)",
+      "field_text": "The fatigue saving throw DC increases by +1. If the check succeeds, the DC does not increase, and the Loremaster improvises an encounter that favours the Company."
+    },
+    "joyfulsight": {
+      "dc_mod": 0,
+      "abbr": "js",
+      "field_title": "Joyful Sight (20)",
+      "field_text": "If the check succeeds, everyone in the Company gains inspiration."
+    }
+  },
+  "roll_table": {
+    "1": "terriblemisfortune",
+    "2": "terriblemisfortune",
+    "3": "despair",
+    "4": "despair",
+    "5": "illchoices",
+    "6": "illchoices",
+    "7": "mishap",
+    "8": "mishap",
+    "9": "mishap",
+    "10": "mishap",
+    "11": "mishap",
+    "12": "mishap",
+    "13": "mishap",
+    "14": "mishap",
+    "15": "shortcut",
+    "16": "shortcut",
+    "17": "shortcut",
+    "18": "chancemeeting",
+    "19": "chancemeeting",
+    "20": "joyfulsight"
+  },
+  "terrain": {
+    "hardterrain": {
+        "dc": 20,
+        "title": "Hard Terrain - DC 20",
+        "desc": "The event takes place in a hex suggesting a hard terrain."
+    },
+    "openterrain": {
+        "dc": 15,
+        "title": "Open Terrain - DC 15",
+        "desc": "The event takes place in a hex suggesting neither hard terrain nor roads."
+    },
+    "roads": {
+        "dc": 10,
+        "title": "Roads - DC 10",
+        "desc": "The events happens along a road."
+    }
+  },
+  "roles": {
+    "guide": {
+        "title": "Guide",
+        "skill": "travel",
+        "function": "In charge of all decisions concerning route, rest, and supplies."
+    },
+    "hunter": {
+        "title": "Hunter",
+        "skill": "hunting",
+        "function": "In charge of finding food in the wild."
+    },
+    "lookout": {
+        "title": "Look-out",
+        "skill": "perception",
+        "function": "In charge of keeping watch."
+    },
+    "scout": {
+        "title": "Scout",
+        "skill": "explore",
+        "function": "In charge of setting up camp, opening new trails."
+    }
+  }
+}

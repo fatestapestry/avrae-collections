@@ -1,0 +1,179 @@
+[
+  {
+    "Class": "Captain",
+    "hitDie": "d10",
+    "subclassLevel": 3,
+    "counters": [
+      {
+        "name": "Leadership",
+        "level": 1,
+        "value": 1,
+        "reset": "short",
+        "display": "bubble",
+        "classLevel": "CaptainLevel",
+        "desc": "As an action in combat, choose a number of friendly creatures (which can include yourself) within 30 feet of you who can see or hear you and who can understand you, up to twice your proficiency bonus. Each creature can gain temporary hit points equal to your Captain level + your Charisma modifier. These temporary hit points last until they are depleted or the creature finishes a short or long rest."
+      }
+    ]
+  },
+  {
+    "Class": "Captain",
+    "subclass": "Chieftain",
+    "counters": [
+      {
+        "name": "Challenge",
+        "level": 3,
+        "value": 1,
+        "reset": "short",
+        "display": "bubble",
+        "classLevel": "CaptainLevel",
+        "desc": "As a bonus action, you can issue a challenge to a creature you can see within 10 feet of you. You gain advantage on melee attack rolls against the creature for 1 minute or until it drops to 0 hit points or falls unconscious. The creature must make a Wisdom (Insight) check (DC 8 + your proficiency bonus + your Charisma modifier). On a failed check, the creature has disadvantage on attack rolls against targets other than you for the duration, until you attack another creature, if a creature friendly to you attacks the target, or if you end your turn more than 30 feet away from the target."
+      }
+    ]
+  },
+  {
+    "Class": "Captain",
+    "subclass": "Thane",
+    "counters": [
+      {
+        "name": "Bright Blade",
+        "level": 3,
+        "value": 1,
+        "reset": "short",
+        "display": "bubble",
+        "classLevel": "CaptainLevel",
+        "desc": "As a bonus action, you can imbue a melee weapon that you are holding with your bravery. For 1 minute, you add your Charisma modifier to attack rolls made with that weapon (with a minimum bonus of +1). For the duration of the effect, when you hit a creature, the next attack roll against the target made by an attacker other than you has advantage if the attack is made before the start of your next turn. If you are no longer holding or carrying this weapon, or if you fall unconscious, this effect ends."
+      }
+    ]
+  },
+  {
+    "Class": "Champion",
+    "hitDie": "d10",
+    "subclassLevel": 3,
+    "counters": [
+      {
+        "name": "Surge of Vigour",
+        "level": 1,
+        "value": 1,
+        "reset": "short",
+        "display": "bubble",
+        "classLevel": "ChampionLevel",
+        "desc": "You have a limited well of stamina that you can draw on to protect yourself from harm, or to push yourself beyond your normal limits for a moment. You can use a bonus action to either take the Attack, Dash, Disengage, or Dodge action, or to regain hit points equal to 1d8 + your Champion level + your Constitution modifier."
+      }
+    ]
+  },
+  {
+    "Class": "Champion",
+    "subclass": "Sharp-shooter",
+    "counters": []
+  },
+  {
+    "Class": "Champion",
+    "subclass": "Slayer",
+    "counters": []
+  },
+  {
+    "Class": "Messenger",
+    "hitDie": "d8",
+    "subclassLevel": 3,
+    "counters": []
+  },
+  {
+    "Class": "Messenger",
+    "subclass": "Counsellor",
+    "counters": []
+  },
+  {
+    "Class": "Messenger",
+    "subclass": "Herald",
+    "counters": []
+  },
+  {
+    "Class": "Scholar",
+    "hitDie": "d8",
+    "subclassLevel": 3,
+    "counters": [
+      {
+        "name": "Rhymes of Lore",
+        "level": 1,
+        "value": "intelligenceMod",
+        "reset": "long",
+        "display": "bubble",
+        "classLevel": "ScholarLevel",
+        "desc": "You can use a bonus action on your turn to choose one creature (including yourself) within 30 feet of you who can hear and understand you. That creature gains one Lore die, a d6. Once within the next minute, the creature can roll the die and add the number rolled to one ability check, attack roll, or saving throw it makes. The creature can wait until after seeing the roll before deciding to use the Lore die, but must decide before the Loremaster says whether the roll succeeds or fails. Once the Lore die is rolled, it is lost. A creature can have only one Lore die at a time."
+      }
+    ]
+  },
+  {
+    "Class": "Scholar",
+    "subclass": "Healing",
+    "counters": [
+      {
+        "name": "A Cure for Weariness",
+        "level": 7,
+        "value": "wisdomMod",
+        "reset": "long",
+        "display": "bubble",
+        "classLevel": "ScholarLevel",
+        "desc": "During a short rest, you can reduce a creature's exhaustion level by one. You can use this feature a number of times equal to your Wisdom modifier (minimum of once). You regain any expended uses when you finish a long rest."
+      }
+    ]
+  },
+  {
+    "Class": "Scholar",
+    "subclass": "Lore",
+    "counters": [
+      {
+        "name": "Words of Command",
+        "level": 7,
+        "value": "intelligenceMod",
+        "reset": "long",
+        "display": "bubble",
+        "classLevel": "ScholarLevel",
+        "desc": "When you roll a Lore die and add the number rolled to an ability check using a skill other than Medicine, you can obtain a magical success. You can use this feature a number of times equal to your Intelligence modifier (minimum of once). You regain any expended uses when you finish a long rest."
+      }
+    ]
+  },
+  {
+    "Class": "Treasure Hunter",
+    "hitDie": "d8",
+    "subclassLevel": 3,
+    "counters": []
+  },
+  {
+    "Class": "Treasure Hunter",
+    "subclass": "Burglar",
+    "counters": []
+  },
+  {
+    "Class": "Treasure Hunter",
+    "subclass": "Spy",
+    "counters": []
+  },
+  {
+    "Class": "Warden",
+    "hitDie": "d10",
+    "subclassLevel": 3,
+    "counters": [
+      {
+        "name": "Rumour of the Earth",
+        "level": 3,
+        "value": 1,
+        "reset": "short",
+        "display": "bubble",
+        "classLevel": "WardenLevel",
+        "desc": "You can use your action to focus your awareness on the region around you. You can sense whether and which of your favoured foes are present within a number of miles of you equal to your Wisdom modifier (minimum of 1; double this value if you are in your warded lands). This feature doesn't reveal the creatures' location or number."
+      }
+    ]
+  },
+  {
+    "Class": "Warden",
+    "subclass": "Forayer",
+    "counters": []
+  },
+  {
+    "Class": "Warden",
+    "subclass": "Hunter",
+    "counters": []
+  }
+]
+

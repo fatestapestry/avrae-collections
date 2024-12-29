@@ -1,0 +1,46 @@
+<drac2>
+using(
+    common_utils="0c6d5bca-a15d-4e45-a08d-48cf51411088",
+    lotr_utils="bf283fd7-585d-4530-b0e2-9e03eb643a96"
+)
+footer = lotr_utils.FOOTER_SHADOW
+
+# Validate character has shadow setup
+ch = character()
+valid, error = lotr_utils.validate_shadow_path(ch)
+if not valid:
+    title = "Validation Error"
+    return common_utils.embed_msg(title=title, desc=error, footer=footer)
+
+# Get current state and validate
+total, status = lotr_utils.get_shadow_status(ch)
+if total >= ch.stats.wisdom:
+    title = "Unable to Harden Will"
+    desc = "The Shadow has grown too great. You must face a bout of madness."
+    return common_utils.embed_msg(title=title, desc=error, footer=footer)
+
+# Get current values
+shadow_points = ch.cc(lotr_utils.CC_SHADOW_POINTS)
+shadow_scars = ch.cc(lotr_utils.CC_SHADOW_SCARS)
+
+# Validate we can add another scar
+if shadow_scars.value >= ch.stats.wisdom:
+    title = "Unable to Harden Will"
+    desc = "Cannot gain additional Shadow Scars - already at maximum."
+    return common_utils.embed_msg(title=title, desc=error, footer=footer)
+
+# Record points to be cleared
+points_to_clear = shadow_points.value - shadow_points.min
+
+# Add scar and update shadow points
+ch.set_cc(lotr_utils.CC_SHADOW_SCARS, shadow_scars.value + 1)
+new_min = shadow_points.min + 1
+ch.set_cc(lotr_utils.CC_SHADOW_POINTS, new_min)
+ch.edit_cc(lotr_utils.CC_SHADOW_POINTS, minVal=str(new_min))
+
+# Display results
+prefix = f"Cleared {points_to_clear} Shadow points and gained 1 Shadow Scar."
+title = f'"{ch.name} Hardens their Will"'
+return lotr_utils.create_brief_shadow_display(ch, title, prefix)
+
+</drac2>

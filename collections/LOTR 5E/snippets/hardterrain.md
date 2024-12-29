@@ -1,0 +1,1 @@
+**Hard Terrain - DC 20.** The event takes place in a hex suggesting a hard terrain.
