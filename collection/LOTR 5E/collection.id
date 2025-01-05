@@ -1,0 +1,32 @@
+{
+  "name": "Lord of the Rings\u2122 5E Utilities", 
+  "collection": "676227da4a35501676368bbe", 
+  "aliases": {
+    "lotrshadow resist": "6767b3305dfa2accdb8790d2", 
+    "lotrshadow path": "6767b3dd4a35501676368f59", 
+    "lotrshadow status": "676790ec5dfa2accdb8790cf", 
+    "lotrcheck list": "67622c9f5dfa2accdb878cf3", 
+    "lotrshadow hardenwill": "6767b3754a35501676368f58", 
+    "lotrevent": "677032f6720c2903c8abde97", 
+    "lotrshadow setup": "676618415dfa2accdb87906b", 
+    "lotrshadow madness": "6767b38c5dfa2accdb8790d3", 
+    "lotrcheck remove": "6762658a4a35501676368bdb", 
+    "lotrfatigue": "676d3adf5dfa2accdb879255", 
+    "lotrshadow": "676399d05dfa2accdb878e93", 
+    "lotrcheck": "676227e94a35501676368bbf", 
+    "lotrcheck setup": "67622f044a35501676368bc2"
+  }, 
+  "snippets": {
+    "blessingdie": "676d27b65dfa2accdb879253", 
+    "grevious": "676267e64a35501676368bdd", 
+    "flawed": "676c21514a3550167636906c", 
+    "openterrain": "676d17f54a355016763690d9", 
+    "keen": "6762671f4a35501676368bdc", 
+    "multipleroles": "676d0acf4a355016763690d6", 
+    "open": "676d09214a355016763690d5", 
+    "friendly": "676d08c85dfa2accdb87924a", 
+    "reluctant": "676d08a15dfa2accdb879249", 
+    "roads": "676d17c45dfa2accdb87924e", 
+    "hardterrain": "676d17a84a355016763690d8"
+  }
+}
