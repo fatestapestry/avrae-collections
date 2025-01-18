@@ -83,20 +83,17 @@
     }
   },
   "roles": {
-    "hunter": {
-        "title": "Hunter",
-        "skill": "hunting",
-        "function": "In charge of finding food in the wild."
+    "hunters": {
+        "title": "Hunters",
+        "skill": "hunting"
     },
-    "lookout": {
-        "title": "Look-out",
-        "skill": "perception",
-        "function": "In charge of keeping watch."
+    "lookouts": {
+        "title": "Look-outs",
+        "skill": "perception"
     },
-    "scout": {
-        "title": "Scout",
-        "skill": "explore",
-        "function": "In charge of setting up camp, opening new trails."
+    "scouts": {
+        "title": "Scouts",
+        "skill": "explore"
     }
   }
 }
