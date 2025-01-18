@@ -83,11 +83,6 @@
     }
   },
   "roles": {
-    "guide": {
-        "title": "Guide",
-        "skill": "travel",
-        "function": "In charge of all decisions concerning route, rest, and supplies."
-    },
     "hunter": {
         "title": "Hunter",
         "skill": "hunting",
