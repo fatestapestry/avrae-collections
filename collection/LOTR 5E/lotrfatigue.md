@@ -11,7 +11,6 @@ Performs a fatigue saving throw in the "Lord of the Rings" system. Calculates a 
   - `blessingdie` - Adds a blessing die to the saving throw.
   - `-mount <value>` - Adds a mount bonus to the saving throw.
   - `-event|e <event|abbr>` - Adds an event consequence modifier to the DC. Use either the event name or abbreviation.
-  - `autumn|winter` - Applies disadvantage due to seasonal conditions.
 
 ## Examples
 - Perform a fatigue saving throw with the default DC:  
@@ -22,8 +21,6 @@ Performs a fatigue saving throw in the "Lord of the Rings" system. Calculates a 
   `!lotrfatigue -dc 15`
 - Add an event modifier using its abbreviation:  
   `!lotrfatigue -e tm`
-- Roll with disadvantage for autumn conditions:  
-  `!lotrfatigue autumn`
 
 ## Notes
 - The base DC for the saving throw is 10 unless overridden by the `-dc` argument or modified by events.

@@ -48,10 +48,6 @@ if args.get('mount'):
 if args.get('b'):
     bonuses.extend(args.get('b'))
 
-# Check for autumn/winter override
-if 'autumn' in args or 'winter' in args:
-    adv = -1
-
 # Process events
 final_dc = dc
 
