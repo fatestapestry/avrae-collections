@@ -1,7 +1,7 @@
 `!lotrfatigue [args]`
 
 ## Description
-Performs a fatigue saving throw in the "Lord of the Rings" system. Calculates a saving throw result based on constitution, modifiers, and optional bonuses. Adjusts the difficulty class (DC) dynamically based on events and other conditions.
+Performs a fatigue saving throw for LOTR 5e. Calculates a saving throw result based on constitution, modifiers, and optional bonuses. Adjusts the difficulty class (DC) dynamically based on events and other conditions.
 
 ## Arguments
 - Optional arguments:
@@ -10,13 +10,14 @@ Performs a fatigue saving throw in the "Lord of the Rings" system. Calculates a 
   - `-b <value>` - Adds custom bonuses to the saving throw.
   - `blessingdie` - Adds a blessing die to the saving throw.
   - `-mount <value>` - Adds a mount bonus to the saving throw.
-  - `-event|e <event|abbr>` - Adds an event consequence modifier to the DC. Use either the event name or abbreviation.
+  - `-event|e <event|abbr>` - Adds an event consequence modifier to save DC. Supported events:
+`['terriblemisfortune|tm', 'despair|dp', 'illchoices|ic', 'mishap|mh', 'shortcut|sc', 'chancemeeting|cm', 'joyfulsight|js']`
 
 ## Examples
 - Perform a fatigue saving throw with the default DC:  
   `!lotrfatigue`
 - Add a blessing die and apply a mount bonus of 3:  
-  `!lotrfatigue blessingdie -mount 3`
+  `!lotrfatigue -event despair blessingdie -mount 3`
 - Apply a custom DC of 15:  
   `!lotrfatigue -dc 15`
 - Add an event modifier using its abbreviation:  

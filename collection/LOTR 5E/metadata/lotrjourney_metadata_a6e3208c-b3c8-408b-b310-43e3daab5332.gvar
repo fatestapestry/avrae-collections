@@ -20,7 +20,7 @@
     },
     "mishap": {
       "dc_mod": 1,
-      "abbr": "mp",
+      "abbr": "mh",
       "field_title": "Mishap (7-14)",
       "field_text": "The fatigue saving throw DC increases by +1. If the check fails, the DC increases by +2 instead, and the length of the journey increases by 1 day."
     },
