@@ -83,25 +83,17 @@
     }
   },
   "roles": {
-    "guide": {
-        "title": "Guide",
-        "skill": "travel",
-        "function": "In charge of all decisions concerning route, rest, and supplies."
+    "hunters": {
+        "title": "Hunters",
+        "skill": "hunting"
     },
-    "hunter": {
-        "title": "Hunter",
-        "skill": "hunting",
-        "function": "In charge of finding food in the wild."
+    "lookouts": {
+        "title": "Look-outs",
+        "skill": "perception"
     },
-    "lookout": {
-        "title": "Look-out",
-        "skill": "perception",
-        "function": "In charge of keeping watch."
-    },
-    "scout": {
-        "title": "Scout",
-        "skill": "explore",
-        "function": "In charge of setting up camp, opening new trails."
+    "scouts": {
+        "title": "Scouts",
+        "skill": "explore"
     }
   }
 }
