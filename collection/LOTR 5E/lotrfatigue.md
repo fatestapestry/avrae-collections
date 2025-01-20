@@ -9,28 +9,24 @@ Performs a fatigue saving throw in the "Lord of the Rings" system. Calculates a 
   - `-dc <value>` - Sets a custom difficulty class (DC) for the saving throw. Defaults to 10.
   - `-b <value>` - Adds custom bonuses to the saving throw.
   - `blessingdie` - Adds a blessing die to the saving throw.
-  - `multipleroles` - Applies a -5 penalty for taking multiple roles during the journey.
   - `-mount <value>` - Adds a mount bonus to the saving throw.
   - `-event|e <event|abbr>` - Adds an event consequence modifier to the DC. Use either the event name or abbreviation.
-  - `autumn|winter` - Applies disadvantage due to seasonal conditions.
 
 ## Examples
 - Perform a fatigue saving throw with the default DC:  
   `!lotrfatigue`
 - Add a blessing die and apply a mount bonus of 3:  
   `!lotrfatigue blessingdie -mount 3`
-- Apply a custom DC of 15 with multiple roles penalty:  
-  `!lotrfatigue -dc 15 multipleroles`
+- Apply a custom DC of 15:  
+  `!lotrfatigue -dc 15`
 - Add an event modifier using its abbreviation:  
   `!lotrfatigue -e tm`
-- Roll with disadvantage for autumn conditions:  
-  `!lotrfatigue autumn`
 
 ## Notes
 - The base DC for the saving throw is 10 unless overridden by the `-dc` argument or modified by events.
 - Advantage or disadvantage can be applied directly using `adv` or `dis`.
 - Events modify the DC dynamically. You can add multiple events using `-e <event|abbr>` or `-event <event|abbr>`.
-- Mount bonuses, blessing dice, and penalties for multiple roles are automatically factored into the roll if specified.
+- Mount bonuses and blessing dice are automatically factored into the roll if specified.
 - Designed for use with the "Lord of the Rings" Roleplaying system.
 
 ## Issues?
