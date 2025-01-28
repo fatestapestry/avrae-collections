@@ -61,7 +61,7 @@ documentation_generator:
 
     ## Notes
     - Provide additional clarifications or setup requirements.
-    - Do not include details of the internal code logic.
+    - Do not include details of the internal code logic, e.g. gvar references, gvar id etc
 
     ## Issues?
     You can file reports and feature requests, as well as see the source code, 

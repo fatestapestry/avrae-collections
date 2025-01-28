@@ -1,0 +1,1 @@
+**Ear (+4 AC)** - Ears are the organs used to hear. Creatures without visible ears are not susceptible to called shots to that location.

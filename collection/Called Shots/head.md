@@ -1,0 +1,1 @@
+**Head (+2 AC)** - Called shots to the head are tricky, as most creatures show some skill at dodging attacks aimed at their faces. Some creatures, such as otyughs and purple worms, lack a proper head altogether.

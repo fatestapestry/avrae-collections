@@ -1,9 +1,9 @@
-# LOTR 5E Metadata gvars
+# lotr 5e metadata gvars
 METADATA_SHADOW = "4160bb62-8791-4239-941c-b7805e5351b6"
 METADATA_CHECK = "856f9b7a-c299-4052-9e7f-5fcba2f919be"
 METADATA_JOURNEY = "a6e3208c-b3c8-408b-b310-43e3daab5332"
 
-# Utils gvars
+# utils gvars
 UTILS_COMMON = "0c6d5bca-a15d-4e45-a08d-48cf51411088"
 
 # Status Constants
@@ -19,16 +19,19 @@ CC_SHADOW_SCARS = "Shadow Scars"
 SHADOW_PATH = "lotrShadowPath"
 LOTR_SKILLS = "lotrSkills"
 
-FOOTER_SHADOW = "!help lotrshadow for more info | Developed by @noralf#0"
-FOOTER_CHECK = "!help lotrcheck for more info | Developed by @noralf#0"
-FOOTER_EVENT = "!help lotrevent for more info | Developed by @noralf#0"
-FOOTER_FATIGUE = "!help lotrfatigue for more info | Developed by @noralf#0"
-
+# snippet params
+MULTIPLE_ROLES_PENALTY = -5
 BLESSING_DIE = {
     2: "1d4",
     3: "1d6",
     4: "1d8"
 }
+
+# footers
+FOOTER_SHADOW = "!help lotrshadow for more info | Developed by @noralf#0"
+FOOTER_CHECK = "!help lotrcheck for more info | Developed by @noralf#0"
+FOOTER_EVENT = "!help lotrevent for more info | Developed by @noralf#0"
+FOOTER_FATIGUE = "!help lotrfatigue for more info | Developed by @noralf#0"
 
 using(
     common_utils=UTILS_COMMON

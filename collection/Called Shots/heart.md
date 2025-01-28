@@ -1,0 +1,1 @@
+**Heart (+4 AC)** - A called shot to the heart represents an attempt at a killing blow. A called shot to the heart can be used for any small, likely fatal location on a creature.

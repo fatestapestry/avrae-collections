@@ -1,0 +1,1 @@
+**Wings (+2 AC)** - Wings are also considered to be arms for the purposes of a called shot.

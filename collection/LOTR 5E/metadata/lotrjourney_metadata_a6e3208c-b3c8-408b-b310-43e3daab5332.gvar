@@ -4,7 +4,7 @@
       "dc_mod": 3,
       "abbr": "tm",
       "field_title": "Terrible Misfortune (1-2)",
-      "field_text": "The fatigue saving throw DC increases by +3. In addition, if the check fails, the target must make a Dexterity saving throw*. On a failed save, the target is reduced to 0 hit points. On a successful save, the target loses half of their maximum hit points (rounded down)."
+      "field_text": "The fatigue saving throw DC increases by +3. In addition, if the check fails, the target must make a Dexterity saving throw. On a failed save, the target is reduced to 0 hit points. On a successful save, the target loses half of their maximum hit points (rounded down)."
     },
     "despair": {
       "dc_mod": 2,
@@ -68,43 +68,49 @@
   "terrain": {
     "hardterrain": {
         "dc": 20,
-        "title": "Hard Terrain - DC 20",
-        "desc": "The event takes place in a hex suggesting a hard terrain."
+        "field_title": "Hard Terrain - DC 20",
+        "field_text": "The event takes place in a hex suggesting a hard terrain."
     },
     "openterrain": {
         "dc": 15,
-        "title": "Open Terrain - DC 15",
-        "desc": "The event takes place in a hex suggesting neither hard terrain nor roads."
+        "field_title": "Open Terrain - DC 15",
+        "field_text": "The event takes place in a hex suggesting neither hard terrain nor roads."
     },
     "roads": {
         "dc": 10,
-        "title": "Roads - DC 10",
-        "desc": "The events happens along a road."
+        "field_title": "Roads - DC 10",
+        "field_text": "The events happens along a road."
     }
   },
   "roles": {
     "guide": {
-        "title": "Guide",
-        "skill": "travel",
-        "function": "In charge of all decisions concerning route, rest, and supplies."
+        "field_title": "Guide",
+        "skill": "travel"
     },
     "scout": {
-        "title": "Scout",
+        "field_title": "Scout",
         "skill": "explore",
-        "function": "In charge of setting up camp, opening new trails.",
         "event_id": 1
     },
     "lookout": {
-        "title": "Look-out",
+        "field_title": "Look-out",
         "skill": "perception",
-        "function": "In charge of keeping watch.",
         "event_id": 2
     },
     "hunter": {
         "title": "Hunter",
         "skill": "hunting",
-        "function": "In charge of finding food in the wild.",
         "event_id": 3
+    }
+  },
+  "weather": {
+    "autumn": {
+      "field_title": "Autumn",
+      "field_text": "The d20 Test has disadvantage if it is autumn or winter."
+    },
+    "winter": {
+      "field_title": "Winter",
+      "field_text": "The d20 Test has disadvantage if it is autumn or winter."
     }
   }
 }

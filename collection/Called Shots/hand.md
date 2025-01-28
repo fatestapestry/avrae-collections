@@ -1,0 +1,1 @@
+**Hand (+2 AC)** - Hands include most extremities used for fine manipulation.

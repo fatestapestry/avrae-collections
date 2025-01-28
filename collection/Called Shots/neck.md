@@ -1,0 +1,1 @@
+**Neck (+2 AC)** - The neck makes for a difficult but rewarding target. Injuries to the neck keep a creature from speaking easily, and if blood vessels or the windpipe are damaged, such injuries rapidly lead to death. Creatures that lack vulnerable heads generally can't be attacked in the neck.

@@ -1,0 +1,1 @@
+**Leg (+2 AC)** - Legs are the ambulatory limbs of a creature, including feet. Called shots to the leg have no special effect on creatures with five or more legs.

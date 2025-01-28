@@ -1,0 +1,1 @@
+**Arms (+2 AC)** - Arms are the manipulating limbs of a creature, including tentacles.
