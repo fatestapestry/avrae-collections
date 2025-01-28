@@ -100,7 +100,7 @@ success = check_result.total >= dc
 
 # Build output
 desc_lines = [
-    f'*{ch.name} makes a {skill.title()} check!*\n',
+    f'*{ch.name} acts as a {role} and makes a {skill.title()} check!*\n',
     f'**DC {dc}**' + (' (overridden)' if dc_override else ''),
     str(check_result),
     "**Success!**" if success else "**Failure!**"
