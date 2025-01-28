@@ -1,4 +1,4 @@
-`!lotrevent region [args]`
+`!lotrevent getevent [args]`
 
 ## Description
 Generates a random LOTR-themed journey event and displays its details. The alias supports rolling with advantage or disadvantage to determine the event.
@@ -10,7 +10,7 @@ Generates a random LOTR-themed journey event and displays its details. The alias
 
 ## Examples
 ```plaintext
-!lotrevent region adv
+!lotrevent getevent adv
 ```
 Rolls for an event in a Border Land region.
 
