@@ -6,11 +6,12 @@ Performs a fatigue saving throw for LOTR 5e. Calculates a saving throw result ba
 ## Arguments
 - Optional arguments:
   - `adv|dis` - Specifies advantage or disadvantage on the saving throw.
-  - `-dc <value>` - Sets a custom difficulty class (DC) for the saving throw. Defaults to 10.
+  - `-dc <value>` - Sets a custom difficulty class (DC) (Default is 10) for the saving throw.
+  - `-formcedmarch|fm` - Sets the difficulty class (DC) to 15. Not supported with events (for end-of-day saves only).
   - `-b <value>` - Adds custom bonuses to the saving throw.
   - `blessingdie` - Adds a blessing die to the saving throw.
-  - `-mount <value>` - Adds a mount bonus to the saving throw.
-  - `-event|e <event|abbr>` - Adds an event consequence modifier to save DC. Supported events:
+  - `-mount <value>` - Adds the mount’s Constitution modifier to the saving throw.
+  - `-event|e <event|abbr>` - Adds an event consequence modifier to save DC. Multiple events are supported. Supported event types:
 `['terriblemisfortune|tm', 'despair|dp', 'illchoices|ic', 'mishap|mh', 'shortcut|sc', 'chancemeeting|cm', 'joyfulsight|js']`
 
 ## Examples
@@ -22,13 +23,13 @@ Performs a fatigue saving throw for LOTR 5e. Calculates a saving throw result ba
   `!lotrfatigue -dc 15`
 - Add an event modifier using its abbreviation:  
   `!lotrfatigue -e tm`
+- Perform a fatigue saving throw with multiple events along the journey:  
+  `!lotrfatigue -e tm -e illchoices -e mh -e tm`
 
 ## Notes
 - The base DC for the saving throw is 10 unless overridden by the `-dc` argument or modified by events.
-- Advantage or disadvantage can be applied directly using `adv` or `dis`.
 - Events modify the DC dynamically. You can add multiple events using `-e <event|abbr>` or `-event <event|abbr>`.
 - Mount bonuses and blessing dice are automatically factored into the roll if specified.
-- Designed for use with the "Lord of the Rings" Roleplaying system.
 
 ## Issues?
 You can file reports and feature requests, as well as see the source code, 

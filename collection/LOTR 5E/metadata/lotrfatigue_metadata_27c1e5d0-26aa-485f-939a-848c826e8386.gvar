@@ -1,0 +1,13 @@
+{
+  "base_dc": 10,
+  "ability": "constitution",
+  "forcedmarch": {
+    "dc": 15,
+    "field_title": "Forced March",
+    "field_text": "If the Company undertakes a forced march, double their speed for the purpose of calculating travel pace, but each Player-hero must make a DC 15 fatigue saving throw at the end of each day of forced march, suffering the normal consequences on a failure."
+  },
+  "mount": {
+    "field_title": "Mount",
+    "field_text": "If you ride a mount for at least half of the journey’s length in days of travel (rounded up), you gain a bonus to your fatigue saving throw equal to your mount’s Constitution modifier."
+  }
+}
