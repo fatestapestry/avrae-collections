@@ -2,28 +2,33 @@
   "skills": {
     "explore": {
       "ability": "wisdom",
-      "name": "Explore",
-      "description": "Used for navigating unfamiliar areas, coping with weather, and finding safe camps"
+      "field_title": "Explore",
+      "field_text": "Used for navigating unfamiliar areas, coping with weather, and finding safe camps"
     },
     "hunting": {
       "ability": "wisdom",
-      "name": "Hunting",
-      "description": "Used for tracking prey, setting traps, and finding game"
+      "field_title": "Hunting",
+      "field_text": "Used for tracking prey, setting traps, and finding game"
     },
     "oldlore": {
       "ability": "intelligence",
-      "name": "Old Lore",
-      "description": "Knowledge of ancient tales, genealogies, and forgotten history"
+      "field_title": "Old Lore",
+      "field_text": "Knowledge of ancient tales, genealogies, and forgotten history"
     },
     "riddle": {
       "ability": "intelligence",
-      "name": "Riddle",
-      "description": "Used for solving riddles and making deductions from partial information"
+      "field_title": "Riddle",
+      "field_text": "Used for solving riddles and making deductions from partial information"
     },
     "travel": {
       "ability": "wisdom",
-      "name": "Travel",
-      "description": "Used for estimating journey length, reading maps, and evaluating strangers"
+      "field_title": "Travel",
+      "field_text": "Used for estimating journey length, reading maps, and evaluating strangers"
+    },
+    "medicine": {
+      "ability": "intelligence",
+      "field_title": "Medicine",
+      "field_text": "Diagnose an illness, or determine what killed the recently slain"
     }
   }
 }

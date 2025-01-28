@@ -42,8 +42,8 @@ ch.set_cvar(skills_cvar, dump_json(char_skills))
 # Create response message
 skill_data = skills[skill]
 title = f"{name}'s LOTR skill {skill_data['name']}  set up"
-desc = f"{skill_data['name']}, {proficiencies[prof_type][1]}\n\n"
-field = f"{skill_data['name']} ({skill_data['ability'].title()})|*{skill_data['description']}*"
+desc = f"{skill_data['field_title']}, {proficiencies[prof_type][1]}\n\n"
+field = f"{skill_data['field_title']} ({skill_data['ability'].title()})|*{skill_data['field_text']}*"
 return common_utils.embed_msg(title=title, desc=desc, field=field, footer=footer)
 
 </drac2>
