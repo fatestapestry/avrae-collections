@@ -98,7 +98,7 @@
         "event_id": 2
     },
     "hunter": {
-        "title": "Hunter",
+        "field_title": "Hunter",
         "skill": "hunting",
         "event_id": 3
     }
