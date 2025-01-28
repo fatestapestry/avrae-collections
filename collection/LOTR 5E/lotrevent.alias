@@ -1,7 +1,4 @@
 <drac2>
-# Constants
-MULTIPLE_ROLES_PENALTY = -5
-
 # Load data
 journey_data = load_json(get_gvar("a6e3208c-b3c8-408b-b310-43e3daab5332"))
 using(
@@ -15,78 +12,109 @@ ch = character()
 
 # Parse arguments and validate required positionals
 args = argparse(&ARGS&)
+
 try:
    pargs = &ARGS&[:2]
    role = pargs[0].lower()
-   terrain = pargs[1].lower()
+   event = pargs[1].lower()
 except:
     title = "Error"
-    desc = "Usage: `!lotrevent <role> <terrain> [args]`"
+    desc = "Usage: `!lotrevent <role> <event> [args]`"
     return common_utils.embed_msg(title=title, desc=desc, footer=footer)
+
+# Get valid roles (filter for ones with event_id)
+valid_roles = {k:v for k,v in journey_data['roles'].items() if 'event_id' in v}
 
 # Validate role
-if role not in journey_data['roles']:
-    title = "Validation Error"
-    desc = f"Invalid role `{role}`.\nMust be one of:\n`{[r for r in journey_data['roles'].keys()]}`"
+if role not in valid_roles:
+    title = "Error"
+    desc = (f"Invalid role `{role}`.\n"
+            f"Must be one of: `{[r for r in valid_roles.keys()]}`")
     return common_utils.embed_msg(title=title, desc=desc, footer=footer)
 
-# Validate terrain
-if terrain not in journey_data['terrain']:
-    title = "Validation Error"
-    desc = f"Invalid terrain `{terrain}`.\nMust be one of:\n`{[t for t in journey_data['terrain'].keys()]}`"
+# Build event lookup options (names and abbreviations)
+event_lookup = {}
+for event_name, event_data in journey_data['events'].items():
+    event_lookup[event_name] = event_name
+    event_lookup[event_data['abbr']] = event_name
+
+# Validate event and get full event name
+if event not in event_lookup:
+    title = "Error"
+    valid_events = [f"{k}|{v['abbr']}" for k,v in journey_data['events'].items()]
+    desc = (f"Invalid event `{event}`.\n"
+            f"Must be one of: `{valid_events}`")
     return common_utils.embed_msg(title=title, desc=desc, footer=footer)
 
-# Get DC (terrain or override)
-dc = journey_data['terrain'][terrain]['dc']
+event_name = event_lookup[event]
+event_data = journey_data['events'][event_name]
+
+# Determine DC
+dc = journey_data['terrain']['openterrain']['dc']  # Default DC
+dc_source = journey_data['terrain']['openterrain']
+dc_override = False
+
+if args.get('terrain'):
+    terrain = args.last('terrain')
+    if terrain not in journey_data['terrain']:
+        title = "Validation Error"
+        desc = (f"Invalid terrain `{terrain}`.\n"
+                f"Must be one of: `{[t for t in journey_data['terrain'].keys()]}`")
+        return common_utils.embed_msg(title=title, desc=desc, footer=footer)
+    dc = journey_data['terrain'][terrain]['dc']
+    dc_source = journey_data['terrain'][terrain]
+
 if args.get('dc'):
-   try:
-       dc = int(args.last('dc'))
-   except:
-       title = "Validation Error"
-       desc = "Invalid DC value"
-       return common_utils.embed_msg(title=title, desc=desc, footer=footer)
+    try:
+        dc = int(args.last('dc'))
+        dc_override = True
+    except:
+        title = "Validation Error"
+        desc = "Invalid DC value"
+        return common_utils.embed_msg(title=title, desc=desc, footer=footer)
 
-# Check for advantage/disadvantage
+# Check for advantage/disadvantage, incl season override
 adv = args.adv()
-
-# Check for autumn/winter (disadvantage on skill check)
-skill_adv = -1 if ('autumn' in args or 'winter' in args) else 0
+adv_override = False
+if 'autumn' in args or 'winter' in args:
+    adv = -1
+    adv_override = True
 
 # Build bonuses list
 bonuses = []
 if 'multipleroles' in args:
-   bonuses.append(f"{MULTIPLE_ROLES_PENALTY}[Multiple Roles]")
+    bonuses.append(f"{lotr_utils.MULTIPLE_ROLES_PENALTY}[Multiple Roles]")
 
-# Check for blessing die
 if 'blessingdie' in args:
-   blessing_die = lotr_utils.get_blessing_die(ch)
-   if blessing_die:
-       bonuses.append(f"{blessing_die}[Blessing Die]")
+    blessing_die = lotr_utils.get_blessing_die(ch)
+    if blessing_die:
+        bonuses.append(f"{blessing_die}[Blessing Die]")
 
-# Roll for event
-event_roll = vroll("2d20kh1" if adv == 1 else "2d20kl1" if adv == -1 else "1d20")
-event_name = journey_data["roll_table"][str(event_roll.total)]
-event_data = journey_data["events"][event_name]
+if args.get('b'):
+    bonuses.append(args.last('b'))
 
 # Make skill check
 skill = journey_data['roles'][role]['skill']
-check_result = lotr_utils.make_lotr_check_roll(ch, skill, adv=skill_adv, bonuses=bonuses)
+check_result = lotr_utils.make_lotr_check_roll(ch, skill, adv=adv, bonuses=bonuses)
 success = check_result.total >= dc
 
 # Build output
 desc_lines = [
-    f'Event Roll: {event_roll.full} `[{event_data["field_title"]}]`',
-    f'**DC {dc}**',
-    f'*{ch.name} makes a {skill.title()} check!*',
+    f'*{ch.name} makes a {skill.title()} check!*\n',
+    f'**DC {dc}**' + (' (overridden)' if dc_override else ''),
     str(check_result),
     "**Success!**" if success else "**Failure!**"
 ]
-title = f"{ch.name} experiences a Journey Event!"
+title = f"{ch.name} faces a {event_data['field_title']} event!"
 desc = '\n'.join(desc_lines)
-fields = [
-    f"{journey_data['terrain'][terrain]['title']}|{journey_data['terrain'][terrain]['desc']}",
-    f"{event_data['field_title']}|{event_data['field_text']}"
-]
-return common_utils.embed_msg(title=title, desc=desc, footer=footer, fields=fields)
 
+# Build fields
+fields = []
+if not dc_override:
+    fields.append(f"{dc_source['title']}|{dc_source['desc']}")
+if adv_override:
+    fields.append(f"Cold Season|The d20 Test has disadvantage if it is autumn or winter.")
+fields.append(f"{event_data['field_title']}|{event_data['field_text']}")
+
+return common_utils.embed_msg(title=title, desc=desc, footer=footer, fields=fields)
 </drac2>
