@@ -24,9 +24,9 @@ if not selected_role:
     return common_utils.embed_msg(title=title, desc=desc, footer=footer)
 
 # Create the embed content
-title = f'{selected_role["title"]} role selected!'
+title = f'{selected_role["field_title"]} role selected!'
 desc = (f'Roll result: {str(roll_result)}\n'
-        f'A party **{selected_role["title"]}** must face the journey event with a `{selected_role["skill"]}` skill check!')
+        f'A party **{selected_role["field_title"]}** must face the journey event with a `{selected_role["skill"]}` skill check!')
 
 # Return the embed
 return common_utils.embed_msg(title=title, desc=desc, footer=footer)
