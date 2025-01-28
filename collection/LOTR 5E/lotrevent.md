@@ -5,17 +5,18 @@ Facilitates a LOTR-themed journey event resolution by performing a skill check b
 
 ## Arguments
 
-- Positional arguments:
-  - `<role>` - `[scout, lookout, hunter]`. Specifies the journey role for the character. Must be one of the valid roles defined in the system.
-  - `<event>` - `[terriblemisfortune|tm, despair|dp, illchoices|ic, mishap|mh, shortcut|sc, chancemeeting|cm, joyfulsight|js]`. Specifies event type. Supports abbreviations.
-- Optional arguments:
-  - `adv|dis` - Specifies advantage or disadvantage on the event roll.
-  - `autumn|winter` - Overrides `adv|dis` to disadvantage on the skill check due to seasonal conditions.
-  - `-terrain <value>` - `[hardterrain, openterrain, roads]`. Defaults to `openterrain` (DC 15).
-  - `-dc <value>` - Overrides the default difficulty class (DC) for the terrain.
-  - `-b <bonus>` - Adds a custom bonus to the skill check roll.
-  - `multipleroles` - Applies a `-5` penalty for taking multiple roles during the journey.
-  - `blessingdie` - Adds a blessing die to the skill check roll.
+Positional arguments:
+- `<role>` - `[scout, lookout, hunter]`. Specifies the journey role for the character. Must be one of the valid roles defined in the system.
+- `<event>` - `[terriblemisfortune|tm, despair|dp, illchoices|ic, mishap|mh, shortcut|sc, chancemeeting|cm, joyfulsight|js]`. Specifies event type. Supports abbreviations.
+
+Optional arguments:
+- `adv|dis` - Specifies advantage or disadvantage on the event roll.
+- `autumn|winter` - Overrides `adv|dis` to disadvantage on the skill check due to seasonal conditions.
+- `-terrain <value>` - `[hardterrain, openterrain, roads]`. Defaults to `openterrain` (DC 15).
+- `-dc <value>` - Overrides the default difficulty class (DC) for the terrain.
+- `-b <bonus>` - Adds a custom bonus to the skill check roll.
+- `multipleroles` - Applies a `-5` penalty for taking multiple roles during the journey.
+- `blessingdie` - Adds a blessing die to the skill check roll.
 
 ## Examples
 ```plaintext
