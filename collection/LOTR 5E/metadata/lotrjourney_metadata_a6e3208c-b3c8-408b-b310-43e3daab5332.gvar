@@ -106,5 +106,15 @@
         "function": "In charge of finding food in the wild.",
         "event_id": 3
     }
+  },
+  "weather": {
+    "autumn": {
+      "field_title": "Autumn",
+      "field_text": "The d20 Test has disadvantage if it is autumn or winter."
+    },
+    "winter": {
+      "field_title": "Winter",
+      "field_text": "The d20 Test has disadvantage if it is autumn or winter."
+    }
   }
 }
