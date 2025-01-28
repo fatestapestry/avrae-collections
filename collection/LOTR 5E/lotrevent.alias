@@ -100,7 +100,7 @@ success = check_result.total >= dc
 
 # Build output
 desc_lines = [
-    f'*{ch.name} acts as a {journey_data['roles'][role]['field_title']} and makes a {skill.title()} check!*\n',
+    f'*{ch.name} acts as a {role.title()} and makes a {skill.title()} check!*\n',
     f'**DC {dc}**' + (' (overridden)' if dc_override else ''),
     str(check_result),
     "**Success!**" if success else "**Failure!**"
