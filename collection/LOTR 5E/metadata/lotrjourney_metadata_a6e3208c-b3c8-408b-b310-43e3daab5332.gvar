@@ -88,20 +88,23 @@
         "skill": "travel",
         "function": "In charge of all decisions concerning route, rest, and supplies."
     },
-    "hunter": {
-        "title": "Hunter",
-        "skill": "hunting",
-        "function": "In charge of finding food in the wild."
+    "scout": {
+        "title": "Scout",
+        "skill": "explore",
+        "function": "In charge of setting up camp, opening new trails.",
+        "event_id": 1
     },
     "lookout": {
         "title": "Look-out",
         "skill": "perception",
-        "function": "In charge of keeping watch."
+        "function": "In charge of keeping watch.",
+        "event_id": 2
     },
-    "scout": {
-        "title": "Scout",
-        "skill": "explore",
-        "function": "In charge of setting up camp, opening new trails."
+    "hunter": {
+        "title": "Hunter",
+        "skill": "hunting",
+        "function": "In charge of finding food in the wild.",
+        "event_id": 3
     }
   }
 }
