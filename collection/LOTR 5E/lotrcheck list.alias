@@ -26,7 +26,7 @@ for skill_key, skill_data in skills.items():
 
     # Create the field text with proper formatting
     field_text = f"Status: {status}"
-    skill_fields.append(f'{skill_data["name"]} ({skill_data["ability"].title()})|{field_text}')
+    skill_fields.append(f'{skill_data["field_title"]} ({skill_data["ability"].title()})|{field_text}')
 
 # Build and return the embed
 title = f"{name}'s LOTR Skills"

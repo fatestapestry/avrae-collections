@@ -51,7 +51,7 @@ if prof_multiplier > 0:
     args.append(f'-b {bonus}["{proficiencies[prof_type][1]}"]')
 
 # Add title override to show our custom skill name
-args.append(f'-title "{name} makes a {skill_data["name"]} check!"')
+args.append(f'-title "{name} makes a {skill_data["field_title"]} check!"')
 
 # Pass through to Avrae's check system with our custom title
 return f'check {ability} {" ".join(args[1:])}'

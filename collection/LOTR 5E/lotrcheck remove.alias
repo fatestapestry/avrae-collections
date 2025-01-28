@@ -33,7 +33,7 @@ char_skills = load_yaml(ch.get_cvar(skills_cvar, '{}'))
 # Check if skill is set up
 if skill not in char_skills:
     title = "Skill Not Found"
-    desc = f"`{skills[skill]['name']}` is not currently set up."
+    desc = f"`{skills[skill]['field_title']}` is not currently set up."
     return common_utils.embed_msg(title=title, desc=desc, footer=footer)
 
 # Remove the skill
@@ -43,7 +43,7 @@ ch.set_cvar(skills_cvar, dump_json(char_skills))
 # Create response message
 skill_data = skills[skill]
 title = "LOTR Skill Removed"
-desc = f"Removed setup for `{skill_data['name']} ({skill_data['ability'].title()})`."
+desc = f"Removed setup for `{skill_data['field_title']} ({skill_data['ability'].title()})`."
 return common_utils.embed_msg(title=title, desc=desc, footer=footer)
 
 </drac2>
