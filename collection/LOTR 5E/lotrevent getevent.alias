@@ -1,0 +1,52 @@
+<drac2>
+# Load data
+journey_data = load_json(get_gvar("a6e3208c-b3c8-408b-b310-43e3daab5332"))
+using(
+   common_utils="0c6d5bca-a15d-4e45-a08d-48cf51411088",
+   lotr_utils="bf283fd7-585d-4530-b0e2-9e03eb643a96"
+)
+footer = lotr_utils.FOOTER_EVENT
+
+# Parse arguments to check for region type
+args = argparse(&ARGS&)
+adv = args.adv() # Will be 1 for advantage, -1 for disadvantage, 0 for normal
+
+# Add land type to title based on advantage/disadvantage
+land_type = ""
+if adv == 1:
+    land_type = "Border Land"
+elif adv == -1:
+    land_type = "Dark Land"
+
+# Roll for event with appropriate advantage/disadvantage
+event_roll = vroll("2d20kh1" if adv == 1 else "2d20kl1" if adv == -1 else "1d20")
+roll_total = int(event_roll.total)
+
+# Get event details from lookup tables
+event_name = journey_data["roll_table"][str(roll_total)]
+event_data = journey_data["events"][event_name]
+
+# Build output
+title = f"A Player-hero must face a {event_data['field_title']} event!"
+if land_type:
+    title = f"A Player-hero in a {land_type} must face a {event_data['field_title']} event!"
+
+desc_lines = [
+    f'Event Roll: {event_roll.full}',
+    f'The nature of the event is a `{event_name}`.'
+]
+desc = '\n'.join(desc_lines)
+
+# Build fields array
+fields = [
+    f"{event_data['field_title']}|{event_data['field_text']}"
+]
+
+# Add land type information if advantage/disadvantage was used
+if adv == 1:
+    fields.append("Border Land|Event rolls are made with advantage in Border Lands.")
+elif adv == -1:
+    fields.append("Dark Land|Event rolls are made with disadvantage in Dark Lands.")
+
+return common_utils.embed_msg(title=title, desc=desc, footer=footer, fields=fields)
+</drac2>

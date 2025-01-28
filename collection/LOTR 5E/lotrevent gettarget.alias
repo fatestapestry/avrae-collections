@@ -1,0 +1,33 @@
+<drac2>
+# Load data
+journey_data = load_json(get_gvar("a6e3208c-b3c8-408b-b310-43e3daab5332"))
+using(
+   common_utils="0c6d5bca-a15d-4e45-a08d-48cf51411088",
+   lotr_utils="bf283fd7-585d-4530-b0e2-9e03eb643a96"
+)
+footer = lotr_utils.FOOTER_EVENT
+
+# Roll 1d3 and get the numerical result
+roll_result = vroll("1d3")
+target_id = int(roll_result.total)
+
+# Find matching role from roles data
+selected_role = None
+for role_id, role_data in journey_data["roles"].items():
+    if "event_id" in role_data and role_data["event_id"] == target_id:
+        selected_role = role_data
+        break
+
+if not selected_role:
+    title = "Error"
+    desc = f"Error: Could not find role matching event_id {target_id}"
+    return common_utils.embed_msg(title=title, desc=desc, footer=footer)
+
+# Create the embed content
+title = f'{selected_role["title"]} role selected!'
+desc = (f'Roll result: {str(roll_result)}\n'
+        f'A party **{selected_role["title"]}** must face the journey event with a `{selected_role["skill"]}` skill check!')
+
+# Return the embed
+return common_utils.embed_msg(title=title, desc=desc, footer=footer)
+</drac2>
