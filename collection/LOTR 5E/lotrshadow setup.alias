@@ -18,7 +18,7 @@ valid_callings = list(shadow_data["paths"].keys())
 calling = None
 
 for possible_calling in valid_callings:
-    class_name = possible_calling.replace(" ", "")
+    class_name = possible_calling
     if ch.levels.get(class_name, 0) > 0:
         calling = possible_calling
         break
