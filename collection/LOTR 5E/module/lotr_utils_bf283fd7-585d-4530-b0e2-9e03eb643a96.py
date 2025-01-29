@@ -33,6 +33,7 @@ FOOTER_CHECK = "!help lotrcheck for more info | Developed by @noralf#0"
 FOOTER_EVENT = "!help lotrevent for more info | Developed by @noralf#0"
 FOOTER_FATIGUE = "!help lotrfatigue for more info | Developed by @noralf#0"
 FOOTER_FELL = "!help fell for more info | Developed by @noralf#0"
+FOOTER_REINFORCED = "!help reinforced for more info | Developed by @noralf#0"
 
 using(
     common_utils=UTILS_COMMON
