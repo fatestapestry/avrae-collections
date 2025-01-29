@@ -5,7 +5,7 @@ The `!cunningmake` command grants a Cunning-make enhancement to one or more comb
 
 ## Arguments
 - **Optional arguments:**
-  - `-t <target1>` - Specifies one or more combatants to receive the Cunning-make effect. Defaults to the user if no targets are provided.
+  - `-t <target>` - Specifies one or more combatants to receive the Cunning-make effect. Defaults to the user if no targets are provided.
 
 ## Examples
 ```markdown
