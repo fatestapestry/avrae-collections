@@ -1,0 +1,84 @@
+<drac2>
+
+# How many extra weapon dice to roll on a crit (in addition to normal dice).
+CRIT_DICE = 2
+
+# Load data
+weapon_data = load_json(get_gvar("c055d535-e757-4730-b70c-6114fdc46614"))
+rewards_data = load_yaml(get_gvar("017fc259-9575-410d-97b0-2bb753887655"))
+using(
+    common_utils="0c6d5bca-a15d-4e45-a08d-48cf51411088",
+    lotr_utils="bf283fd7-585d-4530-b0e2-9e03eb643a96"
+)
+footer = lotr_utils.FOOTER_FELL
+
+# Set up variables
+ch = character()
+args = argparse(&ARGS&)
+c = combat()
+targets = args.get('t')
+
+# Get weapon argument
+try:
+    pargs = &ARGS&
+    weapon = pargs[0].lower()
+except:
+    return common_utils.embed_msg(
+        title="Error: No Weapon Specified",
+        desc="Usage: `!fell <weapon> [-t target]`",
+        footer=footer
+    )
+
+# Validate weapon exists
+if weapon not in weapon_data:
+    return common_utils.embed_msg(
+        title="Error: Invalid Weapon",
+        desc=f"Invalid weapon `{weapon}`. Must be one of the standard weapons.",
+        footer=footer
+    )
+
+weapon_info = weapon_data[weapon]
+die_count = weapon_info["die_count"]
+die = weapon_info["die"]
+dmg_type = weapon_info["dmg_type"]
+damage_str = f"{2 * die_count}{die}[{dmg_type}]"
+
+# Validate targets in combat
+if c and targets:
+    for target in targets:
+        if not c.get_combatant(target):
+            return common_utils.embed_msg(
+                title="Error: Invalid Target",
+                desc=f"Target `{target}` not found in combat.",
+                footer=footer
+            )
+
+# Build description
+desc = []
+
+# Roll damage for each target (or once if no targets)
+if targets:
+    for target in targets:
+        if c:
+            t = c.get_combatant(target)
+            damage_result = t.damage(damage_str)
+            desc.extend([f"**{target}**", f"{damage_result.damage}", f"{t.name}: {t.hp_str()}\n"])
+        else:
+            # Use vroll for non-combat targets
+            damage = vroll(damage_str)
+            desc.extend([f"**{target}**", f"**Damage**: {damage}"])
+else:
+    damage = vroll(damage_str)
+    desc.append(f"**Damage**: {damage}")
+
+# Add fields just for reward description
+fields = [f"{rewards_data['fell']['field_title']}|{rewards_data['fell']['field_text']}"]
+
+# Return formatted embed
+return common_utils.embed_msg(
+    title=f"{name} adds Fell damage to a critical {weapon_info['field_title']} attack!",
+    desc="\n".join(desc),
+    fields=fields,
+    footer=footer
+)
+</drac2>

@@ -1,0 +1,230 @@
+{
+  "club": {
+    "field_title": "Club",
+    "die_count": 1,
+    "die": "d4",
+    "dmg_type": "bludgeoning"
+  },
+  "dagger": {
+    "field_title": "Dagger",
+    "die_count": 1,
+    "die": "d4",
+    "dmg_type": "piercing"
+  },
+  "greatclub": {
+    "field_title": "Greatclub",
+    "die_count": 1,
+    "die": "d8",
+    "dmg_type": "bludgeoning"
+  },
+  "handaxe": {
+    "field_title": "Handaxe",
+    "die_count": 1,
+    "die": "d6",
+    "dmg_type": "slashing"
+  },
+  "javelin": {
+    "field_title": "Javelin",
+    "die_count": 1,
+    "die": "d6",
+    "dmg_type": "piercing"
+  },
+  "light hammer": {
+    "field_title": "Light Hammer",
+    "die_count": 1,
+    "die": "d4",
+    "dmg_type": "bludgeoning"
+  },
+  "mace": {
+    "field_title": "Mace",
+    "die_count": 1,
+    "die": "d6",
+    "dmg_type": "bludgeoning"
+  },
+  "quarterstaff": {
+    "field_title": "Quarterstaff",
+    "die_count": 1,
+    "die": "d6",
+    "dmg_type": "bludgeoning"
+  },
+  "sickle": {
+    "field_title": "Sickle",
+    "die_count": 1,
+    "die": "d4",
+    "dmg_type": "slashing"
+  },
+  "spear": {
+    "field_title": "Spear",
+    "die_count": 1,
+    "die": "d6",
+    "dmg_type": "piercing"
+  },
+  "dart": {
+    "field_title": "Dart",
+    "die_count": 1,
+    "die": "d4",
+    "dmg_type": "piercing"
+  },
+  "light crossbow": {
+    "field_title": "Light Crossbow",
+    "die_count": 1,
+    "die": "d8",
+    "dmg_type": "piercing"
+  },
+  "shortbow": {
+    "field_title": "Shortbow",
+    "die_count": 1,
+    "die": "d6",
+    "dmg_type": "piercing"
+  },
+  "sling": {
+    "field_title": "Sling",
+    "die_count": 1,
+    "die": "d4",
+    "dmg_type": "bludgeoning"
+  },
+  "battleaxe": {
+    "field_title": "Battleaxe",
+    "die_count": 1,
+    "die": "d8",
+    "dmg_type": "slashing"
+  },
+  "flail": {
+    "field_title": "Flail",
+    "die_count": 1,
+    "die": "d8",
+    "dmg_type": "bludgeoning"
+  },
+  "glaive": {
+    "field_title": "Glaive",
+    "die_count": 1,
+    "die": "d10",
+    "dmg_type": "slashing"
+  },
+  "greataxe": {
+    "field_title": "Greataxe",
+    "die_count": 1,
+    "die": "d12",
+    "dmg_type": "slashing"
+  },
+  "greatsword": {
+    "field_title": "Greatsword",
+    "die_count": 2,
+    "die": "d6",
+    "dmg_type": "slashing"
+  },
+  "halberd": {
+    "field_title": "Halberd",
+    "die_count": 1,
+    "die": "d10",
+    "dmg_type": "slashing"
+  },
+  "lance": {
+    "field_title": "Lance",
+    "die_count": 1,
+    "die": "d10",
+    "dmg_type": "piercing"
+  },
+  "longsword": {
+    "field_title": "Longsword",
+    "die_count": 1,
+    "die": "d8",
+    "dmg_type": "slashing"
+  },
+  "maul": {
+    "field_title": "Maul",
+    "die_count": 2,
+    "die": "d6",
+    "dmg_type": "bludgeoning"
+  },
+  "morningstar": {
+    "field_title": "Morningstar",
+    "die_count": 1,
+    "die": "d8",
+    "dmg_type": "piercing"
+  },
+  "pike": {
+    "field_title": "Pike",
+    "die_count": 1,
+    "die": "d10",
+    "dmg_type": "piercing"
+  },
+  "rapier": {
+    "field_title": "Rapier",
+    "die_count": 1,
+    "die": "d8",
+    "dmg_type": "piercing"
+  },
+  "scimitar": {
+    "field_title": "Scimitar",
+    "die_count": 1,
+    "die": "d6",
+    "dmg_type": "slashing"
+  },
+  "shortsword": {
+    "field_title": "Shortsword",
+    "die_count": 1,
+    "die": "d6",
+    "dmg_type": "piercing"
+  },
+  "trident": {
+    "field_title": "Trident",
+    "die_count": 1,
+    "die": "d8",
+    "dmg_type": "piercing"
+  },
+  "warhammer": {
+    "field_title": "Warhammer",
+    "die_count": 1,
+    "die": "d8",
+    "dmg_type": "bludgeoning"
+  },
+  "war pick": {
+    "field_title": "War Pick",
+    "die_count": 1,
+    "die": "d8",
+    "dmg_type": "piercing"
+  },
+  "whip": {
+    "field_title": "Whip",
+    "die_count": 1,
+    "die": "d4",
+    "dmg_type": "slashing"
+  },
+  "blowgun": {
+    "field_title": "Blowgun",
+    "die_count": 1,
+    "die": "d1",
+    "dmg_type": "piercing"
+  },
+  "hand crossbow": {
+    "field_title": "Hand Crossbow",
+    "die_count": 1,
+    "die": "d6",
+    "dmg_type": "piercing"
+  },
+  "heavy crossbow": {
+    "field_title": "Heavy Crossbow",
+    "die_count": 1,
+    "die": "d10",
+    "dmg_type": "piercing"
+  },
+  "longbow": {
+    "field_title": "Longbow",
+    "die_count": 1,
+    "die": "d8",
+    "dmg_type": "piercing"
+  },
+  "musket": {
+    "field_title": "Musket",
+    "die_count": 1,
+    "die": "d12",
+    "dmg_type": "piercing"
+  },
+  "pistol": {
+    "field_title": "Pistol",
+    "die_count": 1,
+    "die": "d10",
+    "dmg_type": "piercing"
+  }
+}
