@@ -1,11 +1,17 @@
 {
   "close-fitting": {
     "field_title": "Close-fitting (Armour)",
-    "field_text": "A skilful smith has made this armour more difficult to overcome with critical hits. While you’re wearing it, any critical hit against you becomes a normal hit."
+    "field_text": "A skilful smith has made this armour more difficult to overcome with critical hits. While you're wearing it, any critical hit against you becomes a normal hit."
   },
   "cunning-make": {
     "field_title": "Cunning-make (Armour)",
-    "field_text": "A skilled craftsman has made this armour lighter or less cumbersome than its lesser counterparts. The armour is half the normal weight. If it normally imposes disadvantage on fatigue saving throws, this version doesn’t. Otherwise, the maximum Dexterity modifier you can add to your AC when you wear it increases by 1."
+    "field_text": "A skilled craftsman has made this armour lighter or less cumbersome than its lesser counterparts. The armour is half the normal weight. If it normally imposes disadvantage on fatigue saving throws, this version doesn't. Otherwise, the maximum Dexterity modifier you can add to your AC when you wear it increases by 1.",
+    "command_data": {
+      "bonus": 1,
+      "effect_name": "Cunning-make Armor",
+      "button_label": "Remove Armor Bonus",
+      "button_verb": "removes their armor enhancement. AC bonus removed"
+    }
   },
   "fell": {
     "field_title": "Fell (Weapon)",
@@ -21,6 +27,12 @@
   },
   "reinforced": {
     "field_title": "Reinforced (Shield)",
-    "field_text": "The shield’s structure is reinforced, possibly with a metal rim or a larger iron boss, letting its wearer parry blows with greater ease. While holding this shield, you have a +1 bonus to AC. This bonus is in addition to the shield’s normal bonus to AC."
+    "field_text": "The shield's structure is reinforced, possibly with a metal rim or a larger iron boss, letting its wearer parry blows with greater ease. While holding this shield, you have a +1 bonus to AC. This bonus is in addition to the shield's normal bonus to AC.",
+    "command_data": {
+      "bonus": 1,
+      "effect_name": "Reinforced Shield",
+      "button_label": "Remove Shield Bonus",
+      "button_verb": "doffs their Reinforced Shield. AC bonus removed"
+    }
   }
 }

@@ -34,6 +34,8 @@ FOOTER_EVENT = "!help lotrevent for more info | Developed by @noralf#0"
 FOOTER_FATIGUE = "!help lotrfatigue for more info | Developed by @noralf#0"
 FOOTER_FELL = "!help fell for more info | Developed by @noralf#0"
 FOOTER_REINFORCED = "!help reinforced for more info | Developed by @noralf#0"
+FOOTER_CUNNING_MAKE = "!help cunningmake for more info | Developed by @noralf#0"
+
 
 using(
     common_utils=UTILS_COMMON
@@ -183,3 +185,79 @@ def make_lotr_check_roll(character, check, adv=0, bonuses=None):
 
 def get_blessing_die(character):
     return BLESSING_DIE.get(character.stats.prof_bonus)
+
+
+def add_ac_bonus_effect(ch, targets, reward_key, rewards_data, footer):
+    """Adds an AC bonus effect to target(s) in combat.
+
+    Args:
+        ch: Character making the effect
+        targets: List of target names (or None for self)
+        reward_key: Key in rewards_data for this reward
+        rewards_data: The rewards data dictionary
+        footer: Footer string for output
+
+    Returns:
+        Formatted embed message
+    """
+    # Get command data
+    cmd_data = rewards_data[reward_key]['command_data']
+    effect_str = f"{cmd_data['effect_name']} (+{cmd_data['bonus']} AC)"
+
+    # Validate combat
+    c = combat()
+    if not c:
+        return common_utils.embed_msg(
+            title="Error: Not in Combat",
+            desc="Effects can only be added to a target in combat.",
+            footer=footer
+        )
+
+    # Process targets (or self)
+    targets = targets if targets else [ch.name]
+    desc = []
+    successful_targets = []
+
+    for target in targets:
+        # Get target combatant
+        combatant = c.get_combatant(target)
+        if not combatant:
+            desc.append(f"Error: Target `{target}` not found in combat.")
+            continue
+
+        # Check existing effect
+        if combatant.get_effect(effect_str):
+            desc.append(f"{target} already has the {cmd_data['effect_name']} effect.")
+            continue
+
+        # Create effect
+        passive_effects = {"ac_bonus": cmd_data['bonus']}
+        buttons = [{
+            "label": cmd_data['button_label'],
+            "verb": cmd_data['button_verb'],
+            "style": 4,
+            "automation": [{"type": "remove_ieffect"}]
+        }]
+
+        # Add effect
+        effect = combatant.add_effect(
+            effect_str,
+            passive_effects=passive_effects,
+            buttons=buttons,
+            desc=rewards_data[reward_key]['field_text']
+        )
+
+        desc.append(f"Added effect `{effect_str}` to {target}")
+        successful_targets.append(target)
+
+    # Build output
+    if not successful_targets:
+        title = "No effects added!"
+    else:
+        title = f"{' and '.join(successful_targets)} {'is' if len(successful_targets) == 1 else 'are'} protected by {cmd_data['effect_name']}!"
+
+    return common_utils.embed_msg(
+        title=title,
+        desc="\n".join(desc),
+        footer=footer
+    )

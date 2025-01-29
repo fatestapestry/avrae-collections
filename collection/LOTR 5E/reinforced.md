@@ -1,4 +1,4 @@
-`!reinforced [-t target1]`
+`!reinforced [-t target]`
 
 ## Description
 The `!reinforced` command grants a shield reinforcement effect to one or more combatants, increasing their AC by **+1**. This effect can only be applied to targets currently in combat.

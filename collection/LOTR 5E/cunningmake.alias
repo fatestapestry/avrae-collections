@@ -14,8 +14,8 @@ args = argparse(&ARGS&)
 return lotr_utils.add_ac_bonus_effect(
     ch,
     args.get('t'),
-    'reinforced',
+    'cunning-make',
     rewards_data,
-    lotr_utils.FOOTER_REINFORCED
+    lotr_utils.FOOTER_CUNNING_MAKE
 )
 </drac2>
