@@ -1,0 +1,26 @@
+{
+  "close-fitting": {
+    "field_title": "Close-fitting (Armour)",
+    "field_text": "A skilful smith has made this armour more difficult to overcome with critical hits. While you’re wearing it, any critical hit against you becomes a normal hit."
+  },
+  "cunning-make": {
+    "field_title": "Cunning-make (Armour)",
+    "field_text": "A skilled craftsman has made this armour lighter or less cumbersome than its lesser counterparts. The armour is half the normal weight. If it normally imposes disadvantage on fatigue saving throws, this version doesn’t. Otherwise, the maximum Dexterity modifier you can add to your AC when you wear it increases by 1."
+  },
+  "fell": {
+    "field_title": "Fell (Weapon)",
+    "field_text": "Hard and straight, a critical hit from this weapon is more dangerous. When you score a critical hit with this weapon, you can roll two additional weapon damage dice and add them to the extra damage. You cannot apply this reward to a weapon that has the ammunition property, but you can apply it to one piece of ammunition instead, that you can choose to expend after you roll the die for the attack roll, but before the Loremaster tells you whether you hit or miss. You can always recover this piece of ammunition at the end of a battle."
+  },
+  "grievous": {
+    "field_title": "Grievous (Weapon)",
+    "field_text": "The weapon is strong and heavy, inflicting more harm on its targets. You gain a +1 bonus to damage rolls with this weapon."
+  },
+  "keen": {
+    "field_title": "Keen (Weapon)",
+    "field_text": "Sharp or better-balanced, this weapon is now more likely to produce a critical hit when hitting its target. Attacks using this weapon score a critical hit on a roll of 19-20."
+  },
+  "reinforced": {
+    "field_title": "Reinforced (Shield)",
+    "field_text": "The shield’s structure is reinforced, possibly with a metal rim or a larger iron boss, letting its wearer parry blows with greater ease. While holding this shield, you have a +1 bonus to AC. This bonus is in addition to the shield’s normal bonus to AC."
+  }
+}
