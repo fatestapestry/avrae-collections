@@ -1,1 +1,1 @@
-Sharp or better-balanced, this weapon is now more likely to produce a critical hit when hitting its target. Attacks using this weapon score a critical hit on a roll of 19-20.
+**Keen (Weapon)**. Sharp or better-balanced, this weapon is now more likely to produce a critical hit when hitting its target. Attacks using this weapon score a critical hit on a roll of 19-20.
