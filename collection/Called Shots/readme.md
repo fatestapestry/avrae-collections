@@ -7,15 +7,30 @@ v1.0.0
 
 ## Examples
 Basic usage:
-`!a sword arms`
-`!a sword -t goblin arms`
+```
+!a sword arms
+```
+```
+!a sword -t goblin arms
+```
 
-Available targets: `Arms (+2 AC)`, `Wings (+2 AC)`, `Chest (+0 AC)`, `Ear (+4 AC)`, `Eye (+4 AC)`, `Hand (+2 AC)`, `Head (+2 AC)`, `Heart (+4 AC)`, `Leg (+2 AC)`, `Neck (+2 AC)`, `Vitals (+2 AC)`
+Available targets:
+- `Arms (+2 AC)`
+- `Wings (+2 AC)`
+- `Chest (+0 AC)`
+- `Ear (+4 AC)`
+- `Eye (+4 AC)`
+- `Hand (+2 AC)`
+- `Head (+2 AC)`
+- `Heart (+4 AC)`
+- `Leg (+2 AC)`
+- `Neck (+2 AC)`
+- `Vitals (+2 AC)`
 
 ## Limitations
-- Currently only implements the attack roll modifications (disadvantage and penalties)
+- Currently only implements attack roll snippets (disadvantage and penalties)
 - Does not automate Saving throws, Critical hit effects, Special effects (exhaustion, status conditions, etc.), Healing requirements
-- Full automation support is planned for a future release
+- Automation support planned for future releases
 
 ## Issues?
 You can file reports and feature requests as well as see the source code on [**GitHub**](https://github.com/fatestapestry/avrae-collections)
