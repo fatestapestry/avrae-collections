@@ -1,0 +1,1 @@
+**Outrageous Request**. An outrageous request (3 successes required) happens when the Player-heroes are asking the encountered folk to do something that is dangerous, or has scarce or no possibilities for reward.

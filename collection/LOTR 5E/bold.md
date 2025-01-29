@@ -1,0 +1,1 @@
+**Bold Request**. A bold request (2 successes required) corresponds to a goal that is profiting the Company more than it does the people encountered.
