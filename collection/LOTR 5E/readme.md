@@ -2,6 +2,9 @@
 
 Avrae support for Lord of the Rings™ (LOTR) Roleplaying gameplay for 5E.
 
+## Version
+v1.0.2
+
 ## Feature Support
 The following LOTR 5E features are supported:
 - Custom Skills [A, S]
@@ -20,7 +23,6 @@ The following LOTR 5E features are supported:
  - `!setrace sub f1bfe146-05df-43fd-895f-68efc6e38c82`
 
 ### Key
-
 - [A] - Alias
 - [S] - Snippet
 - [I] - Automation
@@ -34,9 +36,7 @@ The following LOTR 5E features are supported:
 - Conditions (Miserable and Anguished) [A, S, C]
 
 ## Support Me!
-
 Please consider contributing to future development and maintenance by supporting me on [**Patreon**](https://www.patreon.com/fatestapestry), or donating on [**Ko-Fi**](https://ko-fi.com/noralf).
 
 ## Licensing
-
 By using this, you agree that the workshop is for *Personal Use Only*, and is subject to the **Rules of Use**, **Wizards Fan Content Policy** and **Code of Conduct** as described in DND Beyond's [**Terms & Conditions**](https://www.dndbeyond.com/terms-conditions).
