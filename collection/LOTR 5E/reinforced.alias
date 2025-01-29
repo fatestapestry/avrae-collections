@@ -1,0 +1,21 @@
+<drac2>
+# Load data and utilities
+rewards_data = load_yaml(get_gvar("017fc259-9575-410d-97b0-2bb753887655"))
+using(
+    common_utils="0c6d5bca-a15d-4e45-a08d-48cf51411088",
+    lotr_utils="bf283fd7-585d-4530-b0e2-9e03eb643a96"
+)
+
+# Set up variables
+ch = character()
+args = argparse(&ARGS&)
+
+# Add effect(s)
+return lotr_utils.add_ac_bonus_effect(
+    ch,
+    args.get('t'),
+    'reinforced',
+    rewards_data,
+    lotr_utils.FOOTER_REINFORCED
+)
+</drac2>
