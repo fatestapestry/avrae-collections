@@ -52,5 +52,25 @@
       "dc": 15,
       "description": "Adventurers gain Shadow when they fall victim to the dreadful spells of the Enemy and his minions."
     }
+  },
+  "conditions": {
+    "anguished": {
+      "field_title": "Anguished",
+      "field_text": "An anguished character is miserable, and has disadvantage on all ability checks, attack rolls, and saving throws. There is only one way to recover from such depths of desperation—the Player-hero must experience a bout of madness.",
+      "command_data": {
+        "effect_name": "Anguished",
+        "button_label": "Remove Anguished",
+        "button_verb": "recovers from their anguish through madness",
+        "passive_effects": {
+          "attack_advantage": -1,
+          "save_dis": ["all"],
+          "check_dis": ["all"]
+        }
+      }
+    },
+    "miserable": {
+      "field_title": "Miserable",
+      "field_text": "A miserable character decreases the Fellowship rating of the Company by 1. In addition, if a miserable character's d20 roll is a 1 or 2, the roll is a failure regardless of the DC for any ability check, attack roll, or saving throw."
+    }
   }
 }
