@@ -1,0 +1,93 @@
+<drac2>
+# Load data
+shadow_data = load_json(get_gvar("4160bb62-8791-4239-941c-b7805e5351b6"))
+using(
+    common_utils="0c6d5bca-a15d-4e45-a08d-48cf51411088",
+    lotr_utils="bf283fd7-585d-4530-b0e2-9e03eb643a96"
+)
+
+# Set up variables
+ch = character()
+args = argparse(&ARGS&)
+c = combat()
+targets = args.get('t') if args.get('t') else [ch.name]
+
+# Validate combat
+if not c:
+    return common_utils.embed_msg(
+        title="Error",
+        desc="Effects can only be added to a target in combat.",
+        footer=lotr_utils.FOOTER_ANGUISHED
+    )
+
+# Get command data
+cmd_data = shadow_data['conditions']['anguished']['command_data']
+
+# Process targets
+desc = []
+successful_targets = []
+
+for target in targets:
+    # Get target combatant
+    combatant = c.get_combatant(target)
+    if not combatant:
+        desc.append(f"Error: Target `{target}` not found in combat.")
+        continue
+
+    # Check existing effect
+    if combatant.get_effect(cmd_data['effect_name']):
+        desc.append(f"{target} is already {cmd_data['effect_name']}.")
+        continue
+
+    # Create effect
+    effect = combatant.add_effect(
+        cmd_data['effect_name'],
+        passive_effects=cmd_data['passive_effects'],
+        buttons=[{
+            "label": cmd_data['button_label'],
+            "verb": cmd_data['button_verb'],
+            "style": 4,
+            "automation": [{"type": "remove_ieffect"}]
+        }],
+        desc=shadow_data['conditions']['anguished']['field_text']
+    )
+
+    desc.append(f"Added effect `{cmd_data['effect_name']}` to {target}")
+    successful_targets.append(target)
+
+# Return output
+desc = []
+for target in targets:
+    combatant = c.get_combatant(target)
+    if not combatant:
+        desc.extend([
+            f"**{target}**",
+            f"Error: Target not found in combat"
+        ])
+        continue
+
+    # Use combatant.name instead of target string
+    desc.append(f"**{combatant.name}**")
+    if target in successful_targets:
+        desc.append(f"Added effect `{cmd_data['effect_name']}` to {combatant.name}")
+    else:
+        if combatant.get_effect(cmd_data['effect_name']):
+            desc.append(f"Already has the {cmd_data['effect_name']} effect")
+        else:
+            desc.append(f"Error: Unknown error occurred")
+
+if successful_targets:
+    # Get actual names from successful combatants
+    success_names = [c.get_combatant(t).name for t in successful_targets]
+    targets_str = ", ".join(success_names)
+    title = f"{targets_str} become{'s' if len(successful_targets) == 1 else ''} Anguished!"
+else:
+    title = "No effects added!"
+
+return common_utils.embed_msg(
+    title=title,
+    desc="\n".join(desc),
+    footer=lotr_utils.FOOTER_ANGUISHED
+)
+
+</drac2>
