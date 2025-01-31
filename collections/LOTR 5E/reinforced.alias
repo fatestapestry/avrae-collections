@@ -1,6 +1,6 @@
 <drac2>
-# Load data and utilities
-rewards_data = load_yaml(get_gvar("017fc259-9575-410d-97b0-2bb753887655"))
+# Load data
+rewards_data = load_json(get_gvar("017fc259-9575-410d-97b0-2bb753887655"))
 using(
     common_utils="0c6d5bca-a15d-4e45-a08d-48cf51411088",
     lotr_utils="bf283fd7-585d-4530-b0e2-9e03eb643a96"
@@ -9,13 +9,57 @@ using(
 # Set up variables
 ch = character()
 args = argparse(&ARGS&)
+c = combat()
+targets = args.get('t') if args.get('t') else [ch.name]
 
-# Add effect(s)
-return lotr_utils.add_ac_bonus_effect(
-    ch,
-    args.get('t'),
-    'reinforced',
-    rewards_data,
-    lotr_utils.FOOTER_REINFORCED
+# Validate
+common_utils.is_in_combat(c, lotr_utils.FOOTER_REINFORCED)
+common_utils.validate_targets(c, targets, lotr_utils.FOOTER_REINFORCED)
+
+
+# Get command data
+cmd_data = rewards_data['reinforced']['command_data']
+effect_name = f"{cmd_data['effect_name']} (+{cmd_data['bonus']} AC)"
+effect_config = {
+    "passive_effects": {"ac_bonus": cmd_data['bonus']},
+    "buttons": [{
+        "label": cmd_data['button_label'],
+        "verb": cmd_data['button_verb'],
+        "style": 4,
+        "automation": [{"type": "remove_ieffect"}]
+    }],
+    "desc": rewards_data['reinforced']['field_text']
+}
+
+# Apply effects and get results
+try:
+    results = common_utils.apply_effect_to_targets(c, targets, effect_name, effect_config)
+except Exception as e:
+    return common_utils.embed_msg(
+        title="Error",
+        desc=str(e),
+        footer=lotr_utils.FOOTER_REINFORCED
+    )
+
+# Build output
+desc = []
+fields = [f"{rewards_data['reinforced']['field_title']}|{rewards_data['reinforced']['field_text']}"]
+success_targets = []
+for target_name, message in results:
+    desc.extend([f"**{target_name}**", message])
+    if "Added effect" in message:
+        success_targets.append(target_name)
+
+if success_targets:
+    targets_str = ", ".join(success_targets)
+    title = f"{targets_str} is protected by Reinforced Shield!"
+else:
+    title = "No effects added!"
+
+return common_utils.embed_msg(
+    title=title,
+    desc="\n".join(desc),
+    fields=fields,
+    footer=lotr_utils.FOOTER_REINFORCED
 )
 </drac2>
