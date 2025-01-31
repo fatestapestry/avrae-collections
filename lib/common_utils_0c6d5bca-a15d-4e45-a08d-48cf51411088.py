@@ -62,3 +62,63 @@ def embed_msg(title, desc=None, footer=None, field=None, fields=None):
            f'-color <color> ' \
            f'-thumb <image> ' \
            f'-footer "{footer if footer else ""}"'
+
+
+def is_in_combat(combat, footer=None):
+    """Directly returns embed on failure"""
+    if not combat:
+        return embed_msg(
+            title="Error",
+            desc="Not in combat.",
+            footer=footer
+        )
+
+
+def validate_targets(combat, targets, footer=None):
+    """Directly returns embed on failure"""
+    for target in targets:
+        if not combat.get_combatant(target):
+            return embed_msg(
+                title="Error",
+                desc=f"Error: Target `{target}` not found in combat.",
+                footer=footer
+            )
+
+
+def apply_effect_to_targets(combat, targets, effect_name, effect_config):
+    """
+    Apply an effect to multiple targets.
+
+    Args:
+        combat: The combat instance
+        targets: List of target names
+        effect_name: Name of the effect
+        effect_config: Dict containing effect configuration matching API spec
+            (passive_effects, buttons, desc, etc.)
+
+    Returns:
+        List of tuples (target_name, description) where description indicates:
+        - Effect was added ("Added effect...")
+        - Effect already exists ("Already has effect...")
+
+    Raises:
+        ValueError: If effect_config is invalid
+        RuntimeError: Any other failure in effect application, including effect data
+    """
+    results = []
+
+    for target in targets:
+        combatant = combat.get_combatant(target)
+
+        # Check if effect exists
+        if combatant.get_effect(effect_name):
+            results.append((combatant.name, f"Already has the `{effect_name}` effect"))
+            continue
+
+        try:
+            effect = combatant.add_effect(effect_name, **effect_config)
+            results.append((combatant.name, f"Added effect `{effect_name}`"))
+        except Exception as e:
+            raise RuntimeError(f"Failed to apply effect to {combatant.name}: {str(e)}\nEffect config: {effect_config}")
+
+    return results

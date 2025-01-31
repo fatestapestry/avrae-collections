@@ -1,7 +1,7 @@
 {
   "close-fitting": {
     "field_title": "Close-fitting (Armour)",
-    "field_text": "A skilful smith has made this armour more difficult to overcome with critical hits. While you're wearing it, any critical hit against you becomes a normal hit."
+    "field_text": "A skillful smith has made this armour more difficult to overcome with critical hits. While you're wearing it, any critical hit against you becomes a normal hit."
   },
   "cunning-make": {
     "field_title": "Cunning-make (Armour)",
@@ -10,7 +10,7 @@
       "bonus": 1,
       "effect_name": "Cunning-make Armor",
       "button_label": "Remove Armor Bonus",
-      "button_verb": "removes their armor enhancement. AC bonus removed"
+      "button_verb": "removes their Cunning-make Armor enhancement."
     }
   },
   "fell": {
@@ -32,7 +32,7 @@
       "bonus": 1,
       "effect_name": "Reinforced Shield",
       "button_label": "Remove Shield Bonus",
-      "button_verb": "doffs their Reinforced Shield. AC bonus removed"
+      "button_verb": "doffs their Reinforced Shield."
     }
   }
 }
