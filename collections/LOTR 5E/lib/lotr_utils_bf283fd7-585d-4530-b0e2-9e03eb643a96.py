@@ -1,17 +1,20 @@
 # lotr 5e metadata gvars
-METADATA_SHADOW = "4160bb62-8791-4239-941c-b7805e5351b6"
 METADATA_CHECK = "856f9b7a-c299-4052-9e7f-5fcba2f919be"
+METADATA_SHADOW = "4160bb62-8791-4239-941c-b7805e5351b6"
 METADATA_JOURNEY = "a6e3208c-b3c8-408b-b310-43e3daab5332"
+METADATA_FATIGUE = "27c1e5d0-26aa-485f-939a-848c826e8386"
+METADATA_REWARDS = "017fc259-9575-410d-97b0-2bb753887655"
 
-# utils gvars
+# lib utils and metadata gvars
 UTILS_COMMON = "0c6d5bca-a15d-4e45-a08d-48cf51411088"
+METADATA_WEAPON = "c055d535-e757-4730-b70c-6114fdc46614"
 
-# Status Constants
+# Statuses
 STATUS_NORMAL = "Normal"
 STATUS_ANGUISHED = "Anguished"
 STATUS_MISERABLE = "Miserable"
 
-# Counter Names
+# Counters
 CC_SHADOW_POINTS = "Shadow Points"
 CC_SHADOW_SCARS = "Shadow Scars"
 
