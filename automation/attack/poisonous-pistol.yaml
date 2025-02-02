@@ -1,0 +1,19 @@
+- _v: 2
+  name: Poisonous Pistol
+  automation:
+    - type: target
+      target: all
+      effects:
+        - type: attack
+          hit:
+            - type: damage
+              damage: 1d10[piercing]
+              overheal: false
+            - type: damage
+              damage: 2d10[poison]
+              overheal: false
+          miss: []
+          attackBonus: proficiencyBonus + dexterityMod
+  verb: fires
+  phrase: "Range 30/90 ft., one target. Hit: 9 (1d10 + 4) piercing damage plus 11
+    (2d10) poison damage."
