@@ -35,22 +35,22 @@
     "dread": {
       "save": "charisma",
       "dc": 15,
-      "description": "Terror is a spear in the hand of the Enemy."
+      "description": "Adventurers may resist the effects of Dread with a Charisma saving throw."
     },
     "greed": {
       "save": "wisdom",
       "dc": 15,
-      "description": "Heroes risk being corrupted by their own desire whenever they put their hands on gold and precious objects that were tainted by laying in the dark for a long time."
+      "description": "Adventurers may resist the effects of Greed with a Wisdom saving throw."
     },
-    "misdeed": {
+    "misdeeds": {
       "save": "wisdom",
       "dc": 15,
-      "description": "A special instance of Shadow gain that cannot be reduced or cancelled by a saving throw of any kind."
+      "description": "A Misdeed is a special instance of Shadow gain, as it cannot be reduced or cancelled by a saving throw of any kind."
     },
     "sorcery": {
       "save": "intelligence",
       "dc": 15,
-      "description": "Adventurers gain Shadow when they fall victim to the dreadful spells of the Enemy and his minions."
+      "description": "Adventurers may resist the effects of Sorcery with an Intelligence saving throw."
     }
   },
   "conditions": {
