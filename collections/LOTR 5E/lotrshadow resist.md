@@ -10,26 +10,24 @@ Attempts to resist a source of Shadow, representing a test of willpower against 
 
 - Optional arguments:
   - `adv|dis` - Specifies advantage or disadvantage on the saving throw.
-  - `-ability <name>` - Specifies the ability used for the saving throw (e.g., `wisdom`, `charisma`). Defaults to the source's recommended ability.
-  - `-b` - Includes a custom bonus to the saving throw.
+  - `-ability <name>` - Specifies the ability used for the saving throw (e.g., `charisma`, `wisdom`, `intelligence`). Defaults to the source's recommended ability.
+  - `-b <value>` - Adds a custom bonus to the saving throw.
   - `-dc <value>` - Specifies the saving throw difficulty class (DC). Defaults to the source's recommended DC.
   - `miserable` - Treats the character as Miserable, automatically failing on a roll of 2 or less.
 
 ## Examples
-- Resist Shadow from "Corruption" with a base amount of 3:  
-  `!lotrshadow resist Corruption 3`
-- Resist Shadow from "Despair" with a custom DC of 15:  
-  `!lotrshadow resist Despair 4 -dc 15`
-- Resist with a specified ability (e.g., Wisdom):  
-  `!lotrshadow resist Fear 2 -ability wisdom`
-- Resist with advantage:  
-  `!lotrshadow resist Threat 5 adv`
-- Resist with disadvantage:  
-  `!lotrshadow resist Doubt 2 dis`
-- Resist while Miserable:  
-  `!lotrshadow resist Threat 5 miserable`
-- Resist with a custom bonus of +3:  
-  `!lotrshadow resist Influence 4 -b 3`
+- Resist Shadow from Dread with a base amount of 3:  
+  `!lotrshadow resist dread 3`
+- Resist Shadow from Greed with a custom DC of 10:  
+  `!lotrshadow resist greed 3 -dc 10`
+- Resist Shadow from Misdeeds with the Wisdom ability:  
+  `!lotrshadow resist misdeeds 3 -ability wisdom`
+- Resist Shadow from Sorcery with advantage:  
+  `!lotrshadow resist sorcery 3 adv`
+- Resist Shadow from Dread while Miserable:  
+  `!lotrshadow resist dread 3 miserable`
+- Resist Shadow from Greed with a custom bonus of +3:  
+  `!lotrshadow resist greed 3 -b 3`
 
 ## Notes
 - Determines the amount of Shadow resisted based on the result of a saving throw:
