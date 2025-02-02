@@ -5,15 +5,15 @@ Modifies a character's Shadow Points or Shadow Scars in the "Lord of the Rings" 
 
 ## Arguments
 - Positional arguments:
-  - `<amt>` - The amount to adjust the counter by. Can be a positive, negative, or absolute value (e.g., `1`, `+2`, `-3`).
+  - `<amt>` - The amount to adjust the counter by. Can be a positive, negative, or absolute value (e.g., `+1`, `-2`, `3`).
 - Optional arguments:
   - `scar` - Applies the adjustment to Shadow Scars instead of Shadow Points.
 
 ## Examples
-- Adjust Shadow Points by 3:  
-  `!lotrshadow 3`
-- Increment Shadow Scars by 1:  
-  `!lotrshadow +1 scar`
+- Increment Shadow Points by 3:  
+  `!lotrshadow +3`
+- Decrement Shadow Scars by 1:  
+  `!lotrshadow -1 scar`
 - Set Shadow Points to 5:  
   `!lotrshadow 5`
 
