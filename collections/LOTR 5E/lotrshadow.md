@@ -1,4 +1,4 @@
-`!lotrshadow <amt> [args]`
+`!lotrshadow <amt> [scar]`
 
 ## Description
 Modifies a character's Shadow Points or Shadow Scars in the "Lord of the Rings" system. Supports both direct and incremental changes, maintaining valid limits automatically.

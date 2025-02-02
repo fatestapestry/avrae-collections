@@ -20,6 +20,7 @@ The following LOTR 5E features are supported:
 - Shadow Points [A]
 - Flaws [S]
 - Marvellous Artefacts and Wondrous Items [S*]
+- Conditions (Miserable* and Anguished) [A, S, C]
 
 `!level` and `!setrace` support is available with:
 
@@ -39,7 +40,7 @@ The following LOTR 5E features are supported:
 
 - Crafts [A, C]
 - Calling Automation [I, C]
-- Conditions (Miserable and Anguished) [A, S, C]
+
 
 ## Support Me
 
