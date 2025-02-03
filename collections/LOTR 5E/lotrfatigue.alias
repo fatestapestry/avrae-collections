@@ -105,7 +105,7 @@ desc_lines = [
     "**Success!**" if success else "**Failure!**"
 ]
 
-title = f"{ch.name} makes a Fatigue saving throw!"
+title = f"{ch.name} makes a Fatigue (Constitution) saving throw!"
 desc = '\n'.join(desc_lines)
 if events:
     fields.extend([f"{e['field_title']}|{e['field_text']}" for e in events])
