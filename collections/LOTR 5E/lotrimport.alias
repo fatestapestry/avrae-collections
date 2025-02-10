@@ -1,8 +1,6 @@
 <drac2>
-# Parse args and get character
-args = argparse(&ARGS&)
-target = args.last('t')
-ch = combat().get_combatant(target).character if target else character()
+# Get character
+ch = character()
 if not ch:
     err("No valid character found")
 
