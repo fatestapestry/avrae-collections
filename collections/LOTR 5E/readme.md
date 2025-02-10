@@ -22,9 +22,9 @@ To set up a player-hero in Avrae, please use `-cc`:
 ## Recommended
 
 It is recommended that the workshop is used in conjunction with:
-- `!hide`- [**Hiding in 2024**](https://avrae.io/dashboard/workshop/6714f1721da5c606863358b9)
+- `!hide` - [**Hiding in 2024**](https://avrae.io/dashboard/workshop/6714f1721da5c606863358b9)
 - `!tool` - [**Tool Check**](https://avrae.io/dashboard/workshop/630b0e39b85ea38890666c08)
-- `!hd `- [**Hit Dice**](https://avrae.io/dashboard/workshop/5f9b7e7b14a62cb7e811c1bd)
+- `!hd` - [**Hit Dice**](https://avrae.io/dashboard/workshop/5f9b7e7b14a62cb7e811c1bd)
 
 ## Feature Support
 
