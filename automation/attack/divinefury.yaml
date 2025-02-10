@@ -1,0 +1,38 @@
+- _v: 2
+  name: Divine Fury (Radiant)
+  automation:
+    - type: target
+      target: all
+      effects:
+        - type: damage
+          damage: (1d6 + {{floor(caster.levels.get('Barbarian')/2)}})[radiant]
+          fixedValue: true
+    - type: text
+      text: Starting when you choose this path at 3rd level, you can channel divine
+        fury into your weapon strikes. While you're raging, the first creature
+        you hit on each of your turns with a weapon attack takes extra damage
+        equal to 1d6 + half your Barbarian level. The extra damage is necrotic
+        or radiant; you choose the type of damage when you gain this feature.
+      title: Divine Fury
+  verb: channels
+  proper: true
+  activation_type: 2
+- _v: 2
+  name: Divine Fury (Necrotic)
+  automation:
+    - type: target
+      target: all
+      effects:
+        - type: damage
+          damage: (1d6 + {{floor(caster.levels.get('Barbarian')/2)}})[necrotic]
+          fixedValue: true
+    - type: text
+      text: Starting when you choose this path at 3rd level, you can channel divine
+        fury into your weapon strikes. While you're raging, the first creature
+        you hit on each of your turns with a weapon attack takes extra damage
+        equal to 1d6 + half your Barbarian level. The extra damage is necrotic
+        or radiant; you choose the type of damage when you gain this feature.
+      title: Divine Fury
+  verb: channels
+  proper: true
+  activation_type: 2

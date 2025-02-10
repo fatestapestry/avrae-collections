@@ -1,0 +1,79 @@
+- _v: 2
+  name: Bright Blade (CHA Attack Bonus)
+  automation:
+    - type: target
+      target: self
+      effects:
+        - type: ieffect2
+          name: Bright Blade (Attack Bonus)
+          duration: "10"
+          effects:
+            to_hit_bonus: "{{1 if charismaMod < 1 else charismaMod}}[bright blade]"
+          attacks: []
+          buttons:
+            - automation:
+                - type: remove_ieffect
+              label: Remove Bright Blade
+              verb: removes Bright Blade
+              style: "4"
+          end: false
+          conc: false
+          stacking: false
+          target_self: false
+          tick_on_caster: false
+    - type: text
+      text: >-
+        Starting at 3rd level, as a bonus action, you can imbue a melee weapon
+        that you are holding with your bravery. For 1 minute, you add your
+        Charisma modifier to attack rolls made with that weapon (with a minimum
+        bonus of +1). For the duration of the effect, when you hit a creature,
+        the next attack roll against the target made by an attacker other than
+        you has advantage if the attack is made before the start of your next
+        turn. If you are no longer holding or carrying this weapon, or if you
+        fall unconscious, this effect ends.
+
+
+        You must then finish a short or long rest to use this feature again.
+      title: Bright Blade
+    - type: counter
+      counter: Bright Blade
+      amount: "1"
+      allowOverflow: false
+      errorBehaviour: raise
+  verb: imbues a melee weapon with
+  activation_type: 3
+- _v: 2
+  name: Bright Blade (Apply Hit Advantage)
+  automation:
+    - type: target
+      target: all
+      effects:
+        - type: ieffect2
+          name: Bright Blade (Adv. on next Attack)
+          duration: "1"
+          buttons:
+            - automation:
+                - type: remove_ieffect
+              label: Bright Blade Adv. Used
+              verb: has their Bright Blade Advantage utilized
+              style: "4"
+          desc: When you hit a creature, the next attack roll against the target made by
+            an attacker other than you has advantage if the attack is made
+            before the start of your next turn. If you are no longer holding or
+            carrying this weapon, or if you fall unconscious, this effect ends.
+    - type: text
+      text: >-
+        Starting at 3rd level, as a bonus action, you can imbue a melee weapon
+        that you are holding with your bravery. For 1 minute, you add your
+        Charisma modifier to attack rolls made with that weapon (with a minimum
+        bonus of +1). For the duration of the effect, when you hit a creature,
+        the next attack roll against the target made by an attacker other than
+        you has advantage if the attack is made before the start of your next
+        turn. If you are no longer holding or carrying this weapon, or if you
+        fall unconscious, this effect ends.
+
+
+        You must then finish a short or long rest to use this feature again.
+  verb: provides advantage from
+  proper: false
+  activation_type: 2

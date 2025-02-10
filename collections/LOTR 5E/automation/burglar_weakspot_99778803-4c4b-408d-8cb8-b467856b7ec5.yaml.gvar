@@ -1,0 +1,136 @@
+- name: Weak Spot (Perception)
+  automation:
+    - type: target
+      target: all
+      effects:
+        - type: check
+          ability: stealth
+          contestAbility: perception
+          fail:
+            - type: ieffect2
+              name: Weak Spot Found
+              duration: "10"
+              save_as: weakspot
+              target_self: true
+              buttons:
+                - label: End Weak Spot Advantage
+                  automation:
+                    - type: remove_ieffect
+                  verb: ends Weak Spot Advantage
+                  style: "4"
+              desc: If you win the contest, you can use your Sneak Attack against that target
+                even if you don’t have advantage on the attack roll, but not if
+                you have disadvantage on it. This benefit lasts for 1 minute or
+                until you successfully use this feature against a different
+                target.
+            - type: ieffect2
+              name: Weak Spot
+              duration: "10"
+              effects: null
+              attacks: []
+              buttons:
+                - label: Remove Weak-Spot Advantage
+                  automation:
+                    - type: remove_ieffect
+                  verb: removes Weak-Spot Advantage
+                  style: "4"
+                  defaultDC: null
+                  defaultAttackBonus: null
+                  defaultCastingMod: null
+              end: null
+              conc: null
+              desc: If you win the contest, you can use your Sneak Attack against that target
+                even if you don’t have advantage on the attack roll, but not if
+                you have disadvantage on it. This benefit lasts for 1 minute or
+                until you successfully use this feature against a different
+                target.
+              stacking: null
+              save_as: null
+              parent: weakspot
+              target_self: null
+              tick_on_caster: null
+          contestTie: success
+          success: []
+    - type: text
+      text: >-
+        Also at 3rd level, you can use a bonus action to make an Intelligence
+        (Investigation) or Wisdom (Perception) check against a creature within
+        30 feet of you that you can see, contested by the target’s Dexterity
+        (Stealth) check. If you win the contest, you can use your Sneak Attack
+        against that target even if you don’t have advantage on the attack roll,
+        but not if you have disadvantage on it.
+
+
+        This benefit lasts for 1 minute or until you successfully use this feature against a different target.
+      title: Weak Spot
+  _v: 2
+  verb: finds
+  activation_type: 3
+- name: Weak Spot (Intelligence)
+  automation:
+    - type: target
+      target: all
+      effects:
+        - type: check
+          ability: stealth
+          contestAbility: intelligence
+          fail:
+            - type: ieffect2
+              name: Weak Spot Found
+              duration: "10"
+              save_as: weakspot
+              target_self: true
+              buttons:
+                - label: End Weak Spot Advantage
+                  automation:
+                    - type: remove_ieffect
+                  verb: ends Weak Spot Advantage
+                  style: "4"
+              desc: If you win the contest, you can use your Sneak Attack against that target
+                even if you don’t have advantage on the attack roll, but not if
+                you have disadvantage on it. This benefit lasts for 1 minute or
+                until you successfully use this feature against a different
+                target.
+            - type: ieffect2
+              name: Weak Spot
+              duration: "10"
+              effects: null
+              attacks: []
+              buttons:
+                - label: Remove Weak-Spot Advantage
+                  automation:
+                    - type: remove_ieffect
+                  verb: removes Weak-Spot Advantage
+                  style: "4"
+                  defaultDC: null
+                  defaultAttackBonus: null
+                  defaultCastingMod: null
+              end: null
+              conc: null
+              desc: If you win the contest, you can use your Sneak Attack against that target
+                even if you don’t have advantage on the attack roll, but not if
+                you have disadvantage on it. This benefit lasts for 1 minute or
+                until you successfully use this feature against a different
+                target.
+              stacking: null
+              save_as: null
+              parent: weakspot
+              target_self: null
+              tick_on_caster: null
+          contestTie: success
+          success: []
+    - type: text
+      text: >-
+        Also at 3rd level, you can use a bonus action to make an Intelligence
+        (Investigation) or Wisdom (Perception) check against a creature within
+        30 feet of you that you can see, contested by the target’s Dexterity
+        (Stealth) check. If you win the contest, you can use your Sneak Attack
+        against that target even if you don’t have advantage on the attack roll,
+        but not if you have disadvantage on it.
+
+
+        This benefit lasts for 1 minute or until you successfully use this feature against a different target.
+      title: Weak Spot
+  _v: 2
+  verb: finds
+  activation_type: 3

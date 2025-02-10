@@ -1,0 +1,34 @@
+<drac2>
+SNIPPET = 'loredie'
+EFFECT_NAME = "Lore Die from"
+EFFECT_IDX = 4
+LORE_DIE = ['none', '1d6', '1d8', '1d10']
+
+usage = f"Usage:`-loredie <{'|'.join(LORE_DIE)}>`."
+args = argparse(&ARGS&)
+die = args.last(SNIPPET).lower()
+if die in ['true', 'none']:
+    die = None
+if die and die not in LORE_DIE:
+    err(f"Invalid die: `{die}`.\n{usage}")
+
+scholar = "a Scholar"
+c = combat()
+# in combat
+if c and not die:
+    target = c.current if not c.me else c.me
+    effect = target.get_effect(EFFECT_NAME)
+    if effect:
+        die = effect.name.split()[0]
+    if die:
+        scholar = " ".join(effect.name.split()[EFFECT_IDX:])
+        # target.remove_effect(effect.name)
+        return f"""-b "{die}[lore die]" -phrase "{name} draws inspiration from {scholar}'s Rhymes of Lore!" """
+    return err(f"Could not parse Lore Die. Please specify die size instead.\n{usage}")
+# out of combat
+elif not die:
+    return err(f"Must specify die size when not in combat.\n{usage}")
+# build snippet
+return f"""-b "{die}[lore die]" -phrase "{name} draws inspiration from {scholar}'s Rhymes of Lore!" """
+</drac2>
+-f "Rhymes of Lore|Rhymes of Lore are short verses created by many cultures to help them remember significant facts from ancient history which might otherwise be lost. You can use a bonus action on your turn to choose one creature (including yourself) within 30 feet of you who can hear and understand you."

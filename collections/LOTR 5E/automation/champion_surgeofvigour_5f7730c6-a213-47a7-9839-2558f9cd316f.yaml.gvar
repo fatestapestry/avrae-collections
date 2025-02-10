@@ -1,0 +1,42 @@
+- name: Surge of Vigour (Attack, Dash, Disengage, or Dodge)
+  automation:
+    - type: text
+      text: You have a limited well of stamina that you can draw on to protect
+        yourself from harm, or to push yourself beyond your normal limits for a
+        moment. You can use a bonus action to either take the Attack, Dash,
+        Disengage, or Dodge action, or to regain hit points equal to 1d8 + your
+        Champion level + your Constitution modifier. Once you use this feature,
+        you must finish a short or long rest before you can use it again.
+      title: Surge of Vigour
+    - type: counter
+      counter: Surge of Vigour
+      amount: "1"
+      errorBehaviour: raise
+  _v: 2
+  proper: false
+  verb: pushes themselves with
+  activation_type: 3
+- name: Surge of Vigour (Regain HP)
+  automation:
+    - type: text
+      text: You have a limited well of stamina that you can draw on to protect
+        yourself from harm, or to push yourself beyond your normal limits for a
+        moment. You can use a bonus action to either take the Attack, Dash,
+        Disengage, or Dodge action, or to regain hit points equal to 1d8 + your
+        Champion level + your Constitution modifier. Once you use this feature,
+        you must finish a short or long rest before you can use it again.
+      title: Surge of Vigour
+    - type: target
+      target: self
+      effects:
+        - type: damage
+          damage: -(1d8 + {{ChampionLevel + constitutionMod}})
+    - type: counter
+      counter: Surge of Vigour
+      amount: "1"
+      fixedValue: true
+      errorBehaviour: raise
+  _v: 2
+  proper: false
+  verb: pushes themselves with
+  activation_type: 3

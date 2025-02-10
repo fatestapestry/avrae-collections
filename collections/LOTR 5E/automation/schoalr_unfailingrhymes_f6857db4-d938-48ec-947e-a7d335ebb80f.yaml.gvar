@@ -1,0 +1,17 @@
+- name: Unfailing Rhymes
+  automation:
+    - type: counter
+      counter: Rhymes of Lore
+      amount: "-1"
+      errorBehaviour: raise
+      allowOverflow: true
+    - type: text
+      text: At 10th level, your Rhymes of Lore mastery is such that those who listen
+        to them are bound to succeed. When a creature adds one of your Lore dice
+        to its ability check, attack roll, or saving throw and the roll fails,
+        the creature can keep the Lore die.
+      title: Unfailing Rhymes
+  _v: 2
+  proper: true
+  verb: adds back a lore dice with
+  activation_type: 2

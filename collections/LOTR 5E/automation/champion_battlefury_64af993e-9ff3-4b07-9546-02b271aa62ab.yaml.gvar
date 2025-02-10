@@ -1,0 +1,43 @@
+- name: Battle-Fury
+  automation:
+    - type: text
+      text: Starting at 3rd level, you can throw aside all concern for defence to
+        attack with fierce desperation. When you make your first attack on your
+        turn, you can decide to attack recklessly. Doing so gives you advantage
+        on melee weapon attack rolls using Strength, a bonus to damage rolls
+        equal to half your proficiency bonus (rounded down), and resistance to
+        bludgeoning, piercing, and slashing damage until the start of your next
+        turn, but attack rolls against you have advantage until your next turn.
+      title: Battle-Fury
+    - type: target
+      target: self
+      effects:
+        - type: ieffect2
+          name: Battle-Fury
+          effects:
+            resistances:
+              - bludgeoning
+              - piercing
+              - slashing
+            damage_bonus: "{{floor(proficiencyBonus/2)}}"
+          duration: "1"
+          target_self: true
+          desc: Bonus to damage rolls equal to half your proficiency bonus (rounded down),
+            and resistance to bludgeoning, piercing, and slashing damage until
+            the start of your next turn, but attack rolls against you have
+            advantage until your next turn.
+        - type: condition
+          condition: choice.lower() == "str" or choice.lower() == "strength"
+          onTrue:
+            - type: ieffect2
+              name: Battle-Fury Advantage
+              duration: "1"
+              effects:
+                attack_advantage: "1"
+              target_self: true
+              desc: Advantage on melee weapon attack rolls using Strength
+          onFalse: []
+  _v: 2
+  proper: true
+  verb: attacks recklessly with
+  activation_type: 2

@@ -1,0 +1,1 @@
+**Foe-Hammer.**  Your tenacity can wear down the most potent foes. When you hit a creature with a weapon attack, you can roll one additional weapon damage die on the damage roll if it’s below its hit points maximum. You can deal this extra damage only once per turn.

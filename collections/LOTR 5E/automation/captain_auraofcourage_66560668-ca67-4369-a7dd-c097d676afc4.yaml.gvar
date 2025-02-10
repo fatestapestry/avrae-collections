@@ -1,0 +1,63 @@
+- name: Aura of Courage
+  automation:
+    - type: target
+      target: self
+      effects:
+        - type: ieffect2
+          name: Aura of Courage
+          duration: null
+          effects:
+            immunities:
+              - Frightened
+          attacks: []
+          buttons:
+            - label: End Aura of Courage
+              automation:
+                - type: remove_ieffect
+              verb: ends their Aura of Courage
+              style: "4"
+          end: false
+          conc: false
+          desc: At 10th level, you and friendly creatures within 10 feet of you cannot be
+            frightened while you are conscious (but can still accumulate Shadow
+            points from Dread).
+          stacking: false
+          save_as: aura_of_courage
+          parent: null
+          target_self: true
+          tick_on_caster: false
+    - type: target
+      target: all
+      effects:
+        - type: ieffect2
+          name: "{{name}}'s Aura of Courage"
+          duration: null
+          effects:
+            immunities:
+              - Frightened
+          attacks: []
+          buttons:
+            - label: Leave Aura of Courage (10ft)
+              automation:
+                - type: remove_ieffect
+              verb: leaves {{name}}'s Aura of Courage
+              style: "4"
+          end: false
+          conc: false
+          desc: At 10th level, you and friendly creatures within 10 feet of you cannot be
+            frightened while you are conscious (but can still accumulate Shadow
+            points from Dread).
+          stacking: false
+          save_as: null
+          parent: aura_of_courage
+          target_self: false
+          tick_on_caster: false
+    - type: text
+      text: At 10th level, you and friendly creatures within 10 feet of you cannot be
+        frightened while you are conscious (but can still accumulate Shadow
+        points from Dread).
+      title: Aura of Courage
+  _v: 2
+  proper: true
+  verb: extends their
+  activation_type: 2

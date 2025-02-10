@@ -1,0 +1,1 @@
+**Quiet-Footed.**  Starting at 7th level, you have advantage on Dexterity (Sleight of Hand) and Dexterity (Stealth) checks if you move no more than half your speed on the same turn.

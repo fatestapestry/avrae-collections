@@ -1,0 +1,26 @@
+- _v: 2
+  name: Leadership
+  automation:
+    - type: target
+      target: all
+      effects:
+        - type: temphp
+          amount: "{{CaptainLevel + charismaMod}}"
+    - type: text
+      text: You possess the ability to direct others to action—when under pressure,
+        other people naturally turn to you for guidance. As an action in combat,
+        choose a number of friendly creatures (which can include yourself)
+        within 30 feet of you who can see or hear you and who can understand
+        you, up to twice your proficiency bonus. Each creature can gain
+        temporary hit points equal to your Captain level + your Charisma
+        modifier. These temporary hit points last until they are depleted or the
+        creature finishes a short or long rest. You must then finish a short or
+        long rest to use this feature again.
+      title: Leadership
+    - type: counter
+      counter: Leadership
+      amount: "1"
+      errorBehaviour: raise
+  verb: demonstrates
+  proper: true
+  activation_type: 1

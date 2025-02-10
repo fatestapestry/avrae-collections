@@ -1,0 +1,1 @@
+**War-Hardened.** By 7th level, your instincts are so honed that you have advantage on initiative rolls, Strength checks, and Strength saving throws, and you cannot be surprised. To gain this benefit, you cannot be blinded, deafened, or incapacitated.

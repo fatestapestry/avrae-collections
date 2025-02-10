@@ -1,0 +1,20 @@
+- name: Rumour of the Earth
+  automation:
+    - type: counter
+      counter: Rumour of the Earth
+      amount: "1"
+      errorBehaviour: raise
+      fixedValue: true
+    - type: text
+      text: Beginning at 3rd level, you can use your action to focus your awareness on
+        the region around you. You can sense whether and which of your favoured
+        foes are present within a number of miles of you equal to your Wisdom
+        modifier (minimum of 1; double this value if you are in your warded
+        lands). This feature doesn’t reveal the creatures’ location or number.
+        Once you use this feature, you cannot use it again until you finish a
+        short or long rest.
+      title: Rumour of the Earth
+  _v: 2
+  proper: true
+  verb: uses
+  activation_type: 1

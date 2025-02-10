@@ -1,0 +1,71 @@
+- _v: 2
+  name: Words of Guard and Guiding (CHA)
+  automation:
+    - type: target
+      target: self
+      effects:
+        - type: check
+          ability: charisma
+    - type: text
+      text: Starting at 3rd level, you can use a bonus action to make a Charisma check
+        or take the Help action. In addition, whenever you use the Help action
+        to aid an ally in attacking a creature, the target of the attack can be
+        within 30 feet of you rather than within 5 feet of you, if the ally can
+        hear and understand you.
+      title: Words of Guard and Guiding
+  verb: uses
+  proper: true
+  activation_type: 3
+- _v: 2
+  name: Words of Guard and Guiding (Help)
+  automation:
+    - type: target
+      target: self
+      effects:
+        - type: ieffect2
+          name: Helping with Words of Guard and Guiding
+          buttons:
+            - automation:
+                - type: remove_ieffect
+              label: End Words of Guard and Guiding
+              verb: ends Words of Guard and Guiding
+              style: "4"
+          desc: Starting at 3rd level, you can use a bonus action to make a Charisma check
+            or take the Help action. In addition, whenever you use the Help
+            action to aid an ally in attacking a creature, the target of the
+            attack can be within 30 feet of you rather than within 5 feet of
+            you, if the ally can hear and understand you.
+          save_as: words_of_guard_and_guiding
+          target_self: true
+    - type: target
+      target: all
+      effects:
+        - type: ieffect2
+          name: Help from Words of Guard and Guiding
+          effects:
+            attack_advantage: "1"
+            check_adv:
+              - all
+          buttons:
+            - automation:
+                - type: remove_ieffect
+                  removeParent: if_no_children
+              label: Help used from Words of Guard and Guiding
+              verb: uses Words of Guard and Guiding
+              style: "4"
+          desc: Starting at 3rd level, you can use a bonus action to make a Charisma check
+            or take the Help action. In addition, whenever you use the Help
+            action to aid an ally in attacking a creature, the target of the
+            attack can be within 30 feet of you rather than within 5 feet of
+            you, if the ally can hear and understand you.
+          parent: words_of_guard_and_guiding
+    - type: text
+      text: Starting at 3rd level, you can use a bonus action to make a Charisma check
+        or take the Help action. In addition, whenever you use the Help action
+        to aid an ally in attacking a creature, the target of the attack can be
+        within 30 feet of you rather than within 5 feet of you, if the ally can
+        hear and understand you.
+      title: Words of Guard and Guiding
+  verb: helps with
+  proper: true
+  activation_type: 3

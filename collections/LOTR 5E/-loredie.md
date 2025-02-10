@@ -1,0 +1,5 @@
+**Rhymes of Lore.** Rhymes of Lore are short verses created by many cultures to help them remember significant facts from ancient history which might otherwise be lost. You can use a bonus action on your turn to choose one creature (including yourself) within 30 feet of you who can hear and understand you. That creature gains one Lore die, a d6.
+
+Once within the next minute, the creature can roll the die and add the number rolled to one ability check, attack roll, or saving throw it makes. The creature can wait until after seeing the roll before deciding to use the Lore die, but must decide before the Loremaster says whether the roll succeeds or fails. Once the Lore die is rolled, it is lost. A creature can have only one Lore die at a time.
+
+You can use this feature a number of times equal to your Intelligence modifier (minimum of once). You regain any expended uses when you finish a long rest.

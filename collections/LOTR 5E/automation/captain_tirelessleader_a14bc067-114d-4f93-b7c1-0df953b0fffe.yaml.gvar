@@ -1,0 +1,64 @@
+- name: Tireless Leader
+  automation:
+    - type: target
+      target: self
+      effects:
+        - type: ieffect2
+          name: Leads Tirelessly
+          duration: null
+          effects: null
+          attacks: []
+          buttons:
+            - label: Remove Tireless Leader
+              automation:
+                - type: remove_ieffect
+              verb: ends Tireless Leading
+              style: "4"
+              defaultDC: null
+              defaultAttackBonus: null
+              defaultCastingMod: null
+          end: false
+          conc: false
+          desc: null
+          stacking: false
+          save_as: leads_tirelessly
+          parent: null
+          target_self: true
+          tick_on_caster: false
+    - type: target
+      target: all
+      effects:
+        - type: ieffect2
+          name: Tirelessly Led (by {{name}})
+          duration: null
+          effects: null
+          attacks: []
+          buttons:
+            - label: Remove Tirelessly Led (by {{name}})
+              automation:
+                - type: remove_ieffect
+              verb: null
+              style: "4"
+              defaultDC: null
+              defaultAttackBonus: null
+              defaultCastingMod: null
+          end: false
+          conc: false
+          desc: Starting at 7th level, you and friendly creatures within 10 feet of you
+            suffer the effects of exhaustion as if it was one level lower (no
+            effects at level 1, disadvantage on ability checks at level 2, and
+            so on).
+          stacking: false
+          save_as: null
+          parent: leads_tirelessly
+          target_self: false
+          tick_on_caster: false
+    - type: text
+      text: Starting at 7th level, you and friendly creatures within 10 feet of you
+        suffer the effects of exhaustion as if it was one level lower (no
+        effects at level 1, disadvantage on ability checks at level 2, and so
+        on).
+      title: Tireless Leader
+  _v: 2
+  verb: acts as
+  activation_type: 2

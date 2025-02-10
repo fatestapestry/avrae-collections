@@ -1,0 +1,7 @@
+**Magical Success.** Enchanted artefacts, like magic rings and cloaks, and ancient spells and uncanny powers, can allow a Player-hero to exceed the possibilities of mere mortals.
+
+Possessing a talent or artefact capable of unlocking a magical success on an ability check grants a Player-hero automatic success, regardless of the DC and ignoring conditions.
+
+During contests, a Player-hero who obtains a magical success automatically wins the contest, unless the other participant also obtains a magical success.
+
+Whenever it is necessary to know the exact result of the roll, a Player-hero who achieves a magical success counts as having rolled a 20 on the d20.

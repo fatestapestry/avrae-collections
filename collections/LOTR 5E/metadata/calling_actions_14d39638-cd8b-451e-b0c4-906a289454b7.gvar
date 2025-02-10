@@ -1,0 +1,242 @@
+{
+  "Captain": [
+    {
+      "level": 1,
+      "subclass": null,
+      "name": "Leadership",
+      "gvar": "7e763d36-798b-41ce-a653-e9ff9c58ae2f"
+    },
+    {
+      "level": 6,
+      "subclass": null,
+      "name": "Aura of Valour",
+      "gvar": "b258daed-3bd7-45ce-975a-3ac5689ab772"
+    },
+    {
+      "level": 10,
+      "subclass": null,
+      "name": "Aura of Courage",
+      "gvar": "66560668-ca67-4369-a7dd-c097d676afc4"
+    },
+    {
+      "level": 3,
+      "subclass": "Chieftain",
+      "name": "Challenge", 
+      "gvar": "7568d4e3-e894-4179-b42a-b715a0ad33e5"
+    },
+    {
+      "level": 3,
+      "subclass": "Thane",
+      "name": "Bright Blade",
+      "gvar": "df68db94-1f6e-4822-b655-6e1c6c9dc7a1"
+    },
+    {
+      "level": 7,
+      "subclass": "Chieftain",
+      "name": "Tireless Leader",
+      "gvar": "a14bc067-114d-4f93-b7c1-0df953b0fffe"
+    }
+  ],
+  "Champion": [
+    {
+      "level": 3,
+      "subclass": null,
+      "name": "Surge of Vigour",
+      "gvar": "5f7730c6-a213-47a7-9839-2558f9cd316f"
+    },
+    {
+      "level": 3,
+      "subclass": "Sharp-Shooter",
+      "name": "Mighty Shot",
+      "gvar": null
+    },
+    {
+      "level": 7,
+      "subclass": "Sharp-Shooter", 
+      "name": "True Shot",
+      "gvar": null
+    },
+    {
+      "level": 3,
+      "subclass": "Slayer",
+      "name": "Battle-Fury",
+      "gvar": "64af993e-9ff3-4b07-9546-02b271aa62ab"
+    },
+    {
+      "level": 7,
+      "subclass": "Slayer",
+      "name": "War-Hardened",
+      "gvar": "a2f30731-32ee-4ca4-96ab-9c0c5cf6be77"
+    }
+  ],
+  "Messenger": [
+    {
+      "level": 2,
+      "subclass": null,
+      "name": "Sneak Attack",
+      "gvar": null
+    },
+    {
+      "level": 5,
+      "subclass": null,
+      "name": "Uncanny Dodge",
+      "gvar": "b9bb4811-9d12-4f40-80ab-79651db3fc78"
+    },
+    {
+      "level": 3,
+      "subclass": "Counsellor",
+      "name": "Words of Guard and Guiding",
+      "gvar": "62429279-f8fa-4fbe-9690-bc690ff0d484"
+    },
+    {
+      "level": 7,
+      "subclass": "Counsellor",
+      "name": "A Dangerous Gift",
+      "gvar": null
+    }
+  ],
+  "Scholar": [
+    {
+      "level": 1,
+      "subclass": null,
+      "name": "Rhymes of Lore",
+      "gvar": "8a857fcb-7b5c-41d4-a1b8-8e10d31223f0"
+    },
+    {
+      "level": 2,
+      "subclass": null,
+      "name": "Cunning Mind",
+      "gvar": "c44a2a66-5bb2-4912-b478-93ebe1525c02"
+    },
+    {
+      "level": 2,
+      "subclass": null,
+      "name": "Hands of a Healer",
+      "gvar": "a4a05d41-a1b5-44e5-b738-aa0ca6951bd8"
+    },
+    {
+      "level": 10,
+      "subclass": null,
+      "name": "Unfailing Rhymes",
+      "gvar": "f6857db4-d938-48ec-947e-a7d335ebb80f"
+    },
+    {
+      "level": 3,
+      "subclass": "Healer",
+      "name": "Wise Leechcraft",
+      "gvar": "997564a7-73c3-4e3b-a133-c208e4fa1566"
+    },
+    {
+      "level": 7,
+      "subclass": "Healer",
+      "name": "A Cure for Weariness",
+      "gvar": "08cfde13-2b8c-4131-8b07-9db8029929ce"
+    },
+    {
+      "level": 3,
+      "subclass": "Lore",
+      "name": "Lore-Master",
+      "gvar": null
+    },
+    {
+      "level": 7,
+      "subclass": "Lore",
+      "name": "Words of Command",
+      "gvar": "8c2a64f5-0307-40db-ab1b-3d29e3f32731"
+    }
+  ],
+  "Treasure Hunter": [
+    {
+      "level": 1,
+      "subclass": null,
+      "name": "Sneak Attack",
+      "gvar": null
+    },
+    {
+      "level": 2,
+      "subclass": null,
+      "name": "Cunning Action",
+      "gvar": null
+    },
+    {
+      "level": 5,
+      "subclass": null,
+      "name": "Uncanny Dodge",
+      "gvar": "b9bb4811-9d12-4f40-80ab-79651db3fc78"
+    },
+    {
+      "level": 5,
+      "subclass": null,
+      "name": "Reliable Talent",
+      "gvar": null
+    },
+    {
+      "level": 3,
+      "subclass": "Burglar",
+      "name": "Clever-Handed",
+      "gvar": "1acd2fdd-c0d1-4d15-a125-3a773277acf6"
+    },
+    {
+      "level": 3,
+      "subclass": "Burglar",
+      "name": "Tree-Climber",
+      "gvar": null
+    },
+    {
+      "level": 7,
+      "subclass": "Burglar",
+      "name": "Quiet-Footed",
+      "gvar": null
+    },
+    {
+      "level": 3,
+      "subclass": "Spy",
+      "name": "Cunning Eye",
+      "gvar": "bedc9c57-9c3f-48b5-9f61-66a176314fc6"
+    },
+    {
+      "level": 3,
+      "subclass": "Spy",
+      "name": "Weak Spot",
+      "gvar": "99778803-4c4b-408d-8cb8-b467856b7ec5"
+    },
+    {
+      "level": 7,
+      "subclass": "Spy",
+      "name": "Sharp-Eyed",
+      "gvar": null
+    }
+  ],
+  "Warden": [
+    {
+      "level": 3,
+      "subclass": null,
+      "name": "Rumour of the Earth",
+      "gvar": "64e150e9-01a4-4b20-81f7-31e9e3b80aa2"
+    },
+    {
+      "level": 3,
+      "subclass": "Forayer",
+      "name": "Ambusher",
+      "gvar": null
+    },
+    {
+      "level": 3,
+      "subclass": "Forayer",
+      "name": "Harrier",
+      "gvar": null
+    },
+    {
+      "level": 3,
+      "subclass": "Hunter",
+      "name": "Hunter's Prey",
+      "gvar": null
+    },
+    {
+      "level": 7,
+      "subclass": "Hunter",
+      "name": "Defensive Tactics",
+      "gvar": "a4433b7d-3d41-44a1-a274-a0c1d9b80de3"
+    }
+  ]
+}

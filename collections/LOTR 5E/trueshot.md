@@ -1,0 +1,1 @@
+**True Shot.** By 7th level, once per turn when you take the Attack action and attack with a ranged weapon, you can forgo one of your attacks. If you do so, the next hit you score with a ranged weapon before the end of your turn is a critical hit.

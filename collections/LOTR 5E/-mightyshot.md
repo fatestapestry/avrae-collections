@@ -1,0 +1,1 @@
+**Mighty Shot.** Starting at 3rd level, you have learned to put all your might into your shots. Before you make an attack with a ranged weapon, you can choose to roll the weapon’s damage die and subtract the number rolled from the attack roll. If the attack hits, you roll two additional weapon damage dice on the damage roll. You can deal this extra damage only once per turn.

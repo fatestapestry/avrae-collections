@@ -1,0 +1,103 @@
+- name: Cunning Mind (Help)
+  automation:
+    - type: target
+      target: self
+      effects:
+        - type: ieffect2
+          name: Helping with Cunning Mind
+          duration: null
+          effects: null
+          attacks: []
+          buttons:
+            - label: End Cunning Mind
+              automation:
+                - type: remove_ieffect
+              verb: ends Cunning Mind
+              style: "4"
+              defaultDC: null
+              defaultAttackBonus: null
+              defaultCastingMod: null
+          end: false
+          conc: false
+          desc: Starting at 2nd level, you can take a bonus action on each of your turns
+            in combat. This action can be used only to make an Intelligence or
+            Wisdom check, or to take the Help action.
+          stacking: false
+          save_as: cunning_mind
+          parent: null
+          target_self: true
+          tick_on_caster: false
+    - type: target
+      target: all
+      effects:
+        - type: ieffect2
+          name: Help from Words of Guard and Guiding
+          duration: null
+          effects:
+            attack_advantage: "1"
+            check_adv:
+              - all
+          attacks: []
+          buttons:
+            - label: Help used from Words of Guard and Guiding
+              automation:
+                - type: remove_ieffect
+                  removeParent: if_no_children
+              verb: uses Words of Guard and Guiding
+              style: "4"
+              defaultDC: null
+              defaultAttackBonus: null
+              defaultCastingMod: null
+          end: false
+          conc: false
+          desc: Starting at 3rd level, you can use a bonus action to make a Charisma check
+            or take the Help action. In addition, whenever you use the Help
+            action to aid an ally in attacking a creature, the target of the
+            attack can be within 30 feet of you rather than within 5 feet of
+            you, if the ally can hear and understand you.
+          stacking: false
+          save_as: null
+          parent: cunning_mind
+          target_self: false
+          tick_on_caster: false
+    - type: text
+      text: Starting at 2nd level, you can take a bonus action on each of your turns
+        in combat. This action can be used only to make an Intelligence or
+        Wisdom check, or to take the Help action.
+      title: Cunning Mind
+  _v: 2
+  proper: true
+  verb: helps with
+  activation_type: 3
+- name: Cunning Mind (INT)
+  automation:
+    - type: target
+      target: self
+      effects:
+        - type: check
+          ability: intelligence
+    - type: text
+      text: Starting at 2nd level, you can take a bonus action on each of your turns
+        in combat. This action can be used only to make an Intelligence or
+        Wisdom check, or to take the Help action.
+      title: Cunning Mind
+  _v: 2
+  proper: true
+  verb: uses
+  activation_type: 3
+- name: Cunning Mind (WIS)
+  automation:
+    - type: target
+      target: self
+      effects:
+        - type: check
+          ability: wisdom
+    - type: text
+      text: Starting at 2nd level, you can take a bonus action on each of your turns
+        in combat. This action can be used only to make an Intelligence or
+        Wisdom check, or to take the Help action.
+      title: Cunning Mind
+  _v: 2
+  proper: true
+  verb: uses
+  activation_type: 3

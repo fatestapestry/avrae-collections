@@ -1,0 +1,1 @@
+**Words of Command.** At 7th level, when you roll a Lore die and add the number rolled to an ability check using a skill other than Medicine, you can obtain a magical success. You can use this feature a number of times equal to your Intelligence modifier (minimum of once). You regain any expended uses when you finish a long rest.

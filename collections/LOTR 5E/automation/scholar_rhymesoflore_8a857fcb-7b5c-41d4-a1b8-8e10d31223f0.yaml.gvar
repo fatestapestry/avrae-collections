@@ -1,0 +1,106 @@
+- name: Rhymes of Lore
+  automation:
+    - type: variable
+      name: loredie
+      value: "{6+2*((caster.levels.get('Scholar')>=5)+(caster.levels.get('Scholar')>=\
+        10))}"
+      onError: Scholar level not found
+    - type: target
+      target: self
+      effects:
+        - type: ieffect2
+          name: Sharing Rhymes of Lore
+          duration: "10"
+          effects: null
+          attacks: []
+          buttons:
+            - label: Lore Die Used
+              automation:
+                - type: remove_ieffect
+              verb: ends their Rhymes of Lore
+              style: "4"
+              defaultDC: null
+              defaultAttackBonus: null
+              defaultCastingMod: null
+          end: false
+          conc: false
+          desc: null
+          stacking: true
+          save_as: rhymes_of_lore
+          parent: null
+          target_self: true
+          tick_on_caster: false
+    - type: target
+      target: all
+      effects:
+        - type: ieffect2
+          name: 1d{loredie} Lore Die from {name}
+          duration: "10"
+          effects: null
+          buttons:
+            - label: Roll Lore Die
+              automation:
+                - type: target
+                  target: self
+                  effects:
+                    - type: roll
+                      dice: "{ieffect.name.split()[0]}"
+                      name: ""
+                      displayName: Lore Die
+                    - type: text
+                      text: >-
+                        Rhymes of Lore are short verses created by many cultures to help them
+                        remember significant facts from ancient history which
+                        might otherwise be lost. You can use a bonus action on
+                        your turn to choose one creature (including yourself)
+                        within 30 feet of you who can hear and understand you.
+
+
+                        Once within the next minute, the creature can roll the die and add the number rolled to one ability check, attack roll, or saving throw it makes. The creature can wait until after seeing the roll before deciding to use the Lore die, but must decide before the Loremaster says whether the roll succeeds or fails. Once the Lore die is rolled, it is lost. A creature can have only one Lore die at a time.
+                      title: Rhymes of Lore
+              verb: rolls a Lore Die
+              style: "1"
+              defaultDC: null
+              defaultAttackBonus: null
+              defaultCastingMod: null
+            - label: Lore Die Used
+              automation:
+                - type: remove_ieffect
+                  removeParent: always
+              verb: uses their Lore Die
+              style: "4"
+              defaultDC: null
+              defaultAttackBonus: null
+              defaultCastingMod: null
+          end: false
+          conc: false
+          desc: Rhymes of Lore are short verses created by many cultures to help them
+            remember significant facts from ancient history which might
+            otherwise be lost. You can use a bonus action on your turn to choose
+            one creature (including yourself) within 30 feet of you who can hear
+            and understand you. That creature gains one Lore die.
+          stacking: false
+          save_as: null
+          parent: rhymes_of_lore
+          target_self: false
+          tick_on_caster: false
+    - type: text
+      text: >-
+        Rhymes of Lore are short verses created by many cultures to help them
+        remember significant facts from ancient history which might otherwise be
+        lost. You can use a bonus action on your turn to choose one creature
+        (including yourself) within 30 feet of you who can hear and understand
+        you.
+
+
+        Once within the next minute, the creature can roll the die and add the number rolled to one ability check, attack roll, or saving throw it makes. The creature can wait until after seeing the roll before deciding to use the Lore die, but must decide before the Loremaster says whether the roll succeeds or fails. Once the Lore die is rolled, it is lost. A creature can have only one Lore die at a time.
+      title: Rhymes of Lore
+    - type: counter
+      counter: Rhymes of Lore
+      amount: "1"
+      allowOverflow: false
+      errorBehaviour: raise
+  _v: 2
+  proper: true
+  verb: shares
+  activation_type: 3

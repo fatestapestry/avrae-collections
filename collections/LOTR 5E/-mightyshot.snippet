@@ -1,0 +1,27 @@
+<drac2>
+SNIPPET = 'mightyshot'
+
+# Get damage die from args
+args = argparse(&ARGS&)
+die = args.last(SNIPPET)
+if die == "True":
+    return err(f"Must provide damage die (e.g. 1d8, 2d6)")
+
+if 'd' not in die:
+    return err(f"Invalid die format `{die}`. Must be XdY  (e.g. 1d8, 2d6)")
+
+# Split into count and size
+count, size = die.split('d')
+try:
+    count = int(count)
+    size = int(size)
+except:
+    return err(f"Invalid die format `{die}`. Must be numbers (e.g. 1d8, 2d6)")
+
+# Build the outputs
+to_hit = f'-b "-{die}[mighty shot]"'  # Negative of input die
+extra_damage = f'-d {count*2}d{size}'  # Double the dice count
+
+return f"{to_hit} {extra_damage}"
+</drac2>
+-f "Mighty Shot|Starting at 3rd level, you have learned to put all your might into your shots. Before you make an attack with a ranged weapon, you can choose to roll the weapon’s damage die and subtract the number rolled from the attack roll. If the attack hits, you roll two additional weapon damage dice on the damage roll. You can deal this extra damage only once per turn."

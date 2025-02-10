@@ -1,0 +1,28 @@
+- _v: 2
+  name: Uncanny Dodge
+  automation:
+    - type: counter
+      counter: "''"
+      amount: "0"
+      errorBehaviour: ignore
+    - type: target
+      target: self
+      effects:
+        - type: condition
+          condition: lastCounterRequestedAmount
+          onTrue:
+            - type: damage
+              damage: -{{floor(lastCounterRequestedAmount/2)}} [dodged]
+          onFalse:
+            - type: text
+              text: "You must specify damage to reduce using`-amt #`, where `#` is the total
+                damage taken."
+              title: Damage not Specified
+    - type: text
+      text: Beginning at 5th level, when an attacker that you can see hits you with an
+        attack, you can use your reaction to halve the attack’s damage against
+        you.
+      title: Uncanny Dodge
+  verb: executes an
+  proper: true
+  activation_type: 4

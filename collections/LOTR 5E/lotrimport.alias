@@ -1,0 +1,76 @@
+<drac2>
+# Parse args and get character
+args = argparse(&ARGS&)
+target = args.last('t')
+ch = combat().get_combatant(target).character if target else character()
+if not ch:
+    err("No valid character found")
+
+# Load class metadata and feature mappings
+try:
+    class_data = load_json(get_gvar("b4ac3779-dbcb-4ca1-abb7-f1f1d7c1dd2e"))
+    feature_data = load_json(get_gvar("14d39638-cd8b-451e-b0c4-906a289454b7"))
+except:
+    err("Failed to load metadata gvars")
+
+# Get character classes and levels using a set for uniqueness
+processed_classes = set()
+char_classes = []
+valid_classes = [c["Class"] for c in class_data]
+
+# Helper to extract subclass from cvar JSON
+def get_subclass(cvar_text, class_name):
+    try:
+        cvar_key = f"{class_name.replace(' ', '')}Level"
+        subclass_data = load_json(cvar_text)
+        return subclass_data.get(cvar_key)
+    except:
+        return None
+
+for class_name in valid_classes:
+    if class_name not in processed_classes:
+        level = ch.levels.get(class_name)
+        if level:
+            subclass = get_subclass(ch.get_cvar("subclass", "{}"), class_name)
+            char_classes.append({
+                "name": class_name,
+                "level": level,
+                "subclass": subclass
+            })
+            processed_classes.add(class_name)
+
+if not char_classes:
+    err(f"No valid classes found for {ch.name}")
+
+# Find matching features
+matching_gvars = []
+seen_gvars = set()
+for class_info in char_classes:
+    class_features = feature_data.get(class_info["name"], [])
+    for feature in class_features:
+        if (feature["level"] <= class_info["level"] and
+            (feature["subclass"] is None or
+             feature["subclass"] == class_info["subclass"])):
+            if feature["gvar"] and feature["gvar"] not in seen_gvars:
+                matching_gvars.append(feature["gvar"])
+                seen_gvars.add(feature["gvar"])
+
+if not matching_gvars:
+    err(f"No matching features found for {ch.name}")
+
+# Load and validate all gvars
+try:
+    combined_yaml = []
+    for gvar_id in matching_gvars:
+        yaml_text = get_gvar(gvar_id)
+        if load_yaml(yaml_text):
+            combined_yaml.append(yaml_text)
+        else:
+            err(f"Invalid YAML in gvar {gvar_id}")
+except:
+    err(f"Failed to load or validate gvars")
+
+# Create final import command
+import_text = "\n".join(combined_yaml)
+return f'a import {import_text}'
+</drac2>

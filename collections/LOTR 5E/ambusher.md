@@ -1,0 +1,1 @@
+**Ambusher.** Starting at 3rd level, you excel at ambushing your enemies. You can add your Wisdom modifier to your initiative rolls, and you have advantage on attack rolls against any creature that hasn’t taken a turn. In addition, you gain the Sneak Attack feature (see Treasure Hunter). The extra damage is 1d6, and it increases to 2d6 when you reach 7th level in this calling.

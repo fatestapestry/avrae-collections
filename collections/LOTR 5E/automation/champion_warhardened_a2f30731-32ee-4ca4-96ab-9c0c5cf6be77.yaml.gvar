@@ -1,0 +1,29 @@
+- _v: 2
+  name: War-Hardened
+  automation:
+    - type: target
+      target: self
+      effects:
+        - type: ieffect2
+          name: War-Hardened
+          effects:
+            save_adv:
+              - str
+            check_adv:
+              - strength
+              - athletics
+              - initiative
+          desc: By 7th level, your instincts are so honed that you have advantage on
+            initiative rolls, Strength checks, and Strength saving throws, and
+            you cannot be surprised. To gain this benefit, you cannot be
+            blinded, deafened, or incapacitated.
+          target_self: true
+    - type: text
+      text: By 7th level, your instincts are so honed that you have advantage on
+        initiative rolls, Strength checks, and Strength saving throws, and you
+        cannot be surprised. To gain this benefit, you cannot be blinded,
+        deafened, or incapacitated.
+      title: War-Hardened
+  verb: is
+  proper: true
+  activation_type: 2

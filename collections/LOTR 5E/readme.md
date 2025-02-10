@@ -6,6 +6,14 @@ Avrae support for Lord of the Rings™ (LOTR) Roleplaying gameplay for 5E.
 
 v1.0.2
 
+## Prerequisites
+
+This workshop is designed to be used in conjunction with [**Verbose Character Tools**](https://avrae.io/dashboard/workshop/5f7385fe647bb0a416316d1d)
+
+`!level` and `!setrace` gvar subs:
+- `!level sub b4ac3779-dbcb-4ca1-abb7-f1f1d7c1dd2e`
+- `!setrace sub f1bfe146-05df-43fd-895f-68efc6e38c82`
+
 ## Feature Support
 
 The following LOTR 5E features are supported:
@@ -13,6 +21,7 @@ The following LOTR 5E features are supported:
 - Custom Skills [A, S]
 - Heroic Cultures [M]
 - Callings [M]
+- Calling Automation [I, C, S]
 - Rewards [A, S, C]
 - Councils [S]
 - Journey Events [A, S]
@@ -22,11 +31,6 @@ The following LOTR 5E features are supported:
 - Marvellous Artefacts and Wondrous Items [S*]
 - Conditions (Miserable* and Anguished) [A, S, C]
 
-`!level` and `!setrace` support is available with:
-
-- `!level sub b4ac3779-dbcb-4ca1-abb7-f1f1d7c1dd2e`
-- `!setrace sub f1bfe146-05df-43fd-895f-68efc6e38c82`
-
 ### Key
 
 - [A] - Alias
@@ -34,13 +38,12 @@ The following LOTR 5E features are supported:
 - [I] - Automation
 - [M] - Metadata
 - [C] - Combat
-- *_Partial Support_
+
+*_Partial Support_
 
 ### In Development
 
 - Crafts [A, C]
-- Calling Automation [I, C]
-
 
 ## Support Me
 

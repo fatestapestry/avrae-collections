@@ -1,0 +1,27 @@
+- name: Cure for Weariness
+  automation:
+    - type: target
+      target: all
+      effects:
+        - type: roll
+          dice: "1"
+          name: ""
+          displayName: Exhaustion Reduction
+          fixedValue: true
+    - type: text
+      text: Beginning at 7th level, the healing you impart on others also shakes off
+        their weariness. During a short rest, you can reduce a creature’s
+        exhaustion level by one. You can use this feature a number of times
+        equal to your Wisdom modifier (minimum of once). You regain any expended
+        uses when you finish a long rest.
+      title: A Cure for Weariness
+    - type: counter
+      counter: A Cure for Weariness
+      amount: "1"
+      fixedValue: true
+      errorBehaviour: raise
+  _v: 2
+  proper: false
+  verb: provides
+  activation_type: 8
+  phrase: During a short rest, you can reduce a creature’s exhaustion level by one.

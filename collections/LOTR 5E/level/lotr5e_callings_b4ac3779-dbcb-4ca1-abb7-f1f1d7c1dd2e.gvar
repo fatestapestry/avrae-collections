@@ -96,7 +96,7 @@
         "name": "Rhymes of Lore",
         "level": 1,
         "value": "intelligenceMod",
-        "reset": "long",
+        "reset": "long$5$short",
         "display": "bubble",
         "classLevel": "ScholarLevel",
         "desc": "You can use a bonus action on your turn to choose one creature (including yourself) within 30 feet of you who can hear and understand you. That creature gains one Lore die, a d6. Once within the next minute, the creature can roll the die and add the number rolled to one ability check, attack roll, or saving throw it makes. The creature can wait until after seeing the roll before deciding to use the Lore die, but must decide before the Loremaster says whether the roll succeeds or fails. Once the Lore die is rolled, it is lost. A creature can have only one Lore die at a time."
@@ -107,6 +107,15 @@
     "Class": "Scholar",
     "subclass": "Healing",
     "counters": [
+      {
+        "name": "Rhymes of Lore (Wise Leechcraft)",
+        "level": 3,
+        "value": "wisdomMod",
+        "reset": "long$5$short",
+        "display": "bubble",
+        "classLevel": "ScholarLevel",
+        "desc": "Also starting at 3rd level, you add your Wisdom modifier (minimum of +1) to your Intelligence (Medicine) checks, to the hit points regained for each Hit Die spent by any creature you choose as the target of your Hands of a Healer, and to the number of uses of your Rhymes of Lore. The Lore dice granted by these additional uses can only be added to Intelligence (Medicine) checks.\n\nIn addition, when a creature would roll a Lore die it gained from you on an Intelligence (Medicine) check, it instead uses the highest number possible for the die."
+      },
       {
         "name": "A Cure for Weariness",
         "level": 7,

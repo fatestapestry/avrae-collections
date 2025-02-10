@@ -1,0 +1,23 @@
+<drac2>
+SNIPPET = 'foehammer'
+
+# Get damage die from args
+args = argparse(&ARGS&)
+die = args.last(SNIPPET)
+if die == "True":
+    return err(f"Must provide damage die (e.g. 1d8, 2d6)")
+
+if 'd' not in die:
+    return err(f"Invalid die format `{die}`. Must be XdY  (e.g. 1d8, 2d6)")
+
+# Split into count and size
+count, size = die.split('d')
+try:
+    count = int(count)
+    size = int(size)
+except:
+    return err(f"Invalid die format `{die}`. Must be numbers (e.g. 1d8, 2d6)")
+
+return f"-d '{die}[foe-hammer]' "
+</drac2>
+-f "Foe-Hammer|Your tenacity can wear down the most potent foes. When you hit a creature with a weapon attack, you can roll one additional weapon damage die on the damage roll if it’s below its hit points maximum. You can deal this extra damage only once per turn."

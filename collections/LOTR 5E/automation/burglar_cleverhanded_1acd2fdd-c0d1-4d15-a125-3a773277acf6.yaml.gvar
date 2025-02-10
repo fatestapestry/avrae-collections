@@ -1,0 +1,28 @@
+- name: Clever-Handed (Sleight of Hand)
+  automation:
+    - type: target
+      target: self
+      effects:
+        - type: check
+          ability: sleightOfHand
+    - type: text
+      text: Starting at 3rd level, you can use the bonus action granted by your
+        Cunning Action to make a Dexterity (Sleight of Hand) check or take the
+        Use an Object action.
+      title: Clever-Handed
+  _v: 2
+  proper: true
+  verb: is
+  activation_type: 3
+- name: Clever-Handed (Utilize)
+  automation:
+    - type: text
+      text: Starting at 3rd level, you can use the bonus action granted by your
+        Cunning Action to make a Dexterity (Sleight of Hand) check or take the
+        Use an Object action.
+      title: Clever-Handed
+  _v: 2
+  proper: true
+  verb: is
+  activation_type: 3
+  phrase: Interacts with an object on their bonus action!

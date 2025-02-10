@@ -1,0 +1,76 @@
+- name: Cunning Eye (Perception)
+  automation:
+    - type: target
+      target: self
+      effects:
+        - type: check
+          ability: perception
+    - type: text
+      text: Starting at 3rd level, you can add your Intelligence modifier to your
+        Wisdom (Insight) and Wisdom (Perception) checks. In addition, you can
+        use the bonus action granted by your Cunning Action to take the Search
+        action.
+      title: Cunning Eye
+  _v: 2
+  proper: true
+  verb: uses their
+  phrase: Use the bonus action granted by your Cunning Action to take the Search
+    action!
+  activation_type: 3
+- name: Cunning Eye (Insight)
+  automation:
+    - type: target
+      target: self
+      effects:
+        - type: check
+          ability: insight
+    - type: text
+      text: Starting at 3rd level, you can add your Intelligence modifier to your
+        Wisdom (Insight) and Wisdom (Perception) checks. In addition, you can
+        use the bonus action granted by your Cunning Action to take the Search
+        action.
+      title: Cunning Eye
+  _v: 2
+  proper: true
+  verb: uses their
+  phrase: Use the bonus action granted by your Cunning Action to take the Search
+    action!
+  activation_type: 3
+- name: Cunning Eye (Survival)
+  automation:
+    - type: target
+      target: self
+      effects:
+        - type: check
+          ability: survival
+    - type: text
+      text: Starting at 3rd level, you can add your Intelligence modifier to your
+        Wisdom (Insight) and Wisdom (Perception) checks. In addition, you can
+        use the bonus action granted by your Cunning Action to take the Search
+        action.
+      title: Cunning Eye
+  _v: 2
+  proper: true
+  verb: uses their
+  phrase: Use the bonus action granted by your Cunning Action to take the Search
+    action!
+  activation_type: 3
+- name: Cunning Eye (Medicine)
+  automation:
+    - type: target
+      target: self
+      effects:
+        - type: check
+          ability: medicine
+    - type: text
+      text: Starting at 3rd level, you can add your Intelligence modifier to your
+        Wisdom (Insight) and Wisdom (Perception) checks. In addition, you can
+        use the bonus action granted by your Cunning Action to take the Search
+        action.
+      title: Cunning Eye
+  _v: 2
+  proper: true
+  verb: uses their
+  phrase: Use the bonus action granted by your Cunning Action to take the Search
+    action!
+  activation_type: 3

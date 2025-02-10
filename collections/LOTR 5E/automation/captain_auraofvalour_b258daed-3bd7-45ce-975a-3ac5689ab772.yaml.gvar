@@ -1,0 +1,49 @@
+- _v: 2
+  name: Aura of Valour
+  automation:
+    - type: text
+      text: Starting at 6th level, whenever you or a friendly creature within 10 feet
+        of you hit a target with a melee weapon attack, the creature can add
+        your Charisma modifier to the damage roll. You cannot grant this bonus
+        if you are frightened or unconscious.
+      title: Aura of Valour
+    - type: target
+      target: self
+      effects:
+        - type: ieffect2
+          name: Aura of Valour
+          effects:
+            damage_bonus: "{{charismaMod}}[aura of valour]"
+          buttons:
+            - automation:
+                - type: remove_ieffect
+              label: End Aura of Valour
+              verb: ends their Aura of Valour
+              style: "4"
+          desc: Starting at 6th level, whenever you or a friendly creature within 10 feet
+            of you hit a target with a melee weapon attack, the creature can add
+            your Charisma modifier to the damage roll. You cannot grant this
+            bonus if you are frightened or unconscious.
+          save_as: aura_of_valour
+          target_self: true
+    - type: target
+      target: all
+      effects:
+        - type: ieffect2
+          name: "{{name}}'s Aura of Valour"
+          effects:
+            damage_bonus: "{{charismaMod}}[aura of valour]"
+          buttons:
+            - automation:
+                - type: remove_ieffect
+              label: Leave Aura of Valour (10ft)
+              verb: leaves {{name}}'s Aura of Valour
+              style: "4"
+          desc: Starting at 6th level, whenever you or a friendly creature within 10 feet
+            of you hit a target with a melee weapon attack, the creature can add
+            your Charisma modifier to the damage roll. You cannot grant this
+            bonus if you are frightened or unconscious.
+          parent: aura_of_valour
+  verb: extends their
+  proper: true
+  activation_type: 2

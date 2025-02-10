@@ -1,0 +1,48 @@
+- name: Multiattack Defence
+  automation:
+    - type: target
+      target: self
+      effects:
+        - type: ieffect2
+          name: Multiattack Defence
+          duration: "1"
+          effects:
+            ac_bonus: "{proficiencyBonus}"
+          attacks: []
+          buttons:
+            - label: Remove Multiattack Defence
+              automation:
+                - type: remove_ieffect
+              verb: null
+              style: "1"
+              defaultDC: null
+              defaultAttackBonus: null
+              defaultCastingMod: null
+          end: false
+          conc: false
+          desc: When a creature hits or misses you with an attack, you add your
+            proficiency bonus to your AC against all subsequent attacks made by
+            that creature for the rest of the turn.
+          stacking: false
+          save_as: null
+          parent: null
+          target_self: true
+          tick_on_caster: true
+    - type: text
+      text: When a creature hits or misses you with an attack, you add your
+        proficiency bonus to your AC against all subsequent attacks made by that
+        creature for the rest of the turn.
+      title: Multiattack Defence
+  _v: 2
+  activation_type: 8
+  verb: uses
+  proper: true
+- name: Swift to Fly
+  automation:
+    - type: text
+      text: You can use the Disengage action as a bonus action on your turn.
+      title: Swift to Fly
+  _v: 2
+  proper: true
+  verb: uses
+  activation_type: 3

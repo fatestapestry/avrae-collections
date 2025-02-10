@@ -1,0 +1,3 @@
+**Wise Leechcraft.** Also starting at 3rd level, you add your Wisdom modifier (minimum of +1) to your Intelligence (Medicine) checks, to the hit points regained for each Hit Die spent by any creature you choose as the target of your Hands of a Healer, and to the number of uses of your Rhymes of Lore. The Lore dice granted by these additional uses can only be added to Intelligence (Medicine) checks.
+
+In addition, when a creature would roll a Lore die it gained from you on an Intelligence (Medicine) check, it instead uses the highest number possible for the die.

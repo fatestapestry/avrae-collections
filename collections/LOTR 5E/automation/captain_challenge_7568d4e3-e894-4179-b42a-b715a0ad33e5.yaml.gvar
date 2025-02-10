@@ -1,0 +1,71 @@
+- _v: 2
+  name: Challenge
+  automation:
+    - type: text
+      text: >-
+        Starting at 3rd level, you can issue a challenge to a creature you can see
+        within 10 feet of you as a bonus action. You gain advantage on melee
+        attack rolls against the creature for 1 minute or until it drops to 0
+        hit points or falls unconscious. In addition, the creature must make a
+        Wisdom (Insight) check (DC 8 + your proficiency bonus + your Charisma
+        modifier). On a failed check, the creature has disadvantage on attack
+        rolls against targets other than you for the duration, until you attack
+        another creature, if a creature friendly to you attacks the target, or
+        if you end your turn more than 30 feet away from the target.
+
+
+        You must then finish a short or long rest to use this feature again.
+      title: Challenge
+    - type: target
+      target: all
+      effects:
+        - type: ieffect2
+          name: "Challenge Issued by {{name}}"
+          duration: "10"
+          attacks: []
+          buttons:
+            - automation:
+                - type: remove_ieffect
+                  removeParent: always
+              label: "End Challenge by {{name}}"
+              verb: ends their Challenge
+              style: "4"
+          end: false
+          conc: false
+          desc: Gains advantage on melee attack rolls against the creature for 1 minute or
+            until it drops to 0 hit points or falls unconscious.
+          stacking: false
+          target_self: false
+          tick_on_caster: false
+        - type: check
+          ability: insight
+          dc: 8 + proficiencyBonus + charismaMod
+          fail:
+            - type: ieffect2
+              name: Disadvantage from Challenge by {{name}}
+              attacks: []
+              buttons:
+                - label: "End Dis. from Challenge by {{name}}"
+                  automation:
+                    - type: remove_ieffect
+                      removeParent: always
+                  verb: ends their Challenge Disadvantage
+                  style: "4"
+              end: false
+              conc: false
+              desc: On a failed check, the creature has disadvantage on attack rolls against
+                targets other than you for the duration, until you attack
+                another creature, if a creature friendly to you attacks the
+                target, or if you end your turn more than 30 feet away from the
+                target.
+              stacking: false
+              target_self: false
+              tick_on_caster: false
+          success: []
+    - type: counter
+      counter: Challenge
+      amount: "1"
+      allowOverflow: false
+      errorBehaviour: raise
+  verb: issues
+  activation_type: 3

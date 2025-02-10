@@ -1,0 +1,1 @@
+**Cunning Eye.**  Starting at 3rd level, you can add your Intelligence modifier to your Wisdom (Insight) and Wisdom (Perception) checks. In addition, you can use the bonus action granted by your Cunning Action to take the Search action.

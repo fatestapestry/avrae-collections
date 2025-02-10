@@ -1,0 +1,20 @@
+- name: Shadow Strike
+  automation:
+    - type: counter
+      counter: Shadow Strike
+      amount: "1"
+      allowOverflow: false
+      errorBehaviour: raise
+      fixedValue: true
+    - type: text
+      text: When you make a melee attack roll, you can increase your reach for that
+        attack by 10 feet. Your shadow stretches and delivers the attack as if
+        it were you. You can use this feature a number of times equal to your
+        proficiency bonus, and you regain all expended uses when you finish a
+        long rest.
+      title: Shadow Strike
+  _v: 2
+  proper: true
+  verb: shadow stretches with
+  phrase: Your shadow stretches and delivers the attack as if it were you
+  activation_type: 2
