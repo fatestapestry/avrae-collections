@@ -4,7 +4,7 @@ Avrae support for Lord of the Rings™ (LOTR) Roleplaying gameplay for 5E.
 
 ## Version
 
-v1.0.2
+v1.0.3
 
 ## Prerequisites
 
