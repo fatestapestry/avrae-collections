@@ -18,32 +18,31 @@ This workshop is designed to be used in conjunction with [**Verbose Character To
 
 The following LOTR 5E features are supported:
 
-- Custom Skills [A, S]
+- Custom Skills [L, S]
 - Heroic Cultures [M]
-- Callings [M]
-- Calling Automation [I, C, S]
-- Rewards [A, S, C]
-- Councils [S]
-- Journey Events [A, S]
-- Fatigue Saving Throws [A, S]
-- Shadow Points [A]
+- Callings [A, I, S, M]
+- Rewards [L, S, C]
+- Councils [S*]
+- Journey Events [L, S]
+- Fatigue Saving Throws [L, S]
+- Shadow Points [L]
 - Flaws [S]
 - Marvellous Artefacts and Wondrous Items [S*]
-- Conditions (Miserable* and Anguished) [A, S, C]
+- Conditions (Miserable* and Anguished) [L, S, I]
 
 ### Key
 
-- [A] - Alias
+- [L] - Alias
 - [S] - Snippet
-- [I] - Automation
+- [A] - Attacks
+- [I] - Initiative
 - [M] - Metadata
-- [C] - Combat
 
 *_Partial Support_
 
 ### In Development
 
-- Crafts [A, C]
+- Crafts
 
 ## Support Me
 
