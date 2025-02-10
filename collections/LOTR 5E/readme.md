@@ -8,11 +8,22 @@ v1.0.3
 
 ## Prerequisites
 
-This workshop is designed to be used in conjunction with [**Verbose Character Tools**](https://avrae.io/dashboard/workshop/5f7385fe647bb0a416316d1d)
+This workshop requires [**Verbose Character Tools**](https://avrae.io/dashboard/workshop/5f7385fe647bb0a416316d1d)
 
 `!level` and `!setrace` gvar subs:
 - `!level sub b4ac3779-dbcb-4ca1-abb7-f1f1d7c1dd2e`
 - `!setrace sub f1bfe146-05df-43fd-895f-68efc6e38c82`
+
+To set up a player-hero in Avrae, please use `-cc`:
+
+- `!level <class> <subclass> -cc`
+- `!setrace`
+
+## Recommended
+
+It is recommended that the workshop is used in conjunction with:
+- `!hide`- [**Hiding in 2024**](https://avrae.io/dashboard/workshop/6714f1721da5c606863358b9)
+- `!tool` - [**Tool Check**](https://avrae.io/dashboard/workshop/630b0e39b85ea38890666c08)
 
 ## Feature Support
 
