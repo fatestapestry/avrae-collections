@@ -1,4 +1,4 @@
-# Lord of the Rings™ (LOTR) 5E utilities
+# Lord of the Rings™ (LOTR) 5E Utilities
 
 Avrae support for Lord of the Rings™ (LOTR) Roleplaying gameplay for 5E.
 
