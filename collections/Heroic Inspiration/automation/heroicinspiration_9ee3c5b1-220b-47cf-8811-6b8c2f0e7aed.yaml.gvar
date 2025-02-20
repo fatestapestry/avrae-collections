@@ -1,0 +1,19 @@
+- name: Heroic Inspiration
+  automation:
+    - type: text
+      text: >-
+        If you (a player character) have Heroic Inspiration, you can expend it to
+        reroll any die immediately after rolling it, and you must use the new
+        roll.
+
+
+        If you gain Heroic Inspiration but already have it, it’s lost unless you give it to a player character who lacks it.
+      title: Heroic Inspiration
+    - type: counter
+      counter: Heroic Inspiration
+      amount: "1"
+      errorBehaviour: raise
+  _v: 2
+  proper: true
+  verb: expends their
+  activation_type: 8

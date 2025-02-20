@@ -1,0 +1,13 @@
+<drac2>
+using(hi_lib="07da4a2a-8ed4-4b71-a5c1-341b37f80335")
+
+args = argparse(&ARGS&)
+if 'add' in args:
+    return hi_lib.modify_counter(1)
+elif 'del' in args:
+    return hi_lib.modify_counter(0)
+
+# Default or roll mode
+dice = args.last('d', '1d20')
+return hi_lib.use_heroic_inspiration(dice)
+</drac2>

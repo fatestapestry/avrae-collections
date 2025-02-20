@@ -1,0 +1,17 @@
+- name: Grasping Shadow
+  automation:
+    - type: text
+      text: You learn the Mage Hand cantrip if you don't already know it, and require
+        no components to cast it. The hand created by the spell is shadowy but
+        is not bound to your actual shadow. Your spellcasting ability for this
+        spell is Intelligence, Wisdom, or Charisma (your choice when you gain
+        this Dark Gift).
+      title: Grasping Shadow
+    - type: spell
+      id: 2173
+  _v: 2
+  proper: false
+  verb: casts Mage Hand with
+  activation_type: 1
+  phrase: The hand created by the spell is shadowy but is not bound to your actual
+    shadow.

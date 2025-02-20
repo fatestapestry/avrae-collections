@@ -1,0 +1,39 @@
+- name: Voices from Beyond
+  automation:
+    - type: variable
+      name: n
+      value: len(targets)
+    - type: roll
+      dice: 1d4
+      name: vb
+      fixedValue: true
+      displayName: Voices from Beyond
+    - type: text
+      text: >-
+        {{targets.extend("You have disadvantage on the next attack roll, ability
+        check, or saving throw you make.//You are deafened by the voices for 1
+        minute.//You are frightened of the creature closest to you, other than
+        yourself, until the end of your next turn. If multiple creatures are
+        closest, the DM chooses which creature you are frightened of.//Within
+        the next 10 minutes, you can ask your spirits about the results of a
+        specific course of action that you plan to take within the next 30
+        minutes. You can receive an omen as if you had cast the Augury spell.
+        The omen manifests as whisperings from your spirits perceptible only to
+        you.".split("//"))}}
+
+        {{targets[n+int(vb)-1]}}
+      title: Voices from Beyond
+    - type: counter
+      counter: Voices from Beyond
+      amount: "1"
+      errorBehaviour: raise
+      fixedValue: true
+  _v: 2
+  proper: true
+  verb: hears
+  activation_type: 8
+  phrase: Immediately after you make an attack roll, an ability check, or a saving
+    throw and roll a 1 on the d20, the haunting voices grow too loud to ignore.
+    Roll on the Voices from Beyond table to determine the effect of these
+    voices. Once one of these effects occurs, none of these haunting voices
+    manifest again until you finish a short or long rest.

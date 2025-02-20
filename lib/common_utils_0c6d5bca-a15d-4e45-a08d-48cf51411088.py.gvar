@@ -122,3 +122,30 @@ def apply_effect_to_targets(combat, targets, effect_name, effect_config):
             raise RuntimeError(f"Failed to apply effect to {combatant.name}: {str(e)}\nEffect config: {effect_config}")
 
     return results
+
+
+def import_actions(actions):
+    """Imports actions from a list of gvar IDs containing action YAML.
+
+    Args:
+        actions (list[str]): List of gvar IDs containing action YAML
+
+    Returns:
+        str: Import command string
+    """
+    combined = []
+
+    for gvar_id in actions:
+        try:
+            yaml_content = get_gvar(gvar_id)
+            # Validate yaml
+            parsed = load_yaml(yaml_content)
+            if parsed:  # Only add if valid yaml
+                combined.append(yaml_content)
+        except:
+            err(f"Invalid YAML in gvar {gvar_id}")
+
+    if not combined:
+        err("No valid YAML found")
+
+    return f"!a import {' '.join(combined)}"

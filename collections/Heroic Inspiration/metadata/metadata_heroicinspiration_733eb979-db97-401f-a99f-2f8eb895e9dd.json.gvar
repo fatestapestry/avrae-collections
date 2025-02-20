@@ -1,0 +1,14 @@
+{
+    "name": "Heroic Inspiration",
+    "counter": {
+        "name": "Heroic Inspiration",
+        "minVal": 0,
+        "maxVal": 1,
+        "reset": "none",
+        "dispType": "bubble",
+        "title": "Heroic Inspiration",
+        "desc": "If you (a player character) have Heroic Inspiration, you can expend it to reroll any die immediately after rolling it, and you must use the new roll.\nIf you gain Heroic Inspiration but already have it, it's lost unless you give it to a player character who lacks it."
+    },
+    "field_title": "Reroll Rules",
+    "field_text": "When you have Advantage or Disadvantage and something in the game lets you reroll or replace the d20, you can reroll or replace only one die, not both. You choose which one."
+}

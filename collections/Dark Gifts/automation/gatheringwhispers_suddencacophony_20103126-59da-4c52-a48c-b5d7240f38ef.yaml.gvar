@@ -1,0 +1,40 @@
+- name: Sudden Cacophony (AC Bonus)
+  automation:
+    - type: roll
+      dice: "{{proficiencyBonus}}"
+      name: ""
+      displayName: AC Bonus
+      fixedValue: true
+    - type: text
+      text: When you are hit by an attack roll, you can use your reaction to channel
+        your haunting spirits, letting their voices howl through you. If the
+        attacker isn't deafened, add your proficiency bonus to your AC against
+        that attack, potentially causing it to miss. Once this trait causes an
+        attack to miss, you can't use the trait again until you finish a long
+        rest.
+      title: Sudden Cacophony
+  _v: 2
+  proper: false
+  verb: creates
+  activation_type: 4
+  phrase: Potentially causes an attack to miss. Once this trait causes an attack
+    to miss, you can't use the trait again until you finish a long rest.
+- name: Sudden Cacophony (Missed)
+  automation:
+    - type: text
+      text: When you are hit by an attack roll, you can use your reaction to channel
+        your haunting spirits, letting their voices howl through you. If the
+        attacker isn't deafened, add your proficiency bonus to your AC against
+        that attack, potentially causing it to miss. Once this trait causes an
+        attack to miss, you can't use the trait again until you finish a long
+        rest.
+      title: Sudden Cacophony
+    - type: counter
+      counter: Sudden Cacophony
+      amount: "1"
+      fixedValue: true
+      errorBehaviour: raise
+  _v: 2
+  proper: false
+  verb: causes an attack to miss with
+  activation_type: 4

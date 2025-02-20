@@ -41,6 +41,8 @@ documentation_generator:
     - Any prerequisites.
     
     9. Issues? and Support Me should be added verbatim
+    
+    10. Output always in a markdown code block for easy copying into an IDE
 
   template: |
     `!aliasname <required> [args]`
@@ -49,23 +51,28 @@ documentation_generator:
     Describe the purpose or function of the alias directly.
 
     ## Arguments
-    - Positional arguments:
+    **Positional arguments**
       - `<required>` - Description of required argument.
-    - Optional arguments:
+    **Optional arguments**
       - `-arg1` - Description.
       - `-arg2 <value>` - Description.
 
     ## Examples
-    `!aliasname example1`
-    `!aliasname example2 -arg1 -arg2 3`
+    <Describe the example or remove>
+    ```
+    !aliasname example1
+    ```
+    <Describe the example or remove>
+    ```
+    !aliasname example2 -arg1 -arg2 3`
+    ```
 
     ## Notes
     - Provide additional clarifications or setup requirements.
     - Do not include details of the internal code logic, e.g. gvar references, gvar id etc
 
     ## Issues?
-    You can file reports and feature requests, as well as see the source code, 
-    at my [GitHub](https://github.com/fatestapestry/avrae-collections)
-    
-    ## Support Me
-    You can support me and future development at [Ko-Fi](https://ko-fi.com/noralf)
+    You can file reports and feature requests as well as see the source code on [**GitHub**](https://github.com/fatestapestry/avrae-collections)
+   
+    ## Support Me!
+    Please consider contributing to future development and maintenance by supporting me on [**Patreon**](https://www.patreon.com/fatestapestry), or donating on [**Ko-Fi**](https://ko-fi.com/noralf).

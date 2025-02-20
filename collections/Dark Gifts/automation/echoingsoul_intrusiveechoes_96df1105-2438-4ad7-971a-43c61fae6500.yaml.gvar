@@ -1,0 +1,45 @@
+- _v: 2
+  name: Intrusive Echoes
+  automation:
+    - type: variable
+      name: n
+      value: len(targets)
+    - type: roll
+      dice: 1d6
+      name: ie
+      hidden: false
+      displayName: Intrusive Echoes
+      fixedValue: true
+    - type: text
+      text: >-
+        {{targets.extend("You are charmed by a creature you can see (of the DM's
+        choice) for 1 minute or until the creature damages you.//You are
+        frightened by a creature you can see (of the DM's choice) for 1 minute,
+        or until the creature damages you.//You perceive another time or place
+        around you until the end of your next turn. During this time, you are
+        blinded to your actual surroundings.//You perceive a different time or
+        place overlapping your surroundings. Your speed is halved until the end
+        of your next turn.//Memories and sensations overwhelm you. You are
+        incapacitated until the start of your next turn.//Your memory is one of
+        triumph. You can reroll the ability check, attack roll, or saving throw
+        that you just made. You must use the new roll.".split("//"))}}
+
+        {{targets[n+int(ie)-1]}}
+      title: Intrusive Echoes
+    - type: counter
+      counter: Intrusive Echoes
+      amount: "1"
+      allowOverflow: false
+      errorBehaviour: raise
+      fixedValue: true
+  verb: experiences
+  proper: true
+  phrase: Immediately after you make an attack roll, an ability check, or a saving
+    throw and roll a 1 on the d20, your soul's memories emerge and overtake your
+    perceptions and experiences. You might see people around you as someone
+    other than who they are, or you become disoriented by a double-experience of
+    the world around you. Roll on the Intrusive Echoes table to determine the
+    effect of these vivid memories and perceptions. Once one of effects occur,
+    these intrusive echoes can't manifest again until you finish a short or long
+    rest.
+  activation_type: 8

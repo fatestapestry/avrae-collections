@@ -1,0 +1,18 @@
+- _v: 2
+  name: Spirit Whispers
+  automation:
+    - type: text
+      text: You learn the Message cantrip if you don't already know it, and require no
+        components to cast it. When you cast the spell, the messages are
+        delivered by one of your whispering spirits rather than you or the
+        target's voice. Your spellcasting ability for this spell is
+        Intelligence, Wisdom, or Charisma (your choice when you gain this Dark
+        Gift).
+      title: Spirit Whispers
+    - type: spell
+      id: 2188
+  verb: casts Message using
+  proper: true
+  phrase: Messages are delivered by one of your whispering spirits rather than you
+    or the target's voice.
+  activation_type: 1

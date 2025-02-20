@@ -1,0 +1,63 @@
+<drac2>
+
+USAGE = "dgsetup <gift|abbr>"
+
+# Setup imports
+dg_metadata = load_json(get_gvar("63384f07-f6ba-43ac-b55f-cd66b2eaf2d2"))
+using(
+   common_utils="0c6d5bca-a15d-4e45-a08d-48cf51411088"
+)
+
+# Parse input
+args = &ARGS&
+if not args:
+   options = ", ".join(f"{k}|{v['abbr']}" for k, v in dg_metadata.items())
+   return err(f"Usage: `{ctx.prefix}{USAGE}`\nValid options:\n`[{options}]`")
+
+gift_name = args[0].lower()
+
+# Find matching gift by name or abbreviation
+gift = None
+gift_data = None
+for name, data in dg_metadata.items():
+   if gift_name in (name, data['abbr']):
+       gift_data = data
+       gift = name
+       break
+
+if not gift_data:
+   options = ", ".join(f"{name}|{data['abbr']}" for name, data in dg_metadata.items())
+   return err(f"Gift `{gift_name}` not found.\nUsage: `{ctx.prefix}{USAGE}`\nValid options: `[{options}]`")
+
+# First validate all YAML and concatenate
+all_automation = []
+for auto_name, gvar_id in gift_data['automation'].items():
+    yaml_content = get_gvar(gvar_id)
+    try:
+        validated_yaml = load_yaml(yaml_content)
+        all_automation.append(yaml_content)
+    except:
+        return err(f"Invalid YAML in automation gvar {gvar_id} for {auto_name}")
+
+# Create counters
+ch = character()
+for counter_name, counter_data in gift_data['counters'].items():
+   ch.create_cc(**counter_data)
+
+# Build embed
+counter_list = "\n".join(f"`{data['name']}`" for data in gift_data['counters'].values())
+embed = common_utils.embed_msg(
+    title=f"Dark Gift ({gift_data['field_title']}) set up!",
+    desc=f"Created counters:\n{counter_list}",
+    fields=[f"{gift_data['field_title']}|{gift_data['field_text']}"],
+    footer=f"`{ctx.prefix}{USAGE}` | Developed by @noralf#0"
+)
+
+# Concatenate all automation into one command
+combined_automation = "\n".join(all_automation)
+
+return f"""multiline
+{ctx.prefix}a import {combined_automation}
+{ctx.prefix}{embed}
+"""
+</drac2>
