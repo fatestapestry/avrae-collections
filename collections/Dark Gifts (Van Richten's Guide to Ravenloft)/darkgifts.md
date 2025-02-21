@@ -1,21 +1,21 @@
-`!dgroll <tablename|abbr>`
+`!darkgifts <table|abbr>`
 
 ## Description
 Generates a random result from a specified Dark Gifts table, simulating supernatural blessings or curses. If no table is provided, it lists all available tables.
 
 ## Arguments
 **Positional arguments**
-  - `<tablename|abbr>` - name or abbreviation of the Dark Gifts table.
+  - `<table|abbr>` - name or abbreviation of the Dark Gifts table.
 
 **Optional arguments**
   - None
 
 ## Examples
 ```
-!dgroll touchofdeath
+!darkgifts touchofdeath
 ```
 ```
-!dgroll td
+!darkgifts td
 ```
 
 ## Issues?

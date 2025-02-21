@@ -1,6 +1,6 @@
 <drac2>
 
-USAGE = "dgsetup <gift|abbr>"
+USAGE = "darkgifts import <gift|abbr>"
 
 # Setup imports
 dg_metadata = load_json(get_gvar("63384f07-f6ba-43ac-b55f-cd66b2eaf2d2"))

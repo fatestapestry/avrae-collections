@@ -6,6 +6,7 @@ using(utils="0c6d5bca-a15d-4e45-a08d-48cf51411088")
 FOOTER = "!help heroicinspiration for more info | Developed by @noralf#0"
 METADATA_GVAR = "733eb979-db97-401f-a99f-2f8eb895e9dd"
 
+
 def get_base_fields():
     """Returns base fields for output and creates counter if needed."""
     ch = character()
@@ -26,6 +27,7 @@ def get_base_fields():
         fields.append(f"Custom Counter Created|Heroic Inspiration set up for {ch.name}")
     
     return fields, metadata
+
 
 def use_heroic_inspiration(dice_str="1d20"):
     """Use Heroic Inspiration to roll dice."""
@@ -51,6 +53,7 @@ def use_heroic_inspiration(dice_str="1d20"):
         fields=fields,
         footer=FOOTER
     )
+
 
 def modify_counter(amt):
     """Set Heroic Inspiration counter to 0 or 1."""

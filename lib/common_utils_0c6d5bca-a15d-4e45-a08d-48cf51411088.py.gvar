@@ -149,3 +149,7 @@ def import_actions(actions):
         err("No valid YAML found")
 
     return f"!a import {' '.join(combined)}"
+
+
+def footer(alias):
+    return f"!help {alias} for more info | Developed by @noralf#0"

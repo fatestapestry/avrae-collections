@@ -1,0 +1,37 @@
+<drac2>
+# Constants
+DECK_TYPES = ["HIGH", "COMMON", "FULL"]
+CARDS = "8174a133-9454-4578-972e-7dfc5d03dc9c"
+
+using(utils="0c6d5bca-a15d-4e45-a08d-48cf51411088")
+
+# Load and filter cards
+data = load_json(get_gvar(CARDS))
+cards = data['cards']
+suit_ranks = data['ranks']
+
+pargs = &ARGS&
+deck_filter = pargs[0].upper() if pargs else "FULL"
+if deck_filter not in DECK_TYPES:
+    err(f'Invalid Deck Selection: `{pargs[0]}`.  Must be in `{[d.lower() for d in DECK_TYPES]}`')
+
+deck = [card for card in cards if card["deck"] == deck_filter] if deck_filter != "FULL" else cards
+
+# Draw card
+drawn = deck[randint(0, len(deck) - 1)]
+
+# Format display
+title = f"{name} draws the {drawn['name']} from the {deck_filter.title()} Deck!"
+desc = f"You have drawn the **`{drawn['name']}`**"
+if drawn["deck"] != "HIGH":
+    desc += f" *({drawn['rank']} of {drawn['suit']})*"
+
+# Combine name and desc into reading field
+fields = [f"Represents|*{drawn['desc']}*"]
+if drawn["deck"] == "COMMON":
+    fields.append(f"The Suit of {drawn['suit']}|*{suit_ranks[drawn['suit']]}*")
+
+return (f'embed -title "{title}" -desc "{desc}"' +
+        ''.join(f' -f "{f}"' for f in fields) +
+        f' -footer "{utils.footer(ctx.alias)}" -image {drawn["url"]} -color <color>')
+</drac2>

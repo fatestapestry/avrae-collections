@@ -1,0 +1,442 @@
+{
+   "cards":[
+      {
+         "name":"Warrior",
+         "suit":"Swords",
+         "rank":"Master",
+         "desc":"Strength and force personified; violence; those who use force to accomplish their goals",
+         "deck":"COMMON",
+         "url":"https://i.ibb.co/sdbqscjJ/Master-of-Swords-Warrior.png"
+      },
+      {
+         "name":"Avenger",
+         "suit":"Swords",
+         "rank":"One",
+         "desc":"Justice and revenge for great wrongs; those on a quest to rid the world of great evil",
+         "deck":"COMMON",
+         "url":"https://i.ibb.co/LDSdqvCp/1-of-Swords-Avenger.png"
+      },
+      {
+         "name":"Paladin",
+         "suit":"Swords",
+         "rank":"Two",
+         "desc":"Just and noble warriors; those who live by a code of honor and integrity",
+         "deck":"COMMON",
+         "url":"https://i.ibb.co/QjzzfqYB/2-of-Swords-Paladin.png"
+      },
+      {
+         "name":"Soldier",
+         "suit":"Swords",
+         "rank":"Three",
+         "desc":"War and sacrifice; the stamina to endure great hardship",
+         "deck":"COMMON",
+         "url":"https://i.ibb.co/Q7cLMYZp/3-of-Swords-Soldier.png"
+      },
+      {
+         "name":"Mercenary",
+         "suit":"Swords",
+         "rank":"Four",
+         "desc":"Inner strength and fortitude; those who fight for power or wealth",
+         "deck":"COMMON",
+         "url":"https://i.ibb.co/B5Cs1DrM/4-of-Swords-Mercenary.png"
+      },
+      {
+         "name":"Myrmidon",
+         "suit":"Swords",
+         "rank":"Five",
+         "desc":"Great heroes; a sudden reversal of fate; the triumph of the underdog over a mighty enemy",
+         "deck":"COMMON",
+         "url":"https://i.ibb.co/TMG54h3F/5-of-Swords-Myrmidon.png"
+      },
+      {
+         "name":"Berserker",
+         "suit":"Swords",
+         "rank":"Six",
+         "desc":"The brutal and barbaric side of warfare; bloodlust; those with a bestial nature",
+         "deck":"COMMON",
+         "url":""
+      },
+      {
+         "name":"Hooded One",
+         "suit":"Swords",
+         "rank":"Seven",
+         "desc":"Bigotry, intolerance, and xenophobia; a mysterious presence or newcomer",
+         "deck":"COMMON",
+         "url":"https://i.ibb.co/mF6jrg8m/6-of-Swords-Berserker.png"
+      },
+      {
+         "name":"Dictator",
+         "suit":"Swords",
+         "rank":"Eight",
+         "desc":"All that is wrong with government and leadership; those who rule through fear and violence",
+         "deck":"COMMON",
+         "url":"https://i.ibb.co/v6KtxSK1/8-of-Swords-Dictator.png"
+      },
+      {
+         "name":"Torturer",
+         "suit":"Swords",
+         "rank":"Nine",
+         "desc":"The coming of suffering or merciless cruelty; one who is irredeemably evil or sadistic",
+         "deck":"COMMON",
+         "url":"https://i.ibb.co/MkLkfBxj/9-of-Swords-Torturer.png"
+      },
+      {
+         "name":"Wizard",
+         "suit":"Stars",
+         "rank":"Master",
+         "desc":"Mystery and riddles; the unknown; those who crave magical power and great knowledge",
+         "deck":"COMMON",
+         "url":"https://i.ibb.co/HQZPkQY/Master-of-Stars-Wizard.png"
+      },
+      {
+         "name":"Transmuter",
+         "suit":"Stars",
+         "rank":"One",
+         "desc":"A new discovery; the coming of unexpected things; unforeseen consequences and chaos",
+         "deck":"COMMON",
+         "url":"https://i.ibb.co/PGzCw9hg/1-of-Stars-Transmuter.png"
+      },
+      {
+         "name":"Diviner",
+         "suit":"Stars",
+         "rank":"Two",
+         "desc":"The pursuit of knowledge tempered by wisdom; truth and honesty; sages and prophecy",
+         "deck":"COMMON",
+         "url":"https://i.ibb.co/5g5Y2Pvb/2-of-Stars-Diviner.png"
+      },
+      {
+         "name":"Enchanter",
+         "suit":"Stars",
+         "rank":"Three",
+         "desc":"Inner turmoil that comes from confusion, fear of failure, or false information",
+         "deck":"COMMON",
+         "url":"https://i.ibb.co/v6M79vds/3-of-Stars-Enchanter.png"
+      },
+      {
+         "name":"Abjurer",
+         "suit":"Stars",
+         "rank":"Four",
+         "desc":"Those guided by logic and reasoning; warns of an overlooked clue or piece of information",
+         "deck":"COMMON",
+         "url":"https://i.ibb.co/WWxL1Tpx/4-of-Stars-Abjurer.png"
+      },
+      {
+         "name":"Elementalist",
+         "suit":"Stars",
+         "rank":"Five",
+         "desc":"The triumph of nature over civilization; natural disasters and bountiful harvests",
+         "deck":"COMMON",
+         "url":"https://i.ibb.co/QvSr0Ps7/5-of-Stars-Elementalist.png"
+      },
+      {
+         "name":"Evoker",
+         "suit":"Stars",
+         "rank":"Six",
+         "desc":"Magical or supernatural power that can't be controlled; magic for destructive ends",
+         "deck":"COMMON",
+         "url":"https://i.ibb.co/RGfsjRZP/6-of-Stars-Evoker.png"
+      },
+      {
+         "name":"Illusionist",
+         "suit":"Stars",
+         "rank":"Seven",
+         "desc":"Lies and deceit; grand conspiracies; secret societies; the presence of a dupe or a saboteur",
+         "deck":"COMMON",
+         "url":"https://i.ibb.co/Q77vZ6Gs/7-of-Stars-Illusionist.png"
+      },
+      {
+         "name":"Necromancer",
+         "suit":"Stars",
+         "rank":"Eight",
+         "desc":"Unnatural events and unhealthy obsessions; those who follow a destructive path",
+         "deck":"COMMON",
+         "url":"https://i.ibb.co/zWR5Pv1W/8-of-Stars-Necromancer.png"
+      },
+      {
+         "name":"Conjurer",
+         "suit":"Stars",
+         "rank":"Nine",
+         "desc":"The coming of an unexpected supernatural threat; those who think of themselves as gods",
+         "deck":"COMMON",
+         "url":"https://i.ibb.co/yFZyGKkH/9-of-Stars-Conjurer.png"
+      },
+      {
+         "name":"Rogue",
+         "suit":"Coins",
+         "rank":"Master",
+         "desc":"Anyone for whom money is important; those who believe money is the key to their success",
+         "deck":"COMMON",
+         "url":"https://i.ibb.co/B5tVZZJb/Master-of-Coins-Rogue.png"
+      },
+      {
+         "name":"Swashbuckler",
+         "suit":"Coins",
+         "rank":"One",
+         "desc":"Those who like money yet give it up freely; likable rogues and rapscallions",
+         "deck":"COMMON",
+         "url":"https://i.ibb.co/YFmchkd5/1-of-Coins-Swashbuckler.png"
+      },
+      {
+         "name":"Philanthropist",
+         "suit":"Coins",
+         "rank":"Two",
+         "desc":"Charity and giving on a grand scale; those who use wealth to fight evil and sickness",
+         "deck":"COMMON",
+         "url":"https://i.ibb.co/v43rmYDF/2-of-Coins-Philanthropist.png"
+      },
+      {
+         "name":"Trader",
+         "suit":"Coins",
+         "rank":"Three",
+         "desc":"Commerce; smuggling and black markets; fair and equitable trades",
+         "deck":"COMMON",
+         "url":"https://i.ibb.co/HDcv5psN/3-of-Coins-Trader.png"
+      },
+      {
+         "name":"Merchant",
+         "suit":"Coins",
+         "rank":"Four",
+         "desc":"A rare commodity or business opportunity; deceitful or dangerous business transactions",
+         "deck":"COMMON",
+         "url":"https://i.ibb.co/hRN55Jvc/4-of-Coins-Merchant.png"
+      },
+      {
+         "name":"Guild Member",
+         "suit":"Coins",
+         "rank":"Five",
+         "desc":"Like-minded individuals joined together in a common goal; pride in one's work",
+         "deck":"COMMON",
+         "url":"https://i.ibb.co/XNxWj0B/5-of-Coins-Guild-Member.png"
+      },
+      {
+         "name":"Beggar",
+         "suit":"Coins",
+         "rank":"Six",
+         "desc":"Sudden change in economic status or fortune",
+         "deck":"COMMON",
+         "url":"https://i.ibb.co/mryYcygL/6-of-Coins-Beggar.png"
+      },
+      {
+         "name":"Thief",
+         "suit":"Coins",
+         "rank":"Seven",
+         "desc":"Those who steal or burgle; a loss of property, beauty, innocence, friendship, or reputation",
+         "deck":"COMMON",
+         "url":"https://i.ibb.co/JRfz8FSH/7-of-Coins-Thief.png"
+      },
+      {
+         "name":"Tax Collector",
+         "suit":"Coins",
+         "rank":"Eight",
+         "desc":"Corruption; honesty in an otherwise corrupt government or organization",
+         "deck":"COMMON",
+         "url":"https://i.ibb.co/1thZmhw4/8-of-Coins-Tax-Collector.png"
+      },
+      {
+         "name":"Miser",
+         "suit":"Coins",
+         "rank":"Nine",
+         "desc":"Hoarded wealth; those who are irreversibly unhappy or who think money is meaningless",
+         "deck":"COMMON",
+         "url":"https://i.ibb.co/PvYdYDsD/9-of-Coins-Miser.png"
+      },
+      {
+         "name":"Priest",
+         "suit":"Glyphs",
+         "rank":"Master",
+         "desc":"Enlightenment; those who follow a deity, a system of values, or a higher purpose",
+         "deck":"COMMON",
+         "url":"https://i.ibb.co/Ld8KPFV0/Master-of-Glyphs-Priest.png"
+      },
+      {
+         "name":"Monk",
+         "suit":"Glyphs",
+         "rank":"One",
+         "desc":"Serenity; inner strength and self-reliance; supreme confidence bereft of arrogance",
+         "deck":"COMMON",
+         "url":"https://i.ibb.co/gFvLMqcR/1-of-Glyphs-Monk.png"
+      },
+      {
+         "name":"Missionary",
+         "suit":"Glyphs",
+         "rank":"Two",
+         "desc":"Those who spread wisdom and faith to others; warnings of the spread of fear and ignorance",
+         "deck":"COMMON",
+         "url":"https://i.ibb.co/1Gj0r3Pf/2-of-Glyphs-Missionary.png"
+      },
+      {
+         "name":"Healer",
+         "suit":"Glyphs",
+         "rank":"Three",
+         "desc":"Healing; a contagious illness, disease, or curse; those who practice the healing arts",
+         "deck":"COMMON",
+         "url":"https://i.ibb.co/jPt7vmq0/3-of-Glyphs-Healer.png"
+      },
+      {
+         "name":"Shepherd",
+         "suit":"Glyphs",
+         "rank":"Four",
+         "desc":"Those who protect others; one who bears a burden far too great to be shouldered alone",
+         "deck":"COMMON",
+         "url":"https://i.ibb.co/Txfz4NRZ/4-of-Glyphs-Shepherd.png"
+      },
+      {
+         "name":"Druid",
+         "suit":"Glyphs",
+         "rank":"Five",
+         "desc":"The ambivalence and cruelty of nature and those who feel drawn to it; inner turmoil",
+         "deck":"COMMON",
+         "url":"https://i.ibb.co/W4mrPtcw/5-of-Glyphs-Druid.png"
+      },
+      {
+         "name":"Anarchist",
+         "suit":"Glyphs",
+         "rank":"Six",
+         "desc":"A fundamental change brought on by one whose beliefs are being put to the test",
+         "deck":"COMMON",
+         "url":"https://i.ibb.co/67S1k3Dq/6-of-Glyphs-Anarchist.png"
+      },
+      {
+         "name":"Charlatan",
+         "suit":"Glyphs",
+         "rank":"Seven",
+         "desc":"Liars; those who profess to believe one thing but actually believe another",
+         "deck":"COMMON",
+         "url":"https://i.ibb.co/vCnV3VyK/7-of-Glyphs-Charlatan.png"
+      },
+      {
+         "name":"Bishop",
+         "suit":"Glyphs",
+         "rank":"Eight",
+         "desc":"Strict adherence to a code or a belief; those who plot, plan, and scheme",
+         "deck":"COMMON",
+         "url":"https://i.ibb.co/rGXnXgFJ/8-of-Glyphs-Bishop.png"
+      },
+      {
+         "name":"Traitor",
+         "suit":"Glyphs",
+         "rank":"Nine",
+         "desc":"Betrayal by someone close and trusted; a weakening or loss of faith",
+         "deck":"COMMON",
+         "url":"https://i.ibb.co/TxkF70BP/9-of-Glyphs-Traitor.png"
+      },
+      {
+         "name":"Artifact",
+         "suit":null,
+         "rank":null,
+         "desc":"The importance of some physical object that must be obtained, protected, or destroyed at all costs",
+         "deck":"HIGH",
+         "url":"https://i.ibb.co/4RsYS9Vy/Artifact.png"
+      },
+      {
+         "name":"Beast",
+         "suit":null,
+         "rank":null,
+         "desc":"Great rage or passion; something bestial or malevolent hiding in plain sight or lurking just below the surface",
+         "deck":"HIGH",
+         "url":"https://i.ibb.co/ds50WL7S/Beast.png"
+      },
+      {
+         "name":"Broken One",
+         "suit":null,
+         "rank":null,
+         "desc":"Defeat, failure, and despair; the loss of something or someone important, without which one feels incomplete",
+         "deck":"HIGH",
+         "url":"https://i.ibb.co/ZzC4ff2v/Broken-One.png"
+      },
+      {
+         "name":"Darklord",
+         "suit":null,
+         "rank":null,
+         "desc":"A single, powerful individual of an evil nature, one whose goals have enormous and far-reaching consequences",
+         "deck":"HIGH",
+         "url":"https://i.ibb.co/Jj0xQL1V/Darklord.png"
+      },
+      {
+         "name":"Donjon",
+         "suit":null,
+         "rank":null,
+         "desc":"Isolation and imprisonment; being so conservative in thinking as to be a prisoner of one's own beliefs",
+         "deck":"HIGH",
+         "url":"https://i.ibb.co/R4SmGbV9/Donjon.png"
+      },
+      {
+         "name":"Ghost",
+         "suit":null,
+         "rank":null,
+         "desc":"The looming past; the return of an old enemy or the discovery of a secret buried long ago",
+         "deck":"HIGH",
+         "url":"https://i.ibb.co/ZRqnWxGb/Ghost.png"
+      },
+      {
+         "name":"Executioner",
+         "suit":null,
+         "rank":null,
+         "desc":"The imminent death of one rightly or wrongly convicted of a crime; false accusations and unjust prosecution",
+         "deck":"HIGH",
+         "url":"https://i.ibb.co/mC7FvMhf/Executioner.png"
+      },
+      {
+         "name":"Horseman",
+         "suit":null,
+         "rank":null,
+         "desc":"Death; disaster in the form of the loss of wealth or property, a horrible defeat, or the end of a bloodline",
+         "deck":"HIGH",
+         "url":"https://i.ibb.co/Jjdcy32j/Horseman.png"
+      },
+      {
+         "name":"Innocent",
+         "suit":null,
+         "rank":null,
+         "desc":"A being of great importance whose life is in danger (who might be helpless or simply unaware of the peril)",
+         "deck":"HIGH",
+         "url":"https://i.ibb.co/QSDDdBY/Innocent.png"
+      },
+      {
+         "name":"Marionette",
+         "suit":null,
+         "rank":null,
+         "desc":"The presence of a spy or a minion of some greater power; an encounter with a puppet or an underling",
+         "deck":"HIGH",
+         "url":"https://i.ibb.co/1tzjmQXt/Marionette.png"
+      },
+      {
+         "name":"Mists",
+         "suit":null,
+         "rank":null,
+         "desc":"Something unexpected or mysterious that can't be avoided; a great quest or journey that will try one's spirit",
+         "deck":"HIGH",
+         "url":"https://i.ibb.co/wNTXQy8M/Mists.png"
+      },
+      {
+         "name":"Raven",
+         "suit":null,
+         "rank":null,
+         "desc":"A hidden source of information; a fortunate turn of events; a secret potential for good",
+         "deck":"HIGH",
+         "url":"https://i.ibb.co/v4dZVbz0/Raven.png"
+      },
+      {
+         "name":"Seer",
+         "suit":null,
+         "rank":null,
+         "desc":"Inspiration and keen intellect; a future event, the outcome of which will hinge on a clever mind",
+         "deck":"HIGH",
+         "url":"https://i.ibb.co/yF89C97B/Seer.png"
+      },
+      {
+         "name":"Tempter",
+         "suit":null,
+         "rank":null,
+         "desc":"One who has been compromised or led astray by temptation or foolishness; one who tempts others for evil ends",
+         "deck":"HIGH",
+         "url":"https://i.ibb.co/CpRJ5Yn2/Tempter.png"
+      }
+   ],
+   "ranks":{
+      "Swords":"This suit symbolizes aggression and violence. It is the suit of warriors, be they paladins, soldiers, mercenaries, or gladiators. It also symbolizes the power of governments and leaders, whether noble or corrupt.",
+      "Stars":"This suit symbolizes the desire for personal power and control over things beyond the ken of mortals. It is the suit of arcane mages, sages, and intellectuals. It also represents the triumph of magic, science, and reason over religion, mysticism, and superstition.",
+      "Coins":"This suit symbolizes avarice and the desire for personal and material gain. It is also symbolic of gluttony, lust, and obsession. On the side of good, this suit can suggest the accumulation of wealth for the benefit of a charity or a just cause. On the side of evil, it embodies the worst aspects of greed. It speaks to the power of gold, and how that power can build or destroy nations.",
+      "Glyphs":"This suit symbolizes faith, spirituality, and inner strength. It is the suit of priests and those who devote themselves to the service of a deity, a higher power, or a heightened philosophy. On the side of good, it represents willpower and dedication. On the side of evil, the suit signifies weakness of character, self-doubt, and betrayal of one's ideals or beliefs. It symbolizes health and healing, as well as illness and disease."
+   }
+}
