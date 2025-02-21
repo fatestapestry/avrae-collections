@@ -1,4 +1,4 @@
-# Heroic Inspiration
+# Heroic Inspiration (2024)
 
 *Manage and roll Heroic Inspiration points for your characters*
 
