@@ -1,5 +1,5 @@
 - _v: 2
-  name: Spirit Whispers
+  name: "Message: Spirit Whispers"
   automation:
     - type: text
       text: You learn the Message cantrip if you don't already know it, and require no
@@ -11,7 +11,7 @@
       title: Spirit Whispers
     - type: spell
       id: 2188
-  verb: casts Message using
+  verb: casts
   proper: true
   phrase: Messages are delivered by one of your whispering spirits rather than you
     or the target's voice.

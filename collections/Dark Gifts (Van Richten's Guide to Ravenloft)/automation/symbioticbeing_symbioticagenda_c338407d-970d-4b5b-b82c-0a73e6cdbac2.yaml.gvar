@@ -8,10 +8,11 @@
           fail:
             - type: roll
               dice: 1d12
-              name: ""
-              displayName: Charm Length
+              name: charm_duration
+              hidden: null
+              displayName: Charm Duration (Hours)
           success: []
-          dc: "{{choice if choice else spell_dc}}"
+          dc: "{{12 + int(symbiote.split('\"charismaMod\": ')[1].split(',')[0])}}"
     - type: text
       text: >-
         Your symbiote has an agenda that drives it, and it expects you to assist
@@ -31,6 +32,5 @@
   _v: 2
   proper: true
   verb: attempts to resist a
+  phrase: Required `!symbiote` to be set up
   activation_type: 8
-  phrase: Defaults to your Save DC. To set the symbiote DC, use `-choice <dc>` (DC
-    12 + the symbiote's Charisma modifier)

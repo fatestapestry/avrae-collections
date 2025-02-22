@@ -1,0 +1,123 @@
+<drac2>
+USAGE = "!symbiote [show] [random] [-str #] [-dex #] [-con #] [-int #] [-wis #] [-cha #] [override|delete]"
+
+using(
+    common_utils="0c6d5bca-a15d-4e45-a08d-48cf51411088",
+    libroll="fb86111e-6d9f-42e0-aba1-d0c03750cb38"
+)
+
+
+def gen_stat_block(stats):
+    """Generate the full stat block with modifiers"""
+    stat_block = {}
+    for abbr, score in stats.items():
+        full_name = common_utils.ABILITY_NAMES[abbr]
+        lower_name = full_name.lower()
+        mod = libroll.calculate_mod(score)
+        # Store each stat in all required formats
+        stat_block[lower_name] = score  # strength
+        stat_block[f"{lower_name}Mod"] = mod  # strengthMod
+        stat_block[f"{lower_name}Save"] = mod  # strengthSave
+    return stat_block
+
+
+# Parse arguments
+args = argparse(&ARGS&)
+ch = character()
+
+# Check if symbiote exists
+has_symbiote = ch.get_cvar('symbiote', None) is not None
+
+# Handle show command
+if args.get('show'):
+    if not has_symbiote:
+        return err(f"No symbiote found. Please create one.\nUsage: `{USAGE}`")
+
+    stats = load_json(ch.get_cvar('symbiote'))
+    stat_display = []
+    for abbr in ('str', 'dex', 'con', 'int', 'wis', 'cha'):
+        full_name = common_utils.ABILITY_NAMES[abbr]
+        score = stats[full_name.lower()]
+        mod = stats[f"{full_name.lower()}Mod"]
+        stat_display.append(f"{full_name}: {score} ({mod:+})")
+
+    desc = "**Stats:**\n" + str.join("\n", stat_display)
+
+    return common_utils.embed_msg(
+        title=f"{name}'s Symbiote",
+        desc=desc,
+        footer=f"{common_utils.footer('symbiote')}"
+    )
+
+# Handle delete command
+if args.get('delete'):
+    if not has_symbiote:
+        return err(f"No symbiote to delete.\nUsage: {USAGE}")
+    ch.delete_cvar('symbiote')
+    return common_utils.embed_msg(
+        title=f"{name} has severed their Symbiotic Bond!",
+        desc="The symbiote has been removed.",
+        footer=f"{USAGE} | {common_utils.footer('symbiote')}"
+    )
+
+# Check for existing symbiote
+if has_symbiote and not args.get('override'):
+    return err(f"You already have a symbiote! Use 'override' to replace it or 'delete' to remove it.\nUsage: `{USAGE}`")
+
+# Handle random stat generation
+if args.get('random'):
+    stats = {}
+    rolls = []
+    for abbr in ('str', 'dex', 'con', 'int', 'wis', 'cha'):
+        roll_result = libroll.roll_abilityscore()
+        stats[abbr] = roll_result.total
+        full_name = common_utils.ABILITY_NAMES[abbr]
+        rolls.append(f"{full_name}: {roll_result}")
+
+    stat_block = gen_stat_block(stats)
+    ch.set_cvar('symbiote', dump_json(stat_block))
+
+    stat_display = []
+    for abbr, score in stats.items():
+        full_name = common_utils.ABILITY_NAMES[abbr]
+        mod = libroll.calculate_mod(score)
+        stat_display.append(f"{full_name}: {score} ({mod:+})")
+
+    desc = "**Rolled Stats:**\n" + str.join("\n", rolls) + "\n\n**Final Stats:**\n" + str.join("\n", stat_display)
+
+    return common_utils.embed_msg(
+        title=f"{name}'s Existence is Entwined with a Symbiote!",
+        desc=desc,
+        footer=f"{USAGE} | {common_utils.footer('symbiote')}"
+    )
+
+# Handle manual stat input
+stats = {}
+for abbr in ('str', 'dex', 'con', 'int', 'wis', 'cha'):
+    val = args.last(abbr)
+    if not val:
+        return err(f"Missing {common_utils.ABILITY_NAMES[abbr]} value.\nUsage: `{USAGE}`")
+    try:
+        stats[abbr] = int(val)
+    except:
+        return err(f"Invalid {common_utils.ABILITY_NAMES[abbr]} value: {val}\nUsage: `{USAGE}`")
+
+# Generate and save stat block
+stat_block = gen_stat_block(stats)
+ch.set_cvar('symbiote', dump_json(stat_block))
+
+# Generate display
+stat_display = []
+for abbr, score in stats.items():
+    full_name = common_utils.ABILITY_NAMES[abbr]
+    mod = libroll.calculate_mod(score)
+    stat_display.append(f"{full_name}: {score} ({mod:+})")
+
+desc = "**Stats:**\n" + str.join("\n", stat_display)
+
+return common_utils.embed_msg(
+    title=f"{name}'s Existence is Entwined with a Symbiote!",
+    desc=desc,
+    footer=f"{USAGE} | {common_utils.footer('symbiote')}"
+)
+</drac2>

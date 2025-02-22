@@ -1,5 +1,4 @@
-- _v: 2
-  name: Poisoned Roots
+- name: Poisoned Roots
   automation:
     - type: target
       target: self
@@ -10,6 +9,7 @@
             - type: counter
               counter: Exhaustion
               amount: "-1"
+              allowOverflow: null
               fixedValue: true
           success: []
           dc: "15"
@@ -22,6 +22,7 @@
         saving throw or gain 1 level of exhaustion that can't be removed while
         you remain in the area.
       title: Poisoned Roots
-  verb: attempts to resist
+  _v: 2
   proper: true
+  verb: attempts to resist
   activation_type: 8

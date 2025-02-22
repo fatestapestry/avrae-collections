@@ -1,4 +1,4 @@
-- name: Grasping Shadow
+- name: "Mage Hand: Grasping Shadow"
   automation:
     - type: text
       text: You learn the Mage Hand cantrip if you don't already know it, and require
@@ -10,8 +10,8 @@
     - type: spell
       id: 2173
   _v: 2
-  proper: false
-  verb: casts Mage Hand with
+  proper: true
+  verb: casts
   activation_type: 1
   phrase: The hand created by the spell is shadowy but is not bound to your actual
     shadow.
