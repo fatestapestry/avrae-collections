@@ -142,3 +142,13 @@ def save(save_name: str, parsed_args: dict, custom_args: dict = {}):
     natural_save_roll = int(left)
 
     return {"name": save.title(), "roll": r, "naturalRoll": natural_save_roll}
+
+
+def calculate_mod(score):
+    """Calculate ability modifier from score"""
+    return (score - 10) // 2
+
+
+def roll_abilityscore(dice="4d6kh3"):
+    """Roll an ability score using the specified dice"""
+    return vroll(dice)
