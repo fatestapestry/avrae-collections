@@ -1,0 +1,1 @@
+**Borrowed Eyes.** As an action, you can influence the presence guiding the watchers for 1 hour. For the duration, you gain advantage on Intelligence (Investigation) and Wisdom (Perception) checks, and you can't be blinded. Once you use this feature, you can't use it again until you finish a long rest.

@@ -1,0 +1,20 @@
+- name: "Misty Step: Mist Walker"
+  automation:
+    - type: counter
+      counter: "Mist Walker: Misty Step"
+      amount: "1"
+      fixedValue: true
+      errorBehaviour: raise
+    - type: spell
+      id: 2195
+    - type: text
+      text: You can cast the Misty Step spell, requiring no spell slot, and you must
+        finish a long rest before you can cast it this way again. Your
+        spellcasting ability for this spell is Intelligence, Wisdom, or Charisma
+        (your choice when you gain this Dark Gift). If you have spell slots of
+        2nd level or higher, you can cast this spell with them.
+      title: Misty Step
+  _v: 2
+  proper: true
+  verb: casts
+  activation_type: 3

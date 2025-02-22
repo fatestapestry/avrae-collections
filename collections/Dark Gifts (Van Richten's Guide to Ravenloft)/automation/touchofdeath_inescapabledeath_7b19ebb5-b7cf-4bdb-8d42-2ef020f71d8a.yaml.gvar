@@ -1,0 +1,21 @@
+- name: Inescapable Death
+  automation:
+    - type: condition
+      condition: choice != ""
+      onTrue:
+        - type: target
+          target: all
+          effects:
+            - type: damage
+              damage: "{{choice}}"
+              fixedValue: true
+      onFalse: []
+      errorBehaviour: raise
+    - type: text
+      text: When you hit a target with an attack roll and deal necrotic damage, you
+        ignore the target's resistance to that damage.
+      title: Inescapable Death
+  _v: 2
+  proper: true
+  verb: ensures an
+  phrase: Use `-choice <amt>` to apply necrotic damage to a target

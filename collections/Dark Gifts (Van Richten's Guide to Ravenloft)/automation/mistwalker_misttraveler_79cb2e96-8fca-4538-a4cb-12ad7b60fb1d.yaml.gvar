@@ -1,0 +1,13 @@
+- name: Mist Traveler
+  automation:
+    - type: text
+      text: When you enter the Mists intent on reaching a specific domain, you are
+        treated as if you possess a Mist talisman keyed to that domain. To use
+        this trait, you must know the name of the domain you have chosen as your
+        destination, but you don't need to have previously visited that land.
+        This trait doesn't allow you to bypass domain borders closed by a
+        Darklord's will.
+      title: Mist Traveler
+  _v: 2
+  proper: true
+  verb: uses

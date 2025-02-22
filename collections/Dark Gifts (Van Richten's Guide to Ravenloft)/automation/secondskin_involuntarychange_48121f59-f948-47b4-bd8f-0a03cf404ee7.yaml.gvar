@@ -1,0 +1,24 @@
+- name: Involuntary Change
+  automation:
+    - type: target
+      target: self
+      effects:
+        - type: save
+          stat: cha
+          fail: []
+          success: []
+          dc: "15"
+    - type: text
+      text: >-
+        Certain circumstances can activate your Dark Gift. After you experience
+        this catalyst, at the start of your next turn you must succeed on a DC
+        15 Charisma saving throw or use your action to cast Alter Self as
+        described in the Transformation trait, even if you have already used it.
+
+
+        Roll on or choose an option from the Change Catalyst table to determine what triggers your involuntary change.
+      title: Involuntary Change
+  _v: 2
+  proper: true
+  verb: attempts to resist an
+  activation_type: 8

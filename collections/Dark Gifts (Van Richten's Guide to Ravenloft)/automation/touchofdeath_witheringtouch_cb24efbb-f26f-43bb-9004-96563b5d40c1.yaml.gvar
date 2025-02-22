@@ -1,0 +1,15 @@
+- name: Withering Contact
+  automation:
+    - type: target
+      target: all
+      effects:
+        - type: damage
+          damage: 1d10 [necrotic]
+          fixedValue: true
+    - type: text
+      text: When you start your turn grappling a creature or grappled by it, the
+        creature takes 1d10 necrotic damage.
+      title: Withering Contact
+  _v: 2
+  proper: true
+  verb: attacks with

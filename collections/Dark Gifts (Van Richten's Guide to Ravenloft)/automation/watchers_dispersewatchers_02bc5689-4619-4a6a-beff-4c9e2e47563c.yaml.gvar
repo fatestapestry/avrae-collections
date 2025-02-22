@@ -1,0 +1,28 @@
+- name: Disperse the Watchers
+  automation:
+    - type: target
+      target: self
+      effects:
+        - type: check
+          ability: animalHandling
+          dc: "15"
+          success:
+            - type: counter
+              counter: Disperse Watchers
+              amount: "1"
+              fixedValue: true
+              errorBehaviour: raise
+          fail: []
+    - type: text
+      text: You can temporarily disperse or hide the watchers with some effort. With 1
+        minute of work and a successful DC 15 Charisma (Animal Handling) check,
+        you can suppress your Borrowed Eyes and Dread Presence for 1 hour. Once
+        you successfully suppress these features, you can't do so again until
+        you finish a long rest.
+      title: Disperse the Watchers
+  _v: 2
+  proper: true
+  verb: attempts to
+  activation_type: 8
+  phrase: "Note: performs a standard DC 15 Animal Handling check, not DC 15
+    Charisma (Animal Handling)"

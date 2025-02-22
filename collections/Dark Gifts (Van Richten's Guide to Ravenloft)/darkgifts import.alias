@@ -48,7 +48,7 @@ for counter_name, counter_data in gift_data['counters'].items():
 counter_list = "\n".join(f"`{data['name']}`" for data in gift_data['counters'].values())
 embed = common_utils.embed_msg(
     title=f"Dark Gift ({gift_data['field_title']}) set up!",
-    desc=f"Created counters:\n{counter_list}",
+    desc=f"**Counters Created:**\n{counter_list if counter_list else None}",
     fields=[f"{gift_data['field_title']}|{gift_data['field_text']}"],
     footer=f"`{ctx.prefix}{USAGE}` | Developed by @noralf#0"
 )

@@ -1,0 +1,20 @@
+- name: Borrowed Eyes
+  automation:
+    - type: counter
+      counter: Borrowed Eyes
+      amount: "1"
+      fixedValue: true
+      errorBehaviour: raise
+    - type: text
+      text: As an action, you can influence the presence guiding the watchers for 1
+        hour. For the duration, you gain advantage on Intelligence
+        (Investigation) and Wisdom (Perception) checks, and you can't be
+        blinded. Once you use this feature, you can't use it again until you
+        finish a long rest.
+      title: Borrowed Eyes
+  _v: 2
+  proper: true
+  verb: uses their
+  activation_type: 1
+  phrase: For the duration, you gain advantage on Intelligence (Investigation) and
+    Wisdom (Perception) checks, and you can't be blinded.

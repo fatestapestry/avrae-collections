@@ -1,0 +1,29 @@
+- name: Sustained Symbiosis
+  automation:
+    - type: counter
+      counter: Sustained Symbiosis
+      amount: "1"
+      fixedValue: true
+      errorBehaviour: raise
+    - type: text
+      text: Your symbiote has a vested interest in your survival and takes steps to
+        ensure it. When you fail a saving throw, you can choose to have your
+        symbiote expend one of your Hit Dice to roll it and add the number
+        rolled to the saving throw, potentially turning the failure into a
+        success. If it uses this feature on a death saving throw, you succeed on
+        the save and regain 1 hit point regardless of the number rolled on the
+        d20.
+      title: Sustained Symbiosis
+    - type: condition
+      condition: choice != ""
+      onTrue:
+        - type: roll
+          dice: "{{choice}}"
+          name: hd_save_bonus
+          displayName: Hit Die Save Bonus
+      onFalse: []
+  _v: 2
+  proper: true
+  verb: uses
+  activation_type: 8
+  phrase: Specify the hit die size (e.g. 1d10) with `-choice <XdY>`

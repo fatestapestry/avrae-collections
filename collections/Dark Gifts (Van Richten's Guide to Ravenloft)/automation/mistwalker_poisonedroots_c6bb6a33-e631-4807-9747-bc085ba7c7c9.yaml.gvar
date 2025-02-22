@@ -1,0 +1,27 @@
+- _v: 2
+  name: Poisoned Roots
+  automation:
+    - type: target
+      target: self
+      effects:
+        - type: save
+          stat: con
+          fail:
+            - type: counter
+              counter: Exhaustion
+              amount: "-1"
+              fixedValue: true
+          success: []
+          dc: "15"
+    - type: text
+      text: When you finish a long rest, the world around you in a 10-mile radius
+        becomes a siphon that will eventually leech away your vitality. You can
+        remain in the area safely for a number of weeks equal to your
+        Constitution modifier (minimum of 1 week). Thereafter, each time you
+        finish a long rest in the area, you must succeed on a DC 15 Constitution
+        saving throw or gain 1 level of exhaustion that can't be removed while
+        you remain in the area.
+      title: Poisoned Roots
+  verb: attempts to resist
+  proper: true
+  activation_type: 8

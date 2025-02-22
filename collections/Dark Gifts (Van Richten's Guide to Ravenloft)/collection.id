@@ -1,5 +1,7 @@
 {
   "snippets": {
+    "dreadpresence": "67b961fb94f5a6e3f8bea0a2", 
+    "borrowedeyes": "67b9619c94f5a6e3f8bea0a1", 
     "ominouswill": "67aba175976f4f0569019bb8"
   }, 
   "collection": "67aac0ad52c535a5ed1c2e27", 
@@ -7,5 +9,5 @@
     "darkgifts import": "67b70cbd5b92b89b5ad52376", 
     "darkgifts": "67aac0c9976f4f0569019b47"
   }, 
-  "name": "Dark Gifts"
+  "name": "Dark Gifts (Van Richten's Guide to Ravenloft)"
 }
