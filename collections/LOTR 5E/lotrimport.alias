@@ -1,4 +1,9 @@
 <drac2>
+
+using(
+    common_utils="0c6d5bca-a15d-4e45-a08d-48cf51411088"
+)
+
 # Get character
 ch = character()
 if not ch:
@@ -16,6 +21,7 @@ processed_classes = set()
 char_classes = []
 valid_classes = [c["Class"] for c in class_data]
 
+
 # Helper to extract subclass from cvar JSON
 def get_subclass(cvar_text, class_name):
     try:
@@ -24,6 +30,7 @@ def get_subclass(cvar_text, class_name):
         return subclass_data.get(cvar_key)
     except:
         return None
+
 
 for class_name in valid_classes:
     if class_name not in processed_classes:
@@ -47,14 +54,25 @@ for class_info in char_classes:
     class_features = feature_data.get(class_info["name"], [])
     for feature in class_features:
         if (feature["level"] <= class_info["level"] and
-            (feature["subclass"] is None or
-             feature["subclass"] == class_info["subclass"])):
+                (feature["subclass"] is None or
+                 feature["subclass"] == class_info["subclass"])):
             if feature["gvar"] and feature["gvar"] not in seen_gvars:
                 matching_gvars.append(feature["gvar"])
                 seen_gvars.add(feature["gvar"])
 
 if not matching_gvars:
-    err(f"No matching features found for {ch.name}")
+    # Only change this error to an embed
+    class_list = ", ".join([f"{c['name']} {c['level']}" for c in char_classes])
+    subclass_info = ", ".join([f"Subclass: {c['subclass']}" for c in char_classes if c['subclass']])
+    subclass_text = f" with {subclass_info}" if subclass_info else " (no subclasses yet)"
+
+    title = "No Features Found"
+    desc = (f"Character {ch.name} has class(es):\n"
+            f"`{class_list}`{subclass_text}.\n\n"
+            f"No features match the current character level and subclass configuration.")
+    footer = "Features are typically available at higher levels or with specific subclasses"
+
+    return common_utils.embed_msg(title=title, desc=desc, footer=footer)
 
 # Load and validate all gvars
 try:
