@@ -1,95 +1,53 @@
 <drac2>
 # Shadow Setup Tool for LOTR 5E
-# Initializes shadow tracking for characters based on their calling
-
-# Load shadow data
 shadow_data = load_json(get_gvar("4160bb62-8791-4239-941c-b7805e5351b6"))
 using(
-   lotr_utils="bf283fd7-585d-4530-b0e2-9e03eb643a96",
-   common_utils="0c6d5bca-a15d-4e45-a08d-48cf51411088"
+    lotr_utils="bf283fd7-585d-4530-b0e2-9e03eb643a96",
+    common_utils="0c6d5bca-a15d-4e45-a08d-48cf51411088",
 )
 footer = lotr_utils.FOOTER_SHADOW
+
+# Parse args properly
+args = argparse(&ARGS&)
+override = args.get('override')
 
 # Get character info
 ch = character()
 
-# Determine the character's calling using the shadow paths data
+# Validate character has a valid LOTR calling
 valid_callings = list(shadow_data["paths"].keys())
 calling = None
-
 for possible_calling in valid_callings:
-    class_name = possible_calling
-    if ch.levels.get(class_name, 0) > 0:
+    if ch.levels.get(possible_calling, 0) > 0:
         calling = possible_calling
         break
 
 if not calling:
-    # Create formatted lists for error message
-    class_list = []
-    for class_name, level in ch.levels:
-        class_list.append(f"{class_name} {level}")
+    # Build error message
+    class_list = [f"{class_name} {level}" for class_name, level in ch.levels]
     current_classes = ", ".join(class_list)
 
-    calling_list = []
-    for c in valid_callings:
-        path_name = shadow_data["paths"][c]["name"]
-        calling_list.append(f"• {c}: {path_name}")
+    calling_list = [f"• {c}: {shadow_data['paths'][c]['name']}"
+                    for c in valid_callings]
     valid_calling_str = "\n".join(calling_list)
 
-    title = "Shadow Setup Error - No Valid Calling Found"
-    desc = (f"{ch.name} currently has levels in: {current_classes}\n\n"
-            f"To use the Shadow system, you need levels in one of the following LOTR 5E callings:)\n"
-            f"{valid_calling_str}\n\n"
-            f"Note: This tool is specifically for The Lord of the Rings Roleplaying 5E\n"
-            f"Standard D&D 5E classes are not supported.")
-    return common_utils.embed_msg(title=title, desc=desc, footer=footer)
-
-
-# Define counter specifications for shadow tracking
-shadow_specs = {
-    "Shadow Points": {
-        "minVal": 0,
-        "maxVal": ch.stats.wisdom,
-        "reset": None,
-        "type": "number",
-        "desc": "Points of Shadow gained through fear, doubt, and dark deeds.",
-        "initial_value": 0
-    },
-    "Shadow Scars": {
-        "minVal": 0,
-        "maxVal": ch.stats.wisdom,
-        "reset": None,
-        "type": "number",
-        "desc": "Permanent Shadow points that can only be removed during Yule.",
-        "initial_value": 0
-    }
-}
-
-# Setup counters
-for counter_name, counter_spec in shadow_specs.items():
-    if ch.cc_exists(counter_name):
-        ch.delete_cc(counter_name)
-    ch.create_cc(
-        name=counter_name,
-        minVal=counter_spec["minVal"],
-        maxVal=counter_spec["maxVal"],
-        reset=counter_spec["reset"],
-        dispType=counter_spec["type"],
-        desc=counter_spec["desc"],
-        initial_value=counter_spec.get("initial_value", 0)
+    return common_utils.embed_msg(
+        title="Shadow Setup Error - No Valid Calling Found",
+        desc=f"{ch.name} currently has levels in: {current_classes}\n\n"
+             f"To use the Shadow system, you need levels in one of the following LOTR 5E callings:\n"
+             f"{valid_calling_str}\n\n"
+             f"Note: This tool is specifically for The Lord of the Rings Roleplaying 5E",
+        footer=footer
     )
 
-# Get shadow path data and store character information
-path = shadow_data["paths"][calling]
-shadow_path = {
-    "calling": calling,
-    "path": path["name"],
-    "currentFlaws": []
-}
-ch.set_cvar(lotr_utils.SHADOW_PATH, dump_json(shadow_path))
+# Setup all shadow counters
+for k, data in shadow_data["counters"].items():
+    if override:
+        ch.create_cc(**data)
+    else:
+        ch.create_cc_nx(**data)
 
-# Build output description
+# Build output description 
 title = f"{ch.name}'s Shadow Setup Completed"
 return lotr_utils.create_full_shadow_display(ch, title)
-
 </drac2>

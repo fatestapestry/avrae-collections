@@ -27,7 +27,7 @@ is_scar = 'scar' in args[1:] if len(args) > 1 else False
 
 # Get character and validate shadow path
 ch = character()
-valid, error = lotr_utils.validate_shadow_path(ch)
+valid, error = lotr_utils.validate_shadow(ch)
 if not valid:
     title = "Validation Error"
     desc = error

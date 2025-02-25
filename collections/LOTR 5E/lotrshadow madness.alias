@@ -1,7 +1,4 @@
 <drac2>
-# !lotrshadow madness
-# Load shadow data
-shadow_data = load_json(get_gvar("4160bb62-8791-4239-941c-b7805e5351b6"))
 using(
    lotr_utils="bf283fd7-585d-4530-b0e2-9e03eb643a96",
    common_utils="0c6d5bca-a15d-4e45-a08d-48cf51411088"
@@ -10,8 +7,8 @@ footer = lotr_utils.FOOTER_SHADOW
 
 ch = character()
 
-# Validate shadow path exists
-valid, error = lotr_utils.validate_shadow_path(ch)
+# Validate shadow data
+valid, error = lotr_utils.validate_shadow(ch)
 if not valid:
     title = "Error: Cannot Experience Madness"
     desc = error
@@ -23,29 +20,27 @@ if ch.get_cc(lotr_utils.CC_SHADOW_POINTS) < ch.stats.wisdom:
     desc = "You must have maximum Shadow points to experience madness."
     return common_utils.embed_msg(title=title, desc=desc, footer=footer)
 
-# Load shadow data and current path
-shadow_data = load_json(get_gvar(lotr_utils.METADATA_SHADOW))
-shadow_path = load_json(ch.get_cvar(lotr_utils.SHADOW_PATH))
+# Get path info
+calling, path_data = lotr_utils.get_shadow_path(ch)
+path_flaws = path_data["flaws"]
+current_path_value = ch.get_cc(lotr_utils.CC_SHADOW_PATH)
+max_path_value = ch.get_cc_max(lotr_utils.CC_SHADOW_PATH)
 
-# Get path flaws
-path_flaws = shadow_data["paths"][shadow_path["calling"]]["flaws"]
-current_flaws = shadow_path["currentFlaws"]
-
-# Check if already fully corrupted 
-if len(current_flaws) >= len(path_flaws):
+# Check if already fully corrupted
+if current_path_value >= max_path_value:
     title = "Error: Cannot Experience Madness"
     desc = "You have acquired all flaws. Your next bout of madness will cause you to succumb fully to the Shadow."
     return common_utils.embed_msg(title=title, desc=desc, footer=footer)
 
-# Add next flaw and reset shadow points
-new_flaw = path_flaws[len(current_flaws)]
-shadow_path["currentFlaws"] = lotr_utils.get_flaws_until(path_flaws, new_flaw)
-
-# Save updated path and reset points
-ch.set_cvar(lotr_utils.SHADOW_PATH, dump_json(shadow_path))
+# Advance to next path value and reset shadow points
+next_path_value = current_path_value + 1
+ch.set_cc(lotr_utils.CC_SHADOW_PATH, next_path_value)
 ch.set_cc(lotr_utils.CC_SHADOW_POINTS, ch.cc(lotr_utils.CC_SHADOW_POINTS).min)
 
-prefix = f"A bout of madness clears your Shadow points but leaves a permanent mark. You gain the {new_flaw} flaw."
+# Get flaw name for display
+new_flaw = path_flaws[next_path_value-1] if next_path_value-1 < len(path_flaws) else "Unknown"
+
+prefix = f"A bout of madness clears your Shadow points but leaves a permanent mark. You gain the `{new_flaw}` flaw (Level {next_path_value})."
 title = f"{ch.name} experiences a bout of Madness!"
 return lotr_utils.create_full_shadow_display(ch, title, prefix)
 </drac2>
