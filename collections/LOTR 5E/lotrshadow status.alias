@@ -9,7 +9,7 @@ footer = lotr_utils.FOOTER_SHADOW
 
 # Get character and validate shadow path
 ch = character()
-valid, error = lotr_utils.validate_shadow_path(ch)
+valid, error = lotr_utils.validate_shadow(ch)
 
 if not valid:
     title = "Validation Error"

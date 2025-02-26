@@ -1,63 +1,99 @@
 <drac2>
-# !lotrshadow path <value|none>
-# Load shadow data
-shadow_data = load_json(get_gvar("4160bb62-8791-4239-941c-b7805e5351b6"))
 using(
-   lotr_utils="bf283fd7-585d-4530-b0e2-9e03eb643a96",
-   common_utils="0c6d5bca-a15d-4e45-a08d-48cf51411088"
+    lotr_utils="bf283fd7-585d-4530-b0e2-9e03eb643a96",
+    common_utils="0c6d5bca-a15d-4e45-a08d-48cf51411088"
 )
 footer = lotr_utils.FOOTER_SHADOW
 
 ch = character()
 args = &ARGS&
 
-# Validate shadow path exists
-valid, error = lotr_utils.validate_shadow_path(ch)
+# Validate shadow data exists
+valid, error = lotr_utils.validate_shadow(ch)
 if not valid:
-    title = "Error: Cannot Manage Shadow Path"
-    desc = error
-    return common_utils.embed_msg(title=title, desc=desc, footer=footer)
+    return common_utils.embed_msg(title="Error: Cannot Manage Shadow Path", desc=error, footer=footer)
 
-# Load shadow data and current path
-shadow_data = load_json(get_gvar(lotr_utils.METADATA_SHADOW))
-shadow_path = load_json(ch.get_cvar(lotr_utils.SHADOW_PATH))
-path_flaws = shadow_data["paths"][shadow_path["calling"]]["flaws"]
-
-# Require value argument
+# Require an argument
 if len(args) < 1:
-    title = "Error: Invalid Arguments"
-    desc = "Usage: `!lotrshadow path <value|none>`"
-    return common_utils.embed_msg(title=title, desc=desc, footer=footer)
+    return common_utils.embed_msg(
+        title="Error: Missing Argument",
+        desc="Usage: `!lotrshadow path <value|name|+/-n|none>`",
+        footer=footer
+    )
 
-target_flaw = ' '.join(args).lower()
-display_value = None
+input_arg = args[0].lower()
+cc_name = lotr_utils.CC_SHADOW_PATH
 
-# Handle reset case
-if target_flaw == 'none':
-    shadow_path["currentFlaws"] = []
-    display_value = "None"
+# Get character's path data
+calling, path_data = lotr_utils.get_shadow_path(ch)
+path_flaws = path_data["flaws"]
+
+# Handle different input types
+if input_arg == 'none':
+    # Reset to 0
+    ch.set_cc(cc_name, 0)
+    display_value = "None (Level 0)"
+elif input_arg.startswith(('+', '-')):
+    # Handle increment/decrement
+    try:
+        change = int(input_arg)
+        new_val = ch.get_cc(cc_name) + change
+        # Validate bounds
+        if new_val < 0 or new_val > ch.get_cc_max(cc_name):
+            return common_utils.embed_msg(
+                title="Error: Invalid Value",
+                desc=f"Value must be between 0 and {ch.get_cc_max(cc_name)}",
+                footer=footer
+            )
+        ch.set_cc(cc_name, new_val)
+        if new_val == 0:
+            display_value = "None (Level 0)"
+        else:
+            flaw_name = path_flaws[new_val - 1] if 0 < new_val <= len(path_flaws) else "Unknown"
+            display_value = f"{flaw_name} (Level {new_val})"
+    except:
+        return common_utils.embed_msg(
+            title="Error: Invalid Increment/Decrement",
+            desc="Could not parse increment/decrement value",
+            footer=footer
+        )
 else:
-    # Find matching flaw
-    matching_flaw = None
-    for flaw in path_flaws:
-        if flaw.lower() == target_flaw:
-            matching_flaw = flaw
-            break
+    try:
+        # Try to parse as integer
+        value = int(input_arg)
+        if value < 0 or value > ch.get_cc_max(cc_name):
+            return common_utils.embed_msg(
+                title="Error: Invalid Value",
+                desc=f"Value must be between 0 and {ch.get_cc_max(cc_name)}",
+                footer=footer
+            )
+        ch.set_cc(cc_name, value)
+        if value == 0:
+            display_value = "`None` (Level 0)"
+        else:
+            flaw_name = path_flaws[value - 1] if 0 < value <= len(path_flaws) else "Unknown"
+            display_value = f"`{flaw_name}` (Level {value})"
+    except:
+        # Try to match a flaw name
+        target_level = None
+        for i, flaw in enumerate(path_flaws):
+            if flaw.lower() == input_arg:
+                target_level = i + 1  # Convert to 1-based level
+                break
 
-    if not matching_flaw:
-        title = "Error: Invalid Flaw"
-        desc = (f"`{target_flaw}` is not a valid flaw for your shadow path.\n"
-                f"Valid flaws for {shadow_path['path']}:\n"
-                f"`{[f.lower() for f in path_flaws]}`")
-        return common_utils.embed_msg(title=title, desc=desc, footer=footer)
+        if target_level is None:
+            return common_utils.embed_msg(
+                title="Error: Invalid Input",
+                desc=f"'{input_arg}' is not a valid flaw name or number.\n"
+                     f"Valid flaws: {[f for f in path_flaws]}",
+                footer=footer
+            )
 
-    shadow_path["currentFlaws"] = lotr_utils.get_flaws_until(path_flaws, matching_flaw)
-    display_value = matching_flaw
+        ch.set_cc(cc_name, target_level)
+        display_value = f"`{path_flaws[target_level - 1]}` (Level {target_level})"
 
-# Save updated path
-ch.set_cvar(lotr_utils.SHADOW_PATH, dump_json(shadow_path))
-prefix = f"Shadow Path flaws updated to: {display_value}"
-
-title = f"{ch.name}\'s Flaws updated!"
+# Display results
+prefix = f"Shadow Path updated to: {display_value}"
+title = f"{ch.name}'s Shadow Path updated!"
 return lotr_utils.create_full_shadow_display(ch, title, prefix)
 </drac2>

@@ -72,5 +72,37 @@
       "field_title": "Miserable",
       "field_text": "A miserable character decreases the Fellowship rating of the Company by 1. In addition, if a miserable character's d20 roll is a 1 or 2, the roll is a failure regardless of the DC for any ability check, attack roll, or saving throw."
     }
+  },
+  "counters": {
+    "Shadow Points": {
+      "name": "Shadow Points",
+      "title": "Shadow Points",
+      "minVal": 0,
+      "maxVal": "{{wisdom}}",
+      "initial_value": 0,
+      "reset": "none",
+      "dispType": "bubble",
+      "desc": "Points of Shadow gained through fear, doubt, and dark deeds."
+    },
+    "Shadow Scars": {
+      "name": "Shadow Scars",
+      "title": "Shadow Scars",
+      "minVal": 0,
+      "maxVal": "{{wisdom}}",
+      "initial_value": 0,
+      "reset": "none",
+      "dispType": "bubble",
+      "desc": "Permanent Shadow points that can only be removed during Yule."
+    },
+    "Shadow Path": {
+      "name": "Shadow Path",
+      "title": "Shadow Path",
+      "minVal": 0,
+      "maxVal": 4,
+      "initial_value": 0,
+      "reset": "none",
+      "dispType": "bubble",
+      "desc": "Current progression along Shadow Path"
+    }
   }
 }
