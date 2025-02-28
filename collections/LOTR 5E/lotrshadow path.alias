@@ -17,7 +17,7 @@ if not valid:
 if len(args) < 1:
     return common_utils.embed_msg(
         title="Error: Missing Argument",
-        desc="Usage: `!lotrshadow path <value|name|+/-n|none>`",
+        desc="Usage: `!lotrshadow path <amt|name|none>`",
         footer=footer
     )
 

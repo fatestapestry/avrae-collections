@@ -1,4 +1,4 @@
-`!lotrshadow path <flaw|none>`
+`!lotrshadow path <amt|name|none>`
 
 ## Description
 Manages the character's Shadow Path flaws by setting them to a specified flaw or resetting them entirely. Allows manual adjustments to the progression of flaws on the Shadow Path.
