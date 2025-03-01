@@ -54,6 +54,7 @@ The following LOTR 5E features are supported:
 
 ### In Development
 
+- Feats
 - Crafts
 
 ## Support Me
