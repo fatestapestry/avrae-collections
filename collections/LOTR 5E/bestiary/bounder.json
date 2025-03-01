@@ -1,0 +1,128 @@
+{
+   "flavor":{
+      "faction":"",
+      "environment":"Shire",
+      "description":"Small humanoid (Hobbit)",
+      "nameIsProper":false,
+      "imageUrl":"https://i.ibb.co/vC3DtryJ/TOR06-Hobbit-Bounder-500x.jpg",
+      "descriptionHtml":{
+
+      }
+   },
+   "stats":{
+      "size":"Small",
+      "race":"Humanoid",
+      "alignment":"Unaligned",
+      "armorType":"leather shirt",
+      "armorClass":13,
+      "numHitDie":2,
+      "speed":"25 ft.",
+      "abilityScores":{
+         "strength":13,
+         "dexterity":14,
+         "constitution":12,
+         "intelligence":10,
+         "wisdom":12,
+         "charisma":10
+      },
+      "proficiencyBonus":2,
+      "damageVulnerabilities":[
+
+      ],
+      "damageResistances":[
+
+      ],
+      "damageImmunities":[
+
+      ],
+      "conditionImmunities":[
+
+      ],
+      "senses":[
+
+      ],
+      "languages":[
+         "Westron"
+      ],
+      "challengeRating":0.125,
+      "experiencePoints":25,
+      "legendaryActionsPerRound":3,
+      "legendaryActionsDescription":"",
+      "savingThrows":[
+
+      ],
+      "skills":[
+         {
+            "name":"Perception",
+            "proficient":true,
+            "modifier":3,
+            "modifierStr":"Perception +3",
+            "$$hashKey":"object:5035"
+         },
+         {
+            "name":"Stealth",
+            "proficient":true,
+            "modifier":4,
+            "modifierStr":"Stealth +4",
+            "$$hashKey":"object:5036"
+         }
+      ],
+      "additionalAbilities":[
+
+      ],
+      "actions":[
+         {
+            "name":"Staff",
+            "description":"<i>Melee Weapon Attack:</i> +3 to hit, reach 5 ft., one target. <i>Hit:</i> 3 (1d4 + 1) bludgeoning damage, or 4 (1d6 + 1) bludgeoning damage if used with two hands to make a melee attack.",
+            "descriptionHtml":{
+
+            },
+            "$$hashKey":"object:5001"
+         },
+         {
+            "name":"Bow",
+            "description":"<i>Ranged Weapon Attack:</i> +4 to hit, range 80/320 ft., one target. <i>Hit:</i> 5 (1d6 + 2) piercing damage.",
+            "descriptionHtml":{
+
+            },
+            "$$hashKey":"object:5002"
+         }
+      ],
+      "reactions":[
+
+      ],
+      "legendaryActions":[
+
+      ],
+      "hitDieSize":6,
+      "armorTypeStr":"(leather shirt)",
+      "abilityScoreModifiers":{
+         "strength":1,
+         "dexterity":2,
+         "constitution":1,
+         "intelligence":0,
+         "wisdom":1,
+         "charisma":0
+      },
+      "abilityScoreStrs":{
+         "strength":"13 (+1)",
+         "dexterity":"14 (+2)",
+         "constitution":"12 (+1)",
+         "intelligence":"10 (+0)",
+         "wisdom":"12 (+1)",
+         "charisma":"10 (+0)"
+      },
+      "extraHealthFromConstitution":2,
+      "hitPoints":9,
+      "hitPointsStr":"9 (2d6 + 2)",
+      "passivePerception":13,
+      "challengeRatingStr":"1/8"
+   },
+   "sharing":{
+      "linkSharingEnabled":false
+   },
+   "_id":"67c333186e7abba7de448d43",
+   "name":"Bounder",
+   "bestiaryId":"67c333136e7abba7de448d40",
+   "__v":0
+}

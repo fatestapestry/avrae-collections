@@ -1,0 +1,134 @@
+{
+   "flavor":{
+      "faction":"",
+      "environment":"Shire",
+      "description":"",
+      "nameIsProper":false,
+      "imageUrl":"",
+      "descriptionHtml":""
+   },
+   "stats":{
+      "size":"Medium",
+      "race":"Dwarf",
+      "alignment":"Unaligned",
+      "armorType":"leather corslet",
+      "armorClass":12,
+      "numHitDie":2,
+      "speed":"25 ft.",
+      "abilityScores":{
+         "strength":13,
+         "dexterity":10,
+         "constitution":14,
+         "intelligence":10,
+         "wisdom":12,
+         "charisma":9
+      },
+      "proficiencyBonus":2,
+      "damageVulnerabilities":[
+
+      ],
+      "damageResistances":[
+
+      ],
+      "damageImmunities":[
+
+      ],
+      "conditionImmunities":[
+
+      ],
+      "senses":[
+
+      ],
+      "languages":[
+         "Khuzdul",
+         "Westron"
+      ],
+      "challengeRating":0.125,
+      "experiencePoints":25,
+      "legendaryActionsPerRound":3,
+      "legendaryActionsDescription":"",
+      "savingThrows":[
+
+      ],
+      "skills":[
+         {
+            "name":"Insight",
+            "proficient":true,
+            "modifier":3,
+            "modifierStr":"Insight +3",
+            "$$hashKey":"object:9286"
+         },
+         {
+            "name":"Intimidation",
+            "proficient":true,
+            "modifier":1,
+            "modifierStr":"Intimidation +1",
+            "$$hashKey":"object:9287"
+         },
+         {
+            "name":"Survival",
+            "proficient":true,
+            "modifier":3,
+            "modifierStr":"Survival +3",
+            "$$hashKey":"object:9288"
+         }
+      ],
+      "additionalAbilities":[
+
+      ],
+      "actions":[
+         {
+            "name":"Staff",
+            "description":"<i>Melee Weapon Attack:</i> +3 to hit, reach 5 ft., one target. <i>Hit:</i> 3 (1d4 + 1) bludgeoning damage, or 4 (1d6 + 1) bludgeoning damage if used with two hands to make a melee attack.",
+            "descriptionHtml":{
+
+            },
+            "$$hashKey":"object:9254"
+         },
+         {
+            "name":"Bow",
+            "description":"<i>Ranged Weapon Attack:</i> +2 to hit, range 80/320 ft., one target. <i>Hit:</i> 3 (1d6) piercing damage.",
+            "descriptionHtml":{
+
+            },
+            "$$hashKey":"object:9255"
+         }
+      ],
+      "reactions":[
+
+      ],
+      "legendaryActions":[
+
+      ],
+      "hitDieSize":8,
+      "armorTypeStr":"(leather corslet)",
+      "abilityScoreModifiers":{
+         "strength":1,
+         "dexterity":0,
+         "constitution":2,
+         "intelligence":0,
+         "wisdom":1,
+         "charisma":-1
+      },
+      "abilityScoreStrs":{
+         "strength":"13 (+1)",
+         "dexterity":"10 (+0)",
+         "constitution":"14 (+2)",
+         "intelligence":"10 (+0)",
+         "wisdom":"12 (+1)",
+         "charisma":"9 (–1)"
+      },
+      "extraHealthFromConstitution":4,
+      "hitPoints":13,
+      "hitPointsStr":"13 (2d8 + 4)",
+      "passivePerception":11,
+      "challengeRatingStr":"1/8"
+   },
+   "sharing":{
+      "linkSharingEnabled":false
+   },
+   "_id":"67c343466e7abba7de448dff",
+   "name":"Scoundrel Dwarf",
+   "bestiaryId":"67c333136e7abba7de448d40",
+   "__v":0
+}

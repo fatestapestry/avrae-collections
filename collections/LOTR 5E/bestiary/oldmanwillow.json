@@ -1,0 +1,133 @@
+{
+   "flavor":{
+      "faction":"",
+      "environment":"",
+      "description":"",
+      "nameIsProper":false,
+      "imageUrl":"https://i.ibb.co/FkNNK5Nm/Old-Man-Willow.jpg",
+      "descriptionHtml":""
+   },
+   "stats":{
+      "size":"Huge",
+      "race":"Plant",
+      "alignment":"Unaligned",
+      "armorType":null,
+      "armorClass":10,
+      "numHitDie":1,
+      "speed":"0 ft.",
+      "abilityScores":{
+         "strength":23,
+         "dexterity":1,
+         "constitution":21,
+         "intelligence":12,
+         "wisdom":12,
+         "charisma":18
+      },
+      "proficiencyBonus":4,
+      "damageVulnerabilities":[
+         "Fire"
+      ],
+      "damageResistances":[
+         "Bludgeoning",
+         "Piercing"
+      ],
+      "damageImmunities":[
+
+      ],
+      "conditionImmunities":[
+         "Blinded",
+         "Charmed",
+         "Deafened",
+         "Prone"
+      ],
+      "senses":[
+         "blindsight 120 ft.",
+         "tremorsense 120 ft."
+      ],
+      "languages":[
+         "Westron",
+         "Telepathy 120 ft."
+      ],
+      "challengeRating":9,
+      "experiencePoints":5000,
+      "legendaryActionsPerRound":3,
+      "legendaryActionsDescription":"",
+      "savingThrows":[
+
+      ],
+      "skills":[
+
+      ],
+      "additionalAbilities":[
+         {
+            "name":"Great Willow's Spell",
+            "description":".\nEvery creature within 500 feet of Old Man Willow gains <b>2 Shadow points</b> from Sorcery, resisted by a <b>DC 16 Intelligence</b> saving throw. On a failed save, a target becomes charmed for 24 hours. \n\nWhile charmed by Old Man Willow, a target is <b>Incapacitated</b>. If the save fails by 5 or more, the target gains 4 Shadow points instead of 2 and has disadvantage on Intelligence saving throws while charmed in this way.\n\nIf the charmed target is more than 5 feet away from Old Man Willow, the target must move on its turn toward Old Man Willow by the most direct route, trying to get within 5 feet. It doesn't avoid opportunity attacks, but before moving into a hazard, such as thorns or water, and whenever it takes damage, a target can repeat the saving throw. If a creature's saving throw is successful, the effect ends on it.\n\nIf the charmed target ends its turn within 5 feet of Old Man Willow, it falls asleep and is unconscious and no longer charmed. The target awakens if it takes damage or another creature takes an action to wake it.\n\nA target that successfully saves is immune to Old Man Willow’s spell for the next 24 hours.",
+            "descriptionHtml":{
+
+            },
+            "$$hashKey":"object:9161"
+         }
+      ],
+      "actions":[
+         {
+            "name":"Multiattack",
+            "description":"Old Man Willow makes two root attacks.",
+            "descriptionHtml":{
+
+            },
+            "$$hashKey":"object:9166"
+         },
+         {
+            "name":"Root",
+            "description":"<i>Melee Weapon Attack:</i> +10 to hit, reach 10 ft., one target. <i>Hit:</i> If the target is Large or smaller, it is <b>Grappled</b> (Escape DC 18). Until this grapple ends, the target is <b>Prone</b> and <b>Restrained</b>, has disadvantage on Strength and Dexterity checks, and Old Man Willow cannot use the same root on another target.",
+            "descriptionHtml":{
+
+            },
+            "$$hashKey":"object:9167"
+         },
+         {
+            "name":"Trunk Crush",
+            "description":"Old Man Willow crushes a Large or smaller creature grappled by it. The target is blinded and unable to breathe, and it must succeed on a DC 18 Strength saving throw or take 32 (4d12 + 6) bludgeoning damage. On a successful save, the creature takes half as much damage.",
+            "descriptionHtml":{
+
+            },
+            "$$hashKey":"object:9168"
+         }
+      ],
+      "reactions":[
+
+      ],
+      "legendaryActions":[
+
+      ],
+      "hitDieSize":12,
+      "abilityScoreModifiers":{
+         "strength":6,
+         "dexterity":-5,
+         "constitution":5,
+         "intelligence":1,
+         "wisdom":1,
+         "charisma":4
+      },
+      "abilityScoreStrs":{
+         "strength":"23 (+6)",
+         "dexterity":"1 (–5)",
+         "constitution":"21 (+5)",
+         "intelligence":"12 (+1)",
+         "wisdom":"12 (+1)",
+         "charisma":"18 (+4)"
+      },
+      "extraHealthFromConstitution":5,
+      "hitPoints":11,
+      "hitPointsStr":"11 (1d12 + 5)",
+      "passivePerception":11,
+      "challengeRatingStr":"9"
+   },
+   "sharing":{
+      "linkSharingEnabled":false
+   },
+   "_id":"67c35fb66e7abba7de448fe2",
+   "name":"Old Man Willow",
+   "bestiaryId":"67c333136e7abba7de448d40",
+   "__v":0
+}
