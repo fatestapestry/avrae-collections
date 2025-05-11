@@ -1,0 +1,44 @@
+- name: Slimy Tentacle (Far Realm Shard)
+  automation:
+    - type: target
+      target: all
+      effects:
+        - type: save
+          stat: cha
+          fail:
+            - type: damage
+              damage: 3d6 [psychic]
+              overheal: false
+              fixedValue: true
+            - type: ieffect2
+              name: Frightened by Slimy Tentacle
+              duration: "1"
+              effects: null
+              attacks: []
+              buttons: []
+              end: false
+              conc: false
+              desc: null
+              stacking: false
+              save_as: null
+              parent: null
+              target_self: false
+              tick_on_caster: false
+          success: []
+          dc: ""
+    - type: text
+      text: >-
+        This writhing crystal is steeped in the warped essence of the Far Realm.
+        As an action, you can attach the shard to a Tiny object (such as a
+        weapon or a piece of jewelry) or detach it. It falls off if your
+        attunement to it ends. You can use the shard as a spellcasting focus
+        while you hold or wear it.
+
+
+        When you use a Metamagic option on a spell while you are holding or wearing the shard, you can cause a slimy tentacle to rip through the fabric of reality and strike one creature you can see within 30 feet of you. The creature must succeed on a Charisma saving throw against your spell save DC or take 3d6 psychic damage and become frightened of you until the start of your next turn.
+      title: Far Realm Shard
+  _v: 2
+  proper: true
+  verb: strikes with a
+  phrase: A slimy tentacle rips through the fabric of reality...
+  activation_type: 1
