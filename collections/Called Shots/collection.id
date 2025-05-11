@@ -1,18 +1,18 @@
 {
-  "name": "Called Shots", 
   "collection": "677bbfb4485d1aa3f8b0d3b3", 
   "aliases": {}, 
   "snippets": {
-    "eye": "677bc2c5e0af05e26d1c9c0f", 
     "neck": "677bc2ebe0af05e26d1c9c11", 
-    "leg": "677bc2e4e0af05e26d1c9c10", 
     "head": "677bc2d4485d1aa3f8b0d3b6", 
-    "chest": "677bc2a9e0af05e26d1c9c0d", 
-    "wings": "677bc2fde0af05e26d1c9c12", 
-    "arms": "677bc0af485d1aa3f8b0d3b4", 
+    "eye": "677bc2c5e0af05e26d1c9c0f", 
+    "leg": "677bc2e4e0af05e26d1c9c10", 
     "vitals": "677bc2f5485d1aa3f8b0d3b8", 
-    "hand": "677bc2ce485d1aa3f8b0d3b5", 
+    "arms": "677bc0af485d1aa3f8b0d3b4", 
+    "wings": "677bc2fde0af05e26d1c9c12", 
     "heart": "677bc2dc485d1aa3f8b0d3b7", 
-    "ear": "677bc2bee0af05e26d1c9c0e"
-  }
+    "ear": "677bc2bee0af05e26d1c9c0e", 
+    "hands": "677bc2ce485d1aa3f8b0d3b5", 
+    "chest": "677bc2a9e0af05e26d1c9c0d"
+  }, 
+  "name": "Called Shots"
 }

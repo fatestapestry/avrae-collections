@@ -3,7 +3,7 @@
 *A collection of snippets for implementing called shots in D&D 5e combat. These snippets modify attacks to target specific body parts by applying disadvantage and appropriate penalties to hit, representing the increased difficulty of targeting specific locations.*
 
 ## Version
-v1.0.0
+v1.0.1
 
 ## Examples
 Basic usage:
@@ -20,7 +20,7 @@ Available targets:
 - `Chest (+0 AC)`
 - `Ear (+4 AC)`
 - `Eye (+4 AC)`
-- `Hand (+2 AC)`
+- `Hands (+2 AC)`
 - `Head (+2 AC)`
 - `Heart (+4 AC)`
 - `Leg (+2 AC)`
