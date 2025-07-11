@@ -1,0 +1,33 @@
+- name: "Maneuver: Brace"
+  automation:
+    - type: target
+      target: all
+      effects:
+        - type: condition
+          condition: caster.levels.get("Fighter") >= 3
+          onTrue:
+            - type: counter
+              counter: Superiority Dice
+              amount: "1"
+              fixedValue: true
+              errorBehaviour: raise
+            - type: damage
+              damage: '{{"1d12" if caster.levels.get("Fighter") >= 18 else ("1d10" if
+                caster.levels.get("Fighter") >= 10 else "1d8")}}'
+              fixedValue: true
+          onFalse:
+            - type: text
+              text: Minimum of 3 levels of Fighter not found!
+              title: Not a Battle Master
+          errorBehaviour: "false"
+    - type: text
+      text: When a creature you can see moves into the reach you have with the melee
+        weapon you’re wielding, you can use your reaction to expend one
+        superiority die and make one attack against the creature, using that
+        weapon. If the attack hits, add the superiority die to the weapon’s
+        damage roll.
+      title: Brace
+  _v: 2
+  proper: false
+  verb: prepares for
+  activation_type: 4

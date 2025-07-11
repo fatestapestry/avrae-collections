@@ -1,0 +1,3 @@
+!cc create "Fate's Bidding" -max 1 -min 0 -value 1 -type bubble -reset short
+!cc create "Fate's Foretelling" -max 1 -min 0 -value 1 -type bubble -reset short
+!cc create "Fate's Demands" -max 2 -min 0 -value 1 -type bubble -reset long

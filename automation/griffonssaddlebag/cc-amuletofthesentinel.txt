@@ -1,0 +1,1 @@
+!cc create "Amulet of the Sentinel" -max 8 -min 0 -value 8 -reset long -resetby 1d6+2 -type bubble -desc "This golden amulet of an eye has a large ruby embedded in its center and eight smaller gems around it. The amulet has 8 charges and regains 1d6 + 2 expended charges daily at dawn"

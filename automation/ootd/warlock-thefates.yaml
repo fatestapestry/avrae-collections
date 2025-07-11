@@ -1,0 +1,130 @@
+- _v: 2
+  name: Fate's Bidding
+  automation:
+    - type: counter
+      counter: Fate's Bidding
+      amount: "1"
+      allowOverflow: false
+      errorBehaviour: raise
+      fixedValue: true
+    - type: target
+      target: self
+      effects:
+        - type: temphp
+          amount: '{{max(caster.levels.get("Warlock"),1)}}'
+    - type: text
+      text: Starting at 1st level, you are expected to consult with the Fates each
+        morning to learn what they have planned for you. You can cast one
+        divination spell without expending a spell slot immediately after
+        finishing a short or long rest. If you do so, you gain temporary hit
+        points equal to your warlock level (minimum of 1). You must choose a
+        spell that you can cast normally, and must have the necessary material
+        components.
+      title: Fate's Bidding
+  verb: uses
+  proper: true
+  activation_type: 8
+- _v: 2
+  name: Fate's Foretelling
+  automation:
+    - type: counter
+      counter: Fate's Foretelling
+      amount: "1"
+      allowOverflow: false
+      errorBehaviour: raise
+      fixedValue: true
+    - type: roll
+      dice: 1d20
+      name: Foretelling
+      hidden: false
+      fixedValue: true
+    - type: text
+      text: Starting at 6th level, you can call on the Fates to foretell your success.
+        When you finish a short or long rest, roll 1d20 and record the number
+        you rolled. You can replace an attack roll, saving throw, or ability
+        check made by you or a creature that you can see with this roll. You
+        must choose to do so before the roll. This foretelling roll can be used
+        only once. When you finish a short or long rest, you lose any unused
+        foretelling rolls.
+      title: Fate's Foretelling
+  verb: uses
+  proper: true
+  activation_type: 8
+- _v: 2
+  name: Fate's Demands
+  automation:
+    - type: counter
+      counter: Fate's Demands
+      amount: "1"
+      errorBehaviour: raise
+      fixedValue: true
+    - type: counter
+      counter:
+        slot: '{{min(ceil(caster.levels.get("Warlock")/2),5)}}'
+      amount: "-1"
+      allowOverflow: false
+      errorBehaviour: raise
+      fixedValue: true
+    - type: text
+      text: Starting at 10th level, the weight of your servitude grows heavy, and the
+        burden only lessens when you help the story reach the end the Fates have
+        in mind. Each time you reduce a creature to 0 hit points, you regain one
+        expended spell slot. You may use this feature twice, and you regain any
+        expended uses when you finish a long rest.
+      title: Fate's Demands
+  verb: evokes
+  proper: true
+  activation_type: 8
+- _v: 2
+  name: Inescapable Fate
+  automation:
+    - type: counter
+      counter: Inescapable Fate
+      amount: "1"
+      allowOverflow: false
+      errorBehaviour: raise
+      fixedValue: true
+    - type: target
+      target: all
+      effects:
+        - type: save
+          stat: wis
+          fail:
+            - type: ieffect2
+              name: Compelled by Fate
+              attacks: []
+              buttons:
+                - automation:
+                    - type: target
+                      target: self
+                      effects:
+                        - type: damage
+                          damage: 2d10[psychic]
+                          overheal: false
+                          fixedValue: true
+                  label: Take Damage (Inescapable Fate)
+                  style: "4"
+                - automation:
+                    - type: remove_ieffect
+                  label: End Inescapable Fate
+                  style: "1"
+              end: false
+              conc: false
+              stacking: false
+              target_self: false
+              tick_on_caster: false
+          success: []
+    - type: text
+      text: >-
+        Starting at 14th level, you learn to accelerate the entropic power of
+        fate. You can use an action to force a creature you can see to make a
+        Wisdom saving throw. If the creature is unaware of your presence, then
+        it has disadvantage on the roll. If the creature fails the saving throw,
+        choose another creature that you can see. The first creature is
+        compelled by fate to move toward the second creature for 1 minute.
+
+
+        At the beginning of each of the first creature’s turns, if it is not located within 5 feet of the second creature, then the first creature takes 2d10 psychic damage, and it must use its full movement to move closer to the second creature, dashing if necessary, even if it cannot reach them. This effect ends if you or either of the two creatures are reduced to 0 hit points or become unconscious. Once you use this feature, you can’t use it again until you finish a long rest.
+      title: Inescapable Fate
+  proper: true
+  activation_type: 1

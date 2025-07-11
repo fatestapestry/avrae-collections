@@ -1,0 +1,126 @@
+{
+  "flavor": {
+    "faction": "",
+    "environment": "",
+    "description": "",
+    "nameIsProper": false,
+    "imageUrl": "https://i.ibb.co/rGkRDKq3/127.jpg",
+    "descriptionHtml": ""
+  },
+  "stats": {
+    "size": "Large",
+    "race": "Giant",
+    "alignment": "Unaligned",
+    "armorType": "Natural Armor",
+    "armorClass": 14,
+    "numHitDie": 4,
+    "speed": "40 ft.",
+    "abilityScores": {
+      "strength": 17,
+      "dexterity": 8,
+      "constitution": 16,
+      "intelligence": 7,
+      "wisdom": 7,
+      "charisma": 7
+    },
+    "proficiencyBonus": 2,
+    "damageVulnerabilities": [],
+    "damageResistances": [
+      "Poison",
+      "Bludgeoning",
+      "Piercing",
+      "Slashing"
+    ],
+    "damageImmunities": [],
+    "conditionImmunities": [],
+    "senses": [
+      "darkvision 120 ft."
+    ],
+    "languages": [
+      "Westron"
+    ],
+    "challengeRating": 1,
+    "experiencePoints": 200,
+    "legendaryActionsPerRound": 3,
+    "legendaryActionsDescription": "",
+    "savingThrows": [
+      {
+        "ability": "strength",
+        "proficient": true,
+        "modifier": 5,
+        "modifierStr": "Str +5",
+        "$$hashKey": "object:2546"
+      },
+      {
+        "ability": "constitution",
+        "proficient": true,
+        "modifier": 5,
+        "modifierStr": "Con +5",
+        "$$hashKey": "object:2547"
+      }
+    ],
+    "skills": [
+      {
+        "name": "Intimidation",
+        "proficient": true,
+        "modifier": 0,
+        "modifierStr": "Intimidation +0",
+        "$$hashKey": "object:2555"
+      }
+    ],
+    "additionalAbilities": [
+      {
+        "name": "Hideous Toughness",
+        "description": "If Jack the Stone-troll takes 7 damage or less that would reduce it to 0 hit points, it is reduced to 1 hit point instead.",
+        "descriptionHtml": {},
+        "$$hashKey": "object:2509"
+      },
+      {
+        "name": "Sunlight Curse",
+        "description": "Jack the Stone-troll becomes petri- fied if it ends its turn in sunlight.",
+        "descriptionHtml": {},
+        "$$hashKey": "object:2510"
+      }
+    ],
+    "actions": [
+      {
+        "name": "Slam",
+        "description": "<i>Melee Weapon Attack:</i> +5 to hit, reach 5 ft., one target. <i>Hit:</i> 8 (2d4 + 3) bludgeoning damage. If the target is Medium or smaller, it is Grappled (Escape DC 13). If the target is Small or smaller, it is also Restrained until this grapple ends. While grappling the target, Jack the Stone-troll has advantage on attack rolls against it and cannot use this attack against other targets.",
+        "descriptionHtml": {},
+        "$$hashKey": "object:2517"
+      }
+    ],
+    "reactions": [],
+    "legendaryActions": [],
+    "hitDieSize": 10,
+    "armorTypeStr": "(Natural Armor)",
+    "abilityScoreModifiers": {
+      "strength": 3,
+      "dexterity": -1,
+      "constitution": 3,
+      "intelligence": -2,
+      "wisdom": -2,
+      "charisma": -2
+    },
+    "abilityScoreStrs": {
+      "strength": "17 (+3)",
+      "dexterity": "8 (–1)",
+      "constitution": "16 (+3)",
+      "intelligence": "7 (–2)",
+      "wisdom": "7 (–2)",
+      "charisma": "7 (–2)"
+    },
+    "extraHealthFromConstitution": 12,
+    "hitPoints": 34,
+    "hitPointsStr": "34 (4d10 + 12)",
+    "passivePerception": 8,
+    "challengeRatingStr": "1"
+  },
+  "sharing": {
+    "linkSharingEnabled": false
+  },
+  "_id": "681539996e7abba7de49cda5",
+  "name": "Jack, the Stone-troll",
+  "bestiaryId": "67c333136e7abba7de448d40",
+  "__v": 0
+}

@@ -1,0 +1,119 @@
+{
+  "flavor": {
+    "faction": "",
+    "environment": "",
+    "description": "",
+    "nameIsProper": true,
+    "imageUrl": "https://i.ibb.co/Mk6nstMY/138.jpg",
+    "descriptionHtml": ""
+  },
+  "stats": {
+    "size": "Medium",
+    "race": "Humanoid (Orc)",
+    "alignment": "Unaligned",
+    "armorType": "Hide Armor, Shield",
+    "armorClass": 14,
+    "numHitDie": 3,
+    "speed": "30 ft.",
+    "abilityScores": {
+      "strength": 14,
+      "dexterity": 14,
+      "constitution": 12,
+      "intelligence": 8,
+      "wisdom": 12,
+      "charisma": 8
+    },
+    "proficiencyBonus": 2,
+    "damageVulnerabilities": [],
+    "damageResistances": [],
+    "damageImmunities": [],
+    "conditionImmunities": [],
+    "senses": [
+      "darkvision 120 ft."
+    ],
+    "languages": [
+      "Orkish",
+      "Westron"
+    ],
+    "challengeRating": 0.5,
+    "experiencePoints": 100,
+    "legendaryActionsPerRound": 3,
+    "legendaryActionsDescription": "",
+    "savingThrows": [],
+    "skills": [
+      {
+        "name": "Stealth",
+        "proficient": true,
+        "modifier": 4,
+        "modifierStr": "Stealth +4",
+        "$$hashKey": "object:8885"
+      }
+    ],
+    "additionalAbilities": [
+      {
+        "name": "Nimble Escape",
+        "description": "Orc-veteran can take the Disengage or Hide action as a bonus action on each of its turns.",
+        "descriptionHtml": {},
+        "$$hashKey": "object:8842"
+      },
+      {
+        "name": "Sneak Attack (1/Turn)",
+        "description": "Orc-veteran deals an extra 7 (2d6) damage when it hits a target with a weapon attack and has advantage on the attack roll, or when the target is within 5 feet of an ally of Orc-veteran that isn't incapacitated and Orc-veteran doesn't have disadvantage on the attack roll.",
+        "descriptionHtml": {},
+        "$$hashKey": "object:8843"
+      },
+      {
+        "name": "Sunlight Sensitivity",
+        "description": "While in sunlight, Orc-veteran has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight.",
+        "descriptionHtml": {},
+        "$$hashKey": "object:8844"
+      }
+    ],
+    "actions": [
+      {
+        "name": "Scimitar",
+        "description": "<i>Melee Weapon Attack:</i> +4 to hit, reach 5 ft., one target. <i>Hit:</i> 5 (1d6 + 2) slashing damage.",
+        "descriptionHtml": {},
+        "$$hashKey": "object:8853"
+      },
+      {
+        "name": "Spear",
+        "description": "<i>Melee or Ranged Weapon Attack:</i> +4 to hit, reach 5 ft. or range 20/60 ft., one target. <i>Hit:</i> 5 (1d6 + 2) piercing damage in melee, or 5 (1d6 + 2) piercing damage at range, or 6 (1d8 + 2) piercing damage if used with two hands to make a melee attack.",
+        "descriptionHtml": {},
+        "$$hashKey": "object:8854"
+      }
+    ],
+    "reactions": [],
+    "legendaryActions": [],
+    "hitDieSize": 8,
+    "armorTypeStr": "(Hide Armor, Shield)",
+    "abilityScoreModifiers": {
+      "strength": 2,
+      "dexterity": 2,
+      "constitution": 1,
+      "intelligence": -1,
+      "wisdom": 1,
+      "charisma": -1
+    },
+    "abilityScoreStrs": {
+      "strength": "14 (+2)",
+      "dexterity": "14 (+2)",
+      "constitution": "12 (+1)",
+      "intelligence": "8 (–1)",
+      "wisdom": "12 (+1)",
+      "charisma": "8 (–1)"
+    },
+    "extraHealthFromConstitution": 3,
+    "hitPoints": 16,
+    "hitPointsStr": "16 (3d8 + 3)",
+    "passivePerception": 11,
+    "challengeRatingStr": "1/2"
+  },
+  "sharing": {
+    "linkSharingEnabled": false
+  },
+  "_id": "683ee5096e7abba7de4c354a",
+  "name": "Orc-veteran",
+  "bestiaryId": "67c333136e7abba7de448d40",
+  "__v": 0
+}
